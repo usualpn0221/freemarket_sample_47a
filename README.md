@@ -78,7 +78,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|    |    |    |
+
 
 ### Association
 - has_many :users
@@ -87,15 +87,15 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|description|string|
-|condition|string|null: false
-|postage|string|null: false
-|region|string|null: false
-|shipping_date|string|null: false
-|price|integer|null: false
-|saler|references|null: false
-|buyer|references|
+|name|string|index: true,null: false|
+|description|string|null: false|
+|condition|string|null: false|
+|postage|string|null: false|
+|region|string|null: false|
+|shipping_date|string|null: false|
+|price|integer|null: false|
+|saler|references|null: false|
+|buyer|references|  |
 
 <!-- condition(商品の状態),postage(配送料の負担),region(発送元地域),shipping_date(発送までの日数) -->
 
@@ -114,7 +114,7 @@ Things you may want to cover:
 |------|----|-------|
 |user|references|      |
 |item|references|      |
-|text|text|null: false|   |
+|text|text|null: false|
 
 ### Association
 - belongs_to :item
@@ -135,7 +135,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false,index: true|
-|    |    |    |
+
 
 ### Association
 - has_many :items
@@ -145,7 +145,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false,index: true|
-|    |    |    |
+
 
 ### Association
 - has_many :items
@@ -169,8 +169,8 @@ Things you may want to cover:
 |------|----|-------|
 |middlecategory_id|references|    |
 |name|string|null: false,index: true|
-|    |    |    |
-|    |    |    |
+
+
 
 ### Association
 - has_many :items
