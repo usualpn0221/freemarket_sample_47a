@@ -36,23 +36,30 @@ Things you may want to cover:
 |birthyear|integer|null: false|
 |birthmonth|integer|null: false|
 |birthday|integer|null: false|
-|address|string|null: false|
+|postnumber|string|null: false|
+|prefecture_id|references|null: false|
+|shikuchouson|string|null: false|
+|banchi|string|null: false|
+|tatemonomei|string||
 |phonenumber|string|null false|
-<!-- ここから下のカラムはdeviseで自動で作成される -->
-|encrypted_password|string|null: false, default: ""
+|encrypted_password|string|null: false, default: ""|
 |reset_password_token|string|
 |reset_password_sent_at|datetime|
 |remember_created_at|datetime|
+
+<!-- passより下のカラムはdeviseで自動で作成される -->
 
 ### Association
 -has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
 -has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
 -has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 -has_many :creditcards
+-belongs_to :prefecture
 
 ## creditcardsテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |user_id|references|    |
 |type|string|null: false|
 |number|string|null: false|
@@ -73,7 +80,7 @@ Things you may want to cover:
 |    |    |    |
 
 ### Association
--     :
+-has_many :users
 
 ## itemsテーブル
 
