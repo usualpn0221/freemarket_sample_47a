@@ -50,11 +50,11 @@ Things you may want to cover:
 <!-- passより下のカラムはdeviseで自動で作成される -->
 
 ### Association
--has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
--has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
--has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
--has_many :creditcards
--belongs_to :prefecture
+- has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+- has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
+- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+- has_many :creditcards
+- belongs_to :prefecture
 
 ## creditcardsテーブル
 
@@ -70,7 +70,7 @@ Things you may want to cover:
 <!-- 数字でも０から始まる可能性あるものはintegerでなくstringにする -->
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 ## prefecturesテーブル
 
@@ -80,7 +80,7 @@ Things you may want to cover:
 |    |    |    |
 
 ### Association
--has_many :users
+- has_many :users
 
 ## itemsテーブル
 
@@ -98,13 +98,13 @@ Things you may want to cover:
 <!-- condition(商品の状態),postage(配送料の負担),region(発送元地域),shipping_date(発送までの日数) -->
 
 ### Association
--belongs_to :saler, class_name: "User"
--belongs_to :buyer, class_name: "User"
--has_many :images
--belongs_to :brand
--belongs_to :bigcategory
--belongs_to :middlecategory
--belongs_to :smallcategory
+- belongs_to :saler, class_name: "User"
+- belongs_to :buyer, class_name: "User"
+- has_many :images
+- belongs_to :brand
+- belongs_to :bigcategory
+- belongs_to :middlecategory
+- belongs_to :smallcategory
 
 ## commentsテーブル
 
@@ -115,8 +115,8 @@ Things you may want to cover:
 |text|text|null: false|   |
 
 ### Association
--belongs_to :item
--belongs_to :user
+- belongs_to :item
+- belongs_to :user
 
 ## imagesテーブル
 
@@ -126,7 +126,7 @@ Things you may want to cover:
 |image|string|    |
 
 ### Association
--belongs_to :item
+- belongs_to :item
 
 ## brandsテーブル
 
@@ -136,7 +136,7 @@ Things you may want to cover:
 |    |    |    |
 
 ### Association
--has_many :items
+- has_many :items
 
 ## bigcategorysテーブル
 
@@ -146,8 +146,8 @@ Things you may want to cover:
 |    |    |    |
 
 ### Association
--has_many :items
--has_many :middlecategorys
+- has_many :items
+- has_many :middlecategorys
 
 ## middlecategorysテーブル
 
@@ -156,9 +156,9 @@ Things you may want to cover:
 |name|string|null: false,index: true|
 
 ### Association
--has_many :items
--has_many :smallcategorys
--belongs_to :bigcategory
+- has_many :items
+- has_many :smallcategorys
+- belongs_to :bigcategory
 
 ## smallcategorysテーブル
 
@@ -169,5 +169,5 @@ Things you may want to cover:
 |    |    |    |
 
 ### Association
--has_many :items
--belongs_to :middlecategory
+- has_many :items
+- belongs_to :middlecategory
