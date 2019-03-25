@@ -152,6 +152,7 @@ Things you may want to cover:
 ## middlecategorysテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |bigcategory_id|references|    |
 |name|string|null: false,index: true|
 
@@ -163,6 +164,7 @@ Things you may want to cover:
 ## smallcategorysテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |middlecategory_id|references|    |
 |name|string|null: false,index: true|
 |    |    |    |
