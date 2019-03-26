@@ -76,4 +76,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem "font-awesome-rails"
+<<<<<<< HEAD
+=======
+gem 'fog-aws'
+>>>>>>> master
 
