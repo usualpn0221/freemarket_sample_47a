@@ -263,11 +263,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   erb2haml
-<<<<<<< HEAD
   fog-aws
-=======
   font-awesome-rails
->>>>>>> master
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
