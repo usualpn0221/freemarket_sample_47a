@@ -1,0 +1,90 @@
+* {
+  list-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+}
+
+.top-app-baner{
+  color: white;
+  height:260px;
+  width: 100vw;
+  background-image: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?78405350");
+  &__content{
+    height: 260px;
+    width: 750px;
+    margin:0 auto;
+    display: flex;
+    justify-content:space-between;
+    &__inner{
+      width: 420px;
+      align-self: center;
+      &__introduction {
+        font-size:24px;
+      }
+      p{
+        font-size: 35px;
+      }
+      ul{
+        left:20px;
+        padding-top: 20px;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+      }
+    }
+    &__iPhone{
+      height: 260px;
+    }
+  }
+}
+
+.social-link {
+    display: flex;
+}
+
+.under-footer {
+    background: #212121;
+    color: #fff;
+    padding: 0 20px 10px 20px;
+}
+.under-footer--lists {
+    // height: 603px;
+    // width: 700px;
+    margin-top: 18px;
+    margin: 7px;
+    padding-left: 30px;
+    text-align: left;
+}
+.under-footer--list {
+    display: inline-block;
+    vertical-align: top;
+    opacity: .7;
+}
+.under-footer--list li {
+    font-size: 12px;
+    margin-top: 15px;
+}
+.under-footer--list__title {
+    font-weight: bold;
+    font-size: 16px;
+}
+ul.under-footer__copyright li{
+    display: inline-block;
+}
+li.under-footer--copyright{
+    &--logo{
+      width: 124px;
+      left: 0;
+      margin: 30px auto 0;
+      vertical-align: middle;
+    }
+    &--text{
+      vertical-align: middle;
+      text-align: center;
+      small {
+        font-size:12px;
+        }
+    }
+}
+
