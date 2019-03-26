@@ -1,0 +1,34 @@
+.left-side-bar{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  .mypage-nav{
+    &__list{
+      list-style: none;
+      li{
+        .mypage-nav__list__item{
+          border-top: 1px solid;
+          list-style: none;
+          position: relative;
+          display: block;
+          padding: 16px;
+          background-color: white;
+          color: black;
+          text-decoration: none;
+          font-size: 14px;
+          .fas{
+            font-size: 20px;
+            position: absolute;
+            right: 15px;
+            color: #ccc;
+            top: 16px;
+          }
+        }
+      }
+    }
+    h3{
+      margin-top: 40px;
+    }
+  }
+}
+

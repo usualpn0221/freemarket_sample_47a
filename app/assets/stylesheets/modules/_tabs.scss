@@ -1,0 +1,32 @@
+.tabs{
+  background: gray;
+  width:700px;
+}
+input[name="tab_item"] , input[name="tab_user"] {
+    display: none;
+  }
+.tab_item,.tab_user {
+  width: calc(100%/2);
+  height: 74px;
+  font-size: 16px;
+  line-height: 74px;
+  text-align: center;
+  color: black;
+  display: block;
+  float: left;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_content {
+  display: none;
+  background-color: white;
+  clear: both;
+  overflow: hidden;
+  // max-height:    後々制限が必要？（メルカリだとリスト⑤個分）
+}
+
+#notice:checked ~ #notice_content,
+#todo:checked ~ #todo_content , #trade-now:checked ~ #trade-now_content,
+#trade-kako:checked ~ #trade-kako_content {
+  display: block;
+}
