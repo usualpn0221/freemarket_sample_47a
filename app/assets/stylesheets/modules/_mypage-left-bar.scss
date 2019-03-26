@@ -3,6 +3,9 @@
   width: 280px;
   margin: 0 40px 0 0;
   .mypage-nav{
+    &__head{
+      color: black;
+    }
     &__list{
       list-style: none;
       li{
