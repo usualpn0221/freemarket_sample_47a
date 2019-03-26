@@ -80,7 +80,7 @@ gem 'mini_magick'
 
 
 gem 'fog-aws'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '5.4.1'
 
 
 
