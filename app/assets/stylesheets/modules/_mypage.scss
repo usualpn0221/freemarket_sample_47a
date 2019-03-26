@@ -1,0 +1,66 @@
+.default-container{
+  background: #f5f5f5;
+  .l-container{
+    margin: 40px auto 0;
+    width: 1020px;
+    padding: 40px 0;
+    @include clearfix();
+    .right-content{
+      float: right;
+      width: 700px;
+      height: 100vw;
+      &__user{
+        height: 160px;
+        background: url(user-bg.jpg);
+        position: relative;
+        padding-top: 40px;
+        &__page{
+          position: absolute;
+          text-decoration: none;
+          left: 0;
+          right: 0;
+          margin: auto;
+          figure{
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+          }
+          h2{
+            text-align: center;
+            font-size: 14px;
+          }
+          .right-content__user__number{
+            display: block;
+            text-align: center;
+            font-size:0;
+            div{
+              display: inline-block;
+              font-size: 14px;
+              padding-left: 14px;
+              span{
+                margin: 0 0 0 8px;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.tab_content{
+  text-align:  center;
+  padding: 160px 0 60px;
+  background:url(user-joukyo.png)
+}
+.trade-information__tab{
+  line-height: 72px;
+  background: #fafafa;
+  margin-top: 40px;
+}
+
+.notice_content ,.todo_content,.trade-now_content,#trade-kako_content{
+  color: black;
+}

@@ -96,6 +96,9 @@ Things you may want to cover:
 |price|integer|null: false|
 |saler|references|null: false|
 |buyer|references|  |
+|bigcategory|references|null: false|
+|middlecategory|references|null: false|
+|smallcategory|references|null: false|
 
 <!-- condition(商品の状態),postage(配送料の負担),region(発送元地域),shipping_date(発送までの日数) -->
 
