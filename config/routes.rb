@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'buys/new'
+
+  get 'buys/create'
+
+  get 'buys/index'
+
   devise_for :users
   root 'users#show'
   resources :users
