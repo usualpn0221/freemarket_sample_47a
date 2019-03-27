@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#index'
+  root 'users#show'
   resources :users
   resources :items do
     resources :comments, only: [:create]
