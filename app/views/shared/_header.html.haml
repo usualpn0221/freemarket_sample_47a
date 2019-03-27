@@ -1,0 +1,39 @@
+.header
+  .inner-header
+    .inner-header__upper
+      .inner-header__upper__left
+        %a{href: "https://www.mercari.com/jp/"}
+          %img{alt: "mercari", width:"134", height: "36", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?454567723", width: "124"}/
+      .inner-header__upper__right
+        %form#form2{:action => "自分のサイトURL", :method => "get"}
+        %input#sbox2{:name => "s", :placeholder => "何かお探しですか？", :type => "text"}/
+        %button#sbtn2{:type => "submit"}
+          =fa_icon 'search'
+    .inner-header__under
+      .inner-header__under__left
+        %ul.inner-header__under__left__lists
+          %li.inner-header__under__left__list
+          =fa_icon 'list-ul'
+          %span カテゴリーから探す
+          %li.inner-header__under__left__list
+          =fa_icon 'tags'
+          %span ブランドから探す
+      .inner-header__under__right
+        %ul.inner-header__under__right__lists
+          - if user_signed_in?
+            %li.inner-header__under__right__list
+            =fa_icon 'bell'
+            %span マイページ
+            %li.inner-header__under__right__list
+            =fa_icon 'check'
+            %span お知らせ
+            %li.inner-header__under__right__list
+            =fa_icon 'user-circle'
+            %span やることリスト
+          - else
+            %li.inner-header__under__right__list
+              = link_to new_user_session_path do
+                ログイン
+            %li.inner-header__under__right__list
+              = link_to new_user_registration_path do
+                新規会員登録
