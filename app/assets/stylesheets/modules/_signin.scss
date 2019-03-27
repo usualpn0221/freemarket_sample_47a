@@ -1,0 +1,20 @@
+.single-main{
+  text-align: center;
+}
+.login-panel{
+  margin: 0 auto;
+  text-align: center;
+  width: 456px;
+  background: white;
+  font-size: 18px;
+}
+.login-panel__no-account{
+  padding: 40px 64px;
+  border-bottom: 1px solid black;
+  &__create{
+    background: #0099e8;
+    padding: 8px 120px;
+    color: white;
+    line-height: 8px;
+  }
+}
