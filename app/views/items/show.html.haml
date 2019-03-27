@@ -51,12 +51,18 @@
           %td#item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__exhibitor-top
               = link_to root_path do
-                %p.item__main-box__right__column-right__box__exhibitor-top__link-text 出品者名
+                %p.item__main-box__right__column-right__box__exhibitor-top__link-text 田中星矢（出品者名）
 
-            %ul.item__main-box__right__column-right__box__exhibitor-bottom
-              %li.item__main-box__right__column-right__box__exhibitor-bottom__box-good
-              %li.item__main-box__right__column-right__box__exhibitor-bottom__box-usually
-              %li.item__main-box__right__column-right__box__exhibitor-bottom__box-bad
+            .item__main-box__right__column-right__box__exhibitor-bottom
+              .item__main-box__right__column-right__box__exhibitor-bottom__box-good
+                = fa_icon "icon-good"
+                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-good__value 30
+              .item__main-box__right__column-right__box__exhibitor-bottom__box-normal
+                = fa_icon "normal"
+                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value 10
+              .item__main-box__right__column-right__box__exhibitor-bottom__box-bad
+                = fa_icon "bad"
+                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value 2
           %td#item__main-box__right__column-right__category.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__category-large
               = link_to "レディース", "http://zozo.jp/search/?sex=women"
@@ -65,7 +71,8 @@
             .item__main-box__right__column-right__box__category-small
               = link_to "ショルダーバッグ", "http://zozo.jp/women-category/bag/shoulder-bag/"
           %td#item__main-box__right__column-right__brand.item__main-box__right__column-right__box
-            = link_to "ブランド", "https://www.axes-net.com/fs/axes/c/brandlist"
+            = link_to root_path do
+              .item__main-box__right__column-right__box__link-text ナイキ
           %td#item__main-box__right__column-right__state.item__main-box__right__column-right__box
             新品、未使用
           %td#item__main-box__right__column-right__burden.item__main-box__right__column-right__box
