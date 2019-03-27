@@ -7,56 +7,75 @@
         .item__main-box__left__image-big
           大きな画像
         .item__main-box__left__image-box
-          .item__main-box__left__image-box__contents1
+          #item__main-box__left__image-box__contents1.item__main-box__left__image-box__contents-image
             画像1
-          .item__main-box__left__image-box__contents2
+          #item__main-box__left__image-box__contents2.item__main-box__left__image-box__contents-image
             画像2
-          .item__main-box__left__image-box__contents3
+          #item__main-box__left__image-box__contents3.item__main-box__left__image-box__contents-image
             画像3
-          .item__main-box__left__image-box__contents4
+          #item__main-box__left__image-box__contents4.item__main-box__left__image-box__contents-image
             画像4
-          .item__main-box__left__image-box__contents5
+          #item__main-box__left__image-box__contents5.item__main-box__left__image-box__contents-image
             画像5
-          .item__main-box__left__image-box__contents6
+          #item__main-box__left__image-box__contents6.item__main-box__left__image-box__contents-image
             画像6
-          .item__main-box__left__image-box__contents7
+          #item__main-box__left__image-box__contents7.item__main-box__left__image-box__contents-image
             画像7
-          .item__main-box__left__image-box__contents8
+          #item__main-box__left__image-box__contents8.item__main-box__left__image-box__contents-image
             画像8
-          .item__main-box__left__image-box__contents9
+          #item__main-box__left__image-box__contents9.item__main-box__left__image-box__contents-image
             画像9
-          .item__main-box__left__image-box__contents10
+          #item__main-box__left__image-box__contents10.item__main-box__left__image-box__contents-image
             画像10
 
       .item__main-box__right
         .item__main-box__right__column-left
-          %th.item__main-box__right__column-left__exhibitor
+          %th#item__main-box__right__column-left__exhibitor.item__main-box__right__column-left__box
             出品者
-          %th.item__main-box__right__column-left__category
+          %th#item__main-box__right__column-left__category.item__main-box__right__column-left__box
             カテゴリー
-          %th.item__main-box__right__column-left__brand
+          %th#item__main-box__right__column-left__brand.item__main-box__right__column-left__box
             ブランド
-          %th.item__main-box__right__column-left__state
+          %th#item__main-box__right__column-left__state.item__main-box__right__column-left__box
             商品の状態
-          %th.item__main-box__right__column-left__burden
+          %th#item__main-box__right__column-left__burden.item__main-box__right__column-left__box
             配送料の負担
-          %th.item__main-box__right__column-left__method
+          %th#item__main-box__right__column-left__method.item__main-box__right__column-left__box
             配送の方法
-          %th.item__main-box__right__column-left__region
+          %th#item__main-box__right__column-left__region.item__main-box__right__column-left__box
             配送元地域
-          %th.item__main-box__right__column-left__indication
+          %th#item__main-box__right__column-left__indication.item__main-box__right__column-left__box
             発送日の目安
 
         .item__main-box__right__column-right
-          %td.item__main-box__right__column-right__exhibitor
-          %td.item__main-box__right__column-right__category
-          %td.item__main-box__right__column-right__brand
-          %td.item__main-box__right__column-right__state
-          %td.item__main-box__right__column-right__burden
-          %td.item__main-box__right__column-right__method
-          %td.item__main-box__right__column-right__region
-            = link_to "メルカリ", "https://www.mercari.com/jp/"
-          %td.item__main-box__right__column-right__indication
+          %td#item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
+            .item__main-box__right__column-right__box__exhibitor-top
+              = link_to root_path do
+                %p.item__main-box__right__column-right__box__exhibitor-top__link-text 出品者名
+
+            %ul.item__main-box__right__column-right__box__exhibitor-bottom
+              %li.item__main-box__right__column-right__box__exhibitor-bottom__box-good
+              %li.item__main-box__right__column-right__box__exhibitor-bottom__box-usually
+              %li.item__main-box__right__column-right__box__exhibitor-bottom__box-bad
+          %td#item__main-box__right__column-right__category.item__main-box__right__column-right__box
+            .item__main-box__right__column-right__box__category-large
+              = link_to "レディース", "http://zozo.jp/search/?sex=women"
+            .item__main-box__right__column-right__box__category-medium
+              = link_to "バッグ", "http://zozo.jp/women-category/bag/"
+            .item__main-box__right__column-right__box__category-small
+              = link_to "ショルダーバッグ", "http://zozo.jp/women-category/bag/shoulder-bag/"
+          %td#item__main-box__right__column-right__brand.item__main-box__right__column-right__box
+            = link_to "ブランド", "https://www.axes-net.com/fs/axes/c/brandlist"
+          %td#item__main-box__right__column-right__state.item__main-box__right__column-right__box
+            新品、未使用
+          %td#item__main-box__right__column-right__burden.item__main-box__right__column-right__box
+            送料込み(出品者負担)
+          %td#item__main-box__right__column-right__method.item__main-box__right__column-right__box
+            らくらくメルカリ便
+          %td#item__main-box__right__column-right__region.item__main-box__right__column-right__box
+            = link_to root_path do
+              .item__main-box__right__column-right__box__link-text 東京都
+          %td#item__main-box__right__column-right__indication.item__main-box__right__column-right__box
             1〜2日で発送
 
     .item__price-box
