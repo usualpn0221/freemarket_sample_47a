@@ -1,0 +1,174 @@
+.sell{
+  background-color: #F0F0F0;
+  width: 100vw;
+
+  &__icon{
+  height: 128px;
+  width: 100vw;
+  }
+
+  &__form{
+  width: 700px;
+  background-color: white;
+  margin:0 auto;
+
+    &__introduction{
+  text-align: center;
+  border-bottom: solid #F0F0F0;
+  font-size: 20px;
+  font-weight: bold;
+  padding:20px 0;
+    }
+
+    &__image{
+  padding:30px 30px 0;
+  border-bottom: solid #F0F0F0;
+
+      &__uproad{
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      }
+    }
+
+    &__itemname{
+      padding:30px 30px 0;
+      border-bottom: solid #F0F0F0;
+
+      &__input{
+        width: calc(700px - 60px);
+        height: 50px;
+        font-size:20px;
+      }
+
+      &__explanationintro{
+        margin-top:30px;
+      }
+
+      &__explanationinput{
+        width: calc(700px - 60px);
+        height: 150px;
+        font-size:20px;
+      }
+    }
+
+    &__itemdescription{
+      padding:30px 30px 0;
+      border-bottom: solid #F0F0F0;
+      overflow: hidden;
+
+      &__left{
+        width: 320px;
+        float: left;
+      }
+
+      &__right{
+        width: 320px;
+        float: left;
+
+        &__descriptionselect{
+          width: 300px;
+          height: 40px;
+          margin-bottom:20px;
+        }
+
+        &__profit{
+          border-bottom: solid #F0F0F0;
+          height: 50px;
+          line-height: 50px;
+          font-size:20px;
+          clear: both;
+
+          &__input{
+            float: right;
+            clear: both;
+
+            &__box{
+              margin-right:10px;
+              margin-left:10px;
+              height: 30px;
+              width:150px;
+            }
+          }
+        }
+
+        &__margin{
+        font-size:20px;
+        }
+      }
+    }
+
+    &__delivery{
+     padding:30px 30px 0;
+     overflow: hidden;
+     border-bottom: solid #F0F0F0;
+    }
+
+    &__price{
+      padding:40px 30px 30px;
+      overflow: hidden;
+      border-bottom: solid #F0F0F0;
+    }
+
+    &__button{
+      margin:0 30px;
+
+      &__notice{
+        margin-top: 30px;
+      }
+
+      &__button{
+      text-align: center;
+
+        &__input{
+        width: 640px;
+        height: 50px;
+        color:white;
+        border:none;
+        background-color: red;
+        }
+      }
+
+      &__back{
+      text-align: center;
+      margin-top:30px;
+      }
+    }
+
+    &--need{
+    border: solid red;
+    color:white;
+    background-color: red;
+    }
+  }
+
+  &__footer{
+  height: 220px;
+  width: 700px;
+  margin: 0 auto 0;
+  padding-top:30px;
+  text-align: center;
+  }
+}
+
+.itemsnewlink{
+  text-decoration: none;
+
+  &__notice{
+    color:dodgerblue;
+  }
+  &__footer{
+    color:black;
+  }
+
+  &__backbutton{
+    display:block;
+    width:45%;
+    padding-top:10px;
+    margin:0 auto;
+    padding-bottom:10px;
+    background:gray;
+    text-decoration: none;
+    color: white;
+  }
+}

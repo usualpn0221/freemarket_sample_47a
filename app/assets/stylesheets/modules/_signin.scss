@@ -18,3 +18,17 @@
     line-height: 8px;
   }
 }
+.login-panel__login{
+  &__facebook{
+    position: relative;
+    margin: 40px auto 10px;
+    padding: 10px 0;
+    background: blue;
+    width: 75%;
+    .fa-facebook{
+      position: absolute;
+      left: 0;
+      top: 20px;
+    }
+  }
+}

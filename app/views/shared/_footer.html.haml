@@ -18,7 +18,7 @@
 .under-footer
   .under-footer--lists
     %ul.under-footer--list
-      %li.under-footer--list__title メルカリについて
+      %li.under-footer--list__title#title1 メルカリについて
       %li
         =link_to "会社概要(運営会社)" , root_path
       %li
@@ -29,12 +29,13 @@
         =link_to "公式ブログ" , root_path
       %li
         =link_to "メルカリロゴ利用ガイドライン" , root_path
-      %li
-        %i.fab.fa-twitter-square
-      %li
-        %i.fab.fa-facebook
+      %ul.under-footer--sociallinks
+        %li
+          %i.fab.fa-twitter-square
+        %li
+          %i.fab.fa-facebook
     %ul.under-footer--list
-      %li.under-footer--list__title  ヘルプ＆ガイド
+      %li.under-footer--list__title#title2 ヘルプ＆ガイド
       %li
         =link_to "メルカリガイド" , root_path
       %li
@@ -54,7 +55,7 @@
       %li
         =link_to "メルカリボックス" , root_path
     %ul.under-footer--list
-      %li.under-footer--list__title   プライバシーと利用規約
+      %li.under-footer--list__title#title3 プライバシーと利用規約
       %li
         =link_to "プライバシーポリシー" , root_path
       %li
@@ -65,7 +66,7 @@
         =link_to "あんしんスマホサポート制度に関する利用特約" , root_path
       %li
         =link_to "コンプライアンスポリシー" , root_path
-    %ul.under-footer--list
+    %ul.under-footer--list#privacy
       %li
         =link_to "個人データの安全管理に係る基本方針" , root_path
       %li
@@ -77,7 +78,7 @@
       %li
         =link_to "返品・返金ポリシー" , root_path
     %ul.under-footer--list
-      %li.under-footer--list__title   国
+      %li.under-footer--list__title#title4 国
       %li
         =link_to "日本" , root_path
       %li
