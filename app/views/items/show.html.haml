@@ -131,13 +131,26 @@
             あんしん・あんぜんへの取り組み
 
   .comment
-    .comment__top-box
+    .comment__comments-box
+      = render 'shared/comment'
     .comment__form-box
+      = form_for @comment do |f|
+        %p.comment__form-box__top-text
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = f.text_field :text, class: 'comment__form-box__input'
+        = f.submit 'コメントする', class: 'comment__form-box__action-btn'
 
   .nav
-    .nav__left-box
-    .nav__right-box
-
+    .nav__left
+      = link_to root_path do
+        .nav__left__box
+          %i.far.fa-angle-left
+          %p.nav__left__box__text オーブ なめらか質感ひと塗りルージュ BE41
+    .nav__right
+      = link_to root_path do
+        .nav__right__box
+          %i.far.fa-angle-right
+          %p.nav__right__box__text 装備一式
   .social-media
     .social-media__box
 
