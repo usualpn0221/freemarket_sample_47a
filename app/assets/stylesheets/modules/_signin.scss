@@ -7,28 +7,78 @@
   width: 456px;
   background: white;
   font-size: 18px;
+  padding-bottom: 20px;
 }
 .login-panel__no-account{
   padding: 40px 64px;
-  border-bottom: 1px solid black;
-  &__create{
+  border-bottom: 1px solid #eee;
+  a{
     background: #0099e8;
     padding: 8px 120px;
     color: white;
     line-height: 8px;
+    text-decoration: none
   }
 }
 .login-panel__login{
   &__facebook{
     position: relative;
     margin: 40px auto 10px;
-    padding: 10px 0;
-    background: blue;
-    width: 75%;
+    a{
+      color: white;
+      padding: 10px 100px;
+      background: #385185;
+      text-decoration: none;
+      font-size: 13px;
+    }
     .fa-facebook{
       position: absolute;
-      left: 0;
-      top: 20px;
+      left: 80px;
+      top: 0;
+      background: #385185;
+      color: white
     }
   }
+  &__google{
+    margin-top: 20px;
+    position: relative;
+    a{
+      color: black;
+      padding: 10px 110px;
+      background: white;
+      text-decoration: none;
+      font-size: 13px;
+      border: 1px black solid;
+    }
+    img{
+      position: absolute;
+      left: 80px;
+      top: 5px;
+      background: #385185;
+      color: white
+    }
+  }
+}
+.g-recaptcha{
+  margin-top: 20px
+}
+.new_user{
+  margin-top: 20px;
+  input{
+    width: 340px;
+  }
+}
+.forget-passward{
+  position: relative;
+  margin: 20px 0;
+  padding: 20px;
+  a{
+    position: absolute;
+    left: 50px;
+    text-decoration: none;
+    font-size: 13px
+  }
+}
+.main-content{
+  background: #f5f5f5;
 }

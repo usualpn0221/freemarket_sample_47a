@@ -1,25 +1,29 @@
-.default-container
+.main-content
   =render 'shared/mercari-header'
   %main.single-main
     .login-panel
       .login-panel__no-account
         %p
           アカウントをお持ちでない方はこちら
-      =link_to "新規会員登録", class:"login-panel__no-account__create" root_path
-
+          =link_to "新規登録", "sigin_up"
       .login-panel__login
         .login-panel__login__facebook
-          =link_to "Facebook",root_path
+          =link_to "Facebookでログイン",root_path
           %i.fab.fa-facebook
+        .login-panel__login__google
+          =link_to "Googleでログイン",root_path
+          =image_tag "google",size:"20x20"
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
             %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email"
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
           .field
             %br/
-            = f.password_field :password, autocomplete: "current-password"
+            = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード"
           .g-recaptcha
+            =image_tag "recaptcha.ong"
           .actions
-            = f.submit "ログイン"
+            = f.submit "ログイン", style: "background: red;"
           .forget-passward
+            =link_to "パスワードをお忘れの方", root_path
   =render 'shared/mercari-footer'
