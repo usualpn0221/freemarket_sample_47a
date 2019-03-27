@@ -103,11 +103,8 @@ GEM
       nokogiri (>= 1.5.11, < 2.0.0)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
-<<<<<<< HEAD
-=======
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
->>>>>>> master
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -269,10 +266,7 @@ DEPENDENCIES
   erb2haml
   fog-aws
   font-awesome-rails
-<<<<<<< HEAD
-=======
   font-awesome-sass (= 5.6.1)
->>>>>>> master
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
