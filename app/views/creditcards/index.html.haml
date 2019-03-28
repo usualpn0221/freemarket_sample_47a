@@ -1,13 +1,13 @@
 .default-container
   %main.l-container
-    .right-content.credit-right-content
+    .right-content.credit-content
       .sell__form__introduction
         支払方法
-      .credit-right-content__intro
+      .credit-content__intro
         クレジットカード一覧
       .sell__form__button__back
-        %a.itemsnewlink__backbutton.credit-right-content__link{href:"/users/show"}□ クレジットカードを追加する
-      .credit-right-content__notice
+        %a.itemsnewlink__backbutton.credit-content__link{href:"/creditcards/edit"}□ クレジットカードを追加する
+      .credit-content__notice
         %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}支払い方法について >
 
     = render 'shared/mypage-left-bar'

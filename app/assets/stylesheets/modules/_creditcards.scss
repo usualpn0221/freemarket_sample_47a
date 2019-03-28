@@ -1,5 +1,6 @@
-.credit-right-content{
+.credit-content{
   background-color: white;
+  width: 700px;
 
   &__intro{
     margin-top: 30px;
@@ -17,4 +18,33 @@
     padding: 50px 40px 40px 0;
     text-align: right;
   }
+
+  &__cover{
+    width: 300px;
+    margin:0 auto;
+
+    &__title{
+      padding-top: 30px;
+
+      &__input{
+        margin-top: 10px;
+        width: 300px;
+        height: 50px;
+      }
+
+      &__label{
+        width: 100px;
+        height: 40px;
+        margin-top:10px;
+      }
+    }
+
+    &__hosoku{
+      text-align: right;
+    }
+  }
 }
+
+
+
+
