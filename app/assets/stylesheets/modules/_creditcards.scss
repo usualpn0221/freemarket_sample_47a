@@ -1,0 +1,20 @@
+.credit-right-content{
+  background-color: white;
+
+  &__intro{
+    margin-top: 30px;
+    padding-left:190px;
+  }
+
+  &__link{
+    background-color:red;
+    margin-bottom: 30px;
+  }
+
+
+  &__notice{
+    border-top:solid #F0F0F0;
+    padding: 50px 40px 40px 0;
+    text-align: right;
+  }
+}
