@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'buys/index'
 
   devise_for :users
-  root 'users#show'
+  root 'items#index'
   resources :users
   resources :items do
     resources :comments
