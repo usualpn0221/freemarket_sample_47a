@@ -1,0 +1,70 @@
+.signin{
+  width: 700px;
+  background: white;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  &__head{
+    padding: 32px 16px;
+    font: bold;
+    font-size: 22px;
+    border-bottom: 1px #f5f5f5 solid;
+  }
+  &__content{
+    padding: 16px;
+    &__mail{
+      position: relative;
+      margin: 40px auto 10px;
+      a{
+        color: black;
+        padding: 10px 100px;
+        background: #f5f5f5;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .fa-envelope{
+        position: absolute;
+        left: 180px;
+        top: 5px;
+        background: #f5f5f5;
+        color: white;
+        font-size: 20px;
+      }
+    }
+    &__facebook{
+      position: relative;
+      margin: 20px 0;
+      a{
+        color: white;
+        padding: 10px 100px;
+        background: #385185;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .fa-facebook{
+        position: absolute;
+        left: 180px;
+        top: 0;
+        background: #385185;
+        color: white
+      }
+    }
+    &__google{
+      position: relative;
+      a{
+        color: black;
+        padding: 10px 110px;
+        background: white;
+        text-decoration: none;
+        font-size: 13px;
+        border: 1px black solid;
+      }
+      img{
+        position: absolute;
+        left: 180px;
+        top: 5px;
+        background: #385185;
+        color: white
+      }
+    }
+  }
+}
