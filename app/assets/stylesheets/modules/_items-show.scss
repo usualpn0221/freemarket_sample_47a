@@ -1,7 +1,10 @@
-.wallpaper
-  .item
-    &__top-box
-      &__item-name h2
+.wallpaper {
+  .item {
+    &__top-box {
+      &__item-name h2 {
+
+      }
+    }
     &__main-box
       &__left
         &__image-big
@@ -110,63 +113,53 @@
           &__message
             &__text
             &__bottom
-              .comment__comments-box__comment__right__message__bottom__icon-left
-                %i.far.fa-clock
-                .comment__comments-box__comment__right__message__bottom__day
-              .comment__comments-box__comment__right__message__bottom__icon-right
-                 %i.far.fa-flag
+              &__icon-left
+                .fa-clock
+                &__day
+              &__icon-right
+                .fa-flag
 
-            .comment__comments-box__comment__right__message__bottom
-              .comment__comments-box__comment__right__message__bottom__icon-left
-                %i.far.fa-clock
-                .comment__comments-box__comment__right__message__bottom__day
-                  128日前
-              .comment__comments-box__comment__right__message__bottom__icon-right
-                %i.far.fa-flag
-
-
-
-
-
-    .comment__form-box
+    &__form-box
       // = form_for [@items, @comment] do |f|
-      %p.comment__form-box__top-text
-      .comment__form-box__input
-      .comment__form-box__action-btn
+      &__top-text p
+      &__input
+      &__action-btn
 
   .nav
-    .nav__left
+    &__left
       a
         .nav__left__box
-          %i.fas.fa-angle-left
-          %p.nav__left__box__text
-    .nav__right
+          .fa-angle-left
+          &__text p
+    &__right
       a
         .nav__right__box
-          %i.fas.fa-angle-right
-          %p.nav__right__box__text
+          .fa-angle-right
+          &__text p
   .social-media
-    .social-media__box
-      .social-media__box__inner-box
-        .social-media__box__inner-box__facebook
+    &__box
+      &__inner-box
+        &__facebook
           a
-            %i.fab.fa-facebook
-        .social-media__box__inner-box__twitter
+            .fa-facebook
+        &__twitter
           a
-            %i.fab.fa-twitter
-        .social-media__box__inner-box__line
+            .fa-twitter
+        &__line
           a
-            %i.fab.fa-line
-        .social-media__box__inner-box__pinterest
+            .fa-line
+        &__pinterest
           a
-            %i.fab.fa-pinterest
+            .fa-pinterest
 
 
 
 
 
 
-.item__main-box__right__column-right__box__links
+.item__main-box__right__column-right__box__links {
+
+}
 
 
 
