@@ -10,7 +10,5 @@
 @import "modules/toppage";
 @import "modules/itemsnew";
 @import "modules/signup_toppage";
-@font-face{
-   font-family: "hoge"
-   src: font-url('font-file.ttf') format('truetype');
- }
+@import "modules/creditcards";
+@import "./variable";

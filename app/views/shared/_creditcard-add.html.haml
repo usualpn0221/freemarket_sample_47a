@@ -1,0 +1,32 @@
+.credit-content
+  .sell__form__introduction
+    クレジットカード情報入力
+  .credit-content__cover
+    .credit-content__cover__title
+      カード番号
+      %span.sell__form--need 必須
+      %input.credit-content__cover__title__input{type:"text",placeholder:"半角数字のみ"}
+      =image_tag "google.jpg", size: "3x3px"
+      =image_tag "google.jpg", size: "3x3px"
+
+    .credit-content__cover__title
+      有効期限
+      %span.sell__form--need 必須
+      .credit-content__cover__title__wrapper__label
+        %select.credit-content__cover__title__label
+          %option{value:"01"} 01
+          %option{value:"02"} 02
+        月
+      .credit-content__cover__title__wrapper__label
+        %select.credit-content__cover__title__label
+          %option{value:"19"} 19
+          %option{value:"20"} 20
+        年
+    .credit-content__cover__title
+      セキュリティコード
+      %span.sell__form--need 必須
+      %input.credit-content__cover__title__input{type:"text",placeholder:"カード背面4桁もしくは3桁の番号"}
+    .credit-content__cover__hosoku
+      %a.itemsnewlink.itemsnewlink__notice{href:""}カード裏面の番号とは?
+    .sell__form__button__back
+      %a.itemsnewlink__backbutton.credit-content__link{href:"/creditcards/update"}追加する
