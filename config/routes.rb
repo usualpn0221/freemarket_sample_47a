@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'creditcards/index'
+
+  get 'creditcards/edit'
+
   get 'buys/new'
 
   get 'buys/create'
