@@ -6,112 +6,127 @@
       &__left
         &__image-big
         &__image-box
-          #item__main-box__left__image-box__contents1.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents2.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents3.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents4.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents5.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents6.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents7.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents8.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents9.item__main-box__left__image-box__contents-image
-          #item__main-box__left__image-box__contents10.item__main-box__left__image-box__contents-image
+          &__contents-image
+          #item__main-box__left__image-box__contents1
+          #item__main-box__left__image-box__contents2
+          #item__main-box__left__image-box__contents3
+          #item__main-box__left__image-box__contents4
+          #item__main-box__left__image-box__contents5
+          #item__main-box__left__image-box__contents6
+          #item__main-box__left__image-box__contents7
+          #item__main-box__left__image-box__contents8
+          #item__main-box__left__image-box__contents9
+          #item__main-box__left__image-box__contents10
 
       &__right
-        .item__main-box__right__column-left
-          %th#item__main-box__right__column-left__exhibitor.item__main-box__right__column-left__box
-          %th#item__main-box__right__column-left__category.item__main-box__right__column-left__box
-          %th#item__main-box__right__column-left__brand.item__main-box__right__column-left__box
-          %th#item__main-box__right__column-left__state.item__main-box__right__column-left__box
-          %th#item__main-box__right__column-left__burden.item__main-box__right__column-left__box
-          %th#item__main-box__right__column-left__method.item__main-box__right__column-left__box
-          %th#item__main-box__right__column-left__region.item__main-box__right__column-left__box
-          %th#item__main-box__right__column-left__indication.item__main-box__right__column-left__box
+        &__column-left
+          &__box
+          #item__main-box__right__column-left__exhibitor th
+          #item__main-box__right__column-left__category th
+          #item__main-box__right__column-left__brand th
+          #item__main-box__right__column-left__state th
+          #item__main-box__right__column-left__burden th
+          #item__main-box__right__column-left__method th
+          #item__main-box__right__column-left__region th
+          #item__main-box__right__column-left__indication th
 
-        .item__main-box__right__column-right
-          %td#item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
-            .item__main-box__right__column-right__box__exhibitor-top
+        &__column-right
+          &__box
+          #item__main-box__right__column-right__exhibitor td
+            &__exhibitor-top
               a
-                %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
+                &__link-text p
 
-            .item__main-box__right__column-right__box__exhibitor-bottom
-              .item__main-box__right__column-right__box__exhibitor-bottom__box-good
-                %i.fas.fa-laugh
-                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-good__value
-              .item__main-box__right__column-right__box__exhibitor-bottom__box-normal
-                %i.fas.fa-meh
-                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value
-              .item__main-box__right__column-right__box__exhibitor-bottom__box-bad
-                %i.fas.fa-frown
-                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value
-          %td#item__main-box__right__column-right__category.item__main-box__right__column-right__box
-            .item__main-box__right__column-right__box__category-large
+            &__exhibitor-bottom
+              &__box-good
+                .fa-laugh
+                &__value p
+              &__box-normal
+                .fa-meh
+                &__value p
+              &__box-bad
+                .fa-frown
+                &__value p
+          #item__main-box__right__column-right__category td
+            &__category-large
               a
-                %p.item__main-box__right__column-right__box__category-large__link-text.item__main-box__right__column-right__box__links
-            .item__main-box__right__column-right__box__category-medium
+                .item__main-box__right__column-right__box__category-large__link-text p
+            &__category-medium
               a
-                %p.item__main-box__right__column-right__box__category-medium__link-text.item__main-box__right__column-right__box__links
-            .item__main-box__right__column-right__box__category-small
+                .item__main-box__right__column-right__box__category-medium__link-text p
+            &__category-small
               a
-                %p.item__main-box__right__column-right__box__category-small__link-text.item__main-box__right__column-right__box__links
-          %td#item__main-box__right__column-right__brand.item__main-box__right__column-right__box
+                .item__main-box__right__column-right__box__category-small__link-text p
+          #item__main-box__right__column-right__brand td
             a
-              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
-          %td#item__main-box__right__column-right__state.item__main-box__right__column-right__box
-          %td#item__main-box__right__column-right__burden.item__main-box__right__column-right__box
-          %td#item__main-box__right__column-right__method.item__main-box__right__column-right__box
-          %td#item__main-box__right__column-right__region.item__main-box__right__column-right__box
+              .item__main-box__right__column-right__box__link-text p
+          #item__main-box__right__column-right__state td
+          #item__main-box__right__column-right__burden td
+          #item__main-box__right__column-right__method td
+          #item__main-box__right__column-right__region td
             a
-              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
-          %td#item__main-box__right__column-right__indication.item__main-box__right__column-right__box
+              .item__main-box__right__column-right__box__link-text p
+          #item__main-box__right__column-right__indication td
 
-    .item__price-box
-      %p.item__price-box__price
-      %p.item__price-box__tax
-      %p.item__price-box__cost
-    .item__confirmation-box
+    &__price-box
+      &__price p
+      &__tax p
+      &__cost p
+    &__confirmation-box
       a
         .item__confirmation-box__link-text
-    .item__text-box
-      %p.item__text-box__text
-    .item__bottom-box
-      .item__bottom-box__left
+    &__text-box
+      &__text p
+    &__bottom-box
+      &__left
         a
           .item__bottom-box__left__inner-box
-            .item__bottom-box__left__inner-box__icon
-              %i.fas.fa-heart
-            .item__bottom-box__left__inner-box__text
-            .item__bottom-box__left__inner-box__value
-      .item__bottom-box__middle
+            &__icon
+              .fa-heart
+            &__text
+            &__value
+      &__middle
         a
           .item__bottom-box__middle__inner-box
-            .item__bottom-box__middle__inner-box__icon
-              %i.far.fa-flag
-            .item__bottom-box__middle__inner-box__text
-      .item__bottom-box__right
+            &__icon
+              .fa-flag
+            &__text
+      &__right
         a
           .item__bottom-box__right__inner-box__icon
-            %i.fas.fa-lock
+            .fa-lock
           .item__bottom-box__right__inner-box__text
 
   .comment
-    .comment__comments-box
-      .comment__comments-box__comment
-        .comment__comments-box__comment__left
+    &__comments-box
+      &__comment
+        &__left
           a
             .comment__comments-box__comment__left__image
               img
             .comment__comments-box__comment__left__text
-        .comment__comments-box__comment__right
-          .comment__comments-box__comment__right__title
-          .comment__comments-box__comment__right__message
-            .comment__comments-box__comment__right__message__text
+        &__right
+          &__title
+          &__message
+            &__text
+            &__bottom
+              .comment__comments-box__comment__right__message__bottom__icon-left
+                %i.far.fa-clock
+                .comment__comments-box__comment__right__message__bottom__day
+              .comment__comments-box__comment__right__message__bottom__icon-right
+                 %i.far.fa-flag
+
             .comment__comments-box__comment__right__message__bottom
               .comment__comments-box__comment__right__message__bottom__icon-left
-                  %i.far.fa-clock
+                %i.far.fa-clock
                 .comment__comments-box__comment__right__message__bottom__day
-                .comment__comments-box__comment__right__message__bottom__icon-right
-                  %i.far.fa-flag
+                  128日前
+              .comment__comments-box__comment__right__message__bottom__icon-right
+                %i.far.fa-flag
+
+
+
+
 
     .comment__form-box
       // = form_for [@items, @comment] do |f|
@@ -151,7 +166,7 @@
 
 
 
-
+.item__main-box__right__column-right__box__links
 
 
 
