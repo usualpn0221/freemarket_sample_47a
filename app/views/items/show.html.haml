@@ -1,7 +1,7 @@
 .wallpaper
   .item
     .item__top-box
-      %h2.item__top-box__item-name 商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+      %h2.item__top-box__item-name 商品名商品名商品名商品名商品名商品名商品名
     .item__main-box
       .item__main-box__left
         .item__main-box__left__image-big
@@ -31,25 +31,25 @@
 
       .item__main-box__right
         .item__main-box__right__column-left
-          %th#item__main-box__right__column-left__exhibitor.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__exhibitor.item__main-box__right__column-left__box
             出品者
-          %th#item__main-box__right__column-left__category.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__category.item__main-box__right__column-left__box
             カテゴリー
-          %th#item__main-box__right__column-left__brand.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__brand.item__main-box__right__column-left__box
             ブランド
-          %th#item__main-box__right__column-left__state.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__state.item__main-box__right__column-left__box
             商品の状態
-          %th#item__main-box__right__column-left__burden.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__burden.item__main-box__right__column-left__box
             配送料の負担
-          %th#item__main-box__right__column-left__method.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__method.item__main-box__right__column-left__box
             配送の方法
-          %th#item__main-box__right__column-left__region.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__region.item__main-box__right__column-left__box
             配送元地域
-          %th#item__main-box__right__column-left__indication.item__main-box__right__column-left__box
+          #item__main-box__right__column-left__indication.item__main-box__right__column-left__box
             発送日の目安
 
         .item__main-box__right__column-right
-          %td#item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__exhibitor-top
               = link_to root_path do
                 %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links 田中星矢（出品者名）
@@ -64,29 +64,32 @@
               .item__main-box__right__column-right__box__exhibitor-bottom__box-bad
                 %i.fas.fa-frown
                 %p.item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value 2
-          %td#item__main-box__right__column-right__category.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__category.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__category-large
               = link_to root_path do
                 %p.item__main-box__right__column-right__box__category-large__link-text.item__main-box__right__column-right__box__links レディース
             .item__main-box__right__column-right__box__category-medium
               = link_to root_path do
-                %p.item__main-box__right__column-right__box__category-medium__link-text.item__main-box__right__column-right__box__links バッグ
+                %p.item__main-box__right__column-right__box__category-medium__link-text.item__main-box__right__column-right__box__links
+                  .item__main-box__right__column-right__box__category-medium__link-text__icon
+                    %i.fas.fa-angle-right
+                  .item__main-box__right__column-right__box__category-medium__link-text__string.item__main-box__right__column-right__box__links バッグ
             .item__main-box__right__column-right__box__category-small
               = link_to root_path do
                 %p.item__main-box__right__column-right__box__category-small__link-text.item__main-box__right__column-right__box__links ショルダーバッグ
-          %td#item__main-box__right__column-right__brand.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__brand.item__main-box__right__column-right__box
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links ナイキ
-          %td#item__main-box__right__column-right__state.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__state.item__main-box__right__column-right__box
             新品、未使用
-          %td#item__main-box__right__column-right__burden.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__burden.item__main-box__right__column-right__box
             送料込み(出品者負担)
-          %td#item__main-box__right__column-right__method.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__method.item__main-box__right__column-right__box
             らくらくメルカリ便
-          %td#item__main-box__right__column-right__region.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__region.item__main-box__right__column-right__box
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links 東京都
-          %td#item__main-box__right__column-right__indication.item__main-box__right__column-right__box
+          #item__main-box__right__column-right__indication.item__main-box__right__column-right__box
             1〜2日で発送
 
     .item__price-box

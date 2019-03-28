@@ -1,10 +1,11 @@
 @import "./reset";
 @import "mixins/clearfix";
+@import "./variable";
 @import "modules/mypage";
 @import "modules/mypage-left-bar";
 @import "modules/tabs";
 @import "modules/footer";
-// @import "modules/items-show";
+@import "modules/items-show";
 @import "modules/signin-signup-header-footer";
 @import "modules/signin";
 @import "modules/header";
@@ -12,4 +13,4 @@
 @import "modules/itemsnew";
 @import "modules/signup_toppage";
 @import "modules/creditcards";
-@import "./variable";
+

@@ -1,166 +1,447 @@
 .wallpaper {
+  background-color: $gray-thin;
+  width: 100%;
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
   .item {
+    box-sizing: border-box;
+    background-color: $white;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 24px 40px 40px;
+    width: 700px;
     &__top-box {
-      &__item-name h2 {
+      width:620px;
+      height: 33px;
+      line-height: 33px;
+      text-align: center;
+      margin-bottom: 16px;
+      &__item-name {
+        font-size: 24px;
+        font-style: bold;
+        color: $font;
+      }
+    }
+    &__main-box {
+      width: 620px;
+      height: 420px;
+      display: flex;
+      &__left {
+        width: 300px;
+        height: 420px;
+        margin-right: 20px;
+        background-color: $gray-thin;
+        &__image-big {
+          width: 300px;
+          height: 300px;
+          background-color: #EEEEEE;
+        }
+        &__image-box {
+          width: 300px;
+          height: 120px;
+          display: flex;
+          flex-wrap: wrap;
+          &__contents-image {
+            width: 60px;
+            height: 60px;
+          }
+          #item__main-box__left__image-box__contents1 {
+            background-color: $test1;
+          }
+          #item__main-box__left__image-box__contents2 {
+            background-color: $test2;
+          }
+          #item__main-box__left__image-box__contents3 {
+            background-color: $test1;
+          }
+          #item__main-box__left__image-box__contents4 {
+            background-color: $test2;
+          }
+          #item__main-box__left__image-box__contents5 {
+            background-color: $test1;
+          }
+          #item__main-box__left__image-box__contents6 {
+            background-color: $test2;
+          }
+          #item__main-box__left__image-box__contents7 {
+            background-color: $test1;
+          }
+          #item__main-box__left__image-box__contents8 {
+            background-color: $test2;
+          }
+          #item__main-box__left__image-box__contents9 {
+            background-color: $test1;
+          }
+          #item__main-box__left__image-box__contents10 {
+            background-color: $test2;
+          }
+        }
+      }
+      &__right {
+        width: 300px;
+        height: 420px;
+        display: flex;
+        &__column-left {
+          height: 420px;
+          width: 117px;
+          &__box {
+            color: $font;
+            width: 117px;
+            font-size: 14px;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: $gray-thin;
+            border-bottom: 1px solid #EEEEEE;
+            border-left: 1px solid #EEEEEE;
+            border-right: 1px solid #EEEEEE;
+          }
+          #item__main-box__right__column-left__exhibitor {
+            height: 70px;
+            line-height:54px;
+            border-top: 1px solid #EEEEEE;
+          }
+          #item__main-box__right__column-left__category {
+            height: 73px;
+            line-height:57px;
+          }
+          #item__main-box__right__column-left__brand {
+            height: 46px;
+            line-height:30px;
+          }
+          #item__main-box__right__column-left__state {
+            height: 46px;
+            line-height:30px;
+          }
+          #item__main-box__right__column-left__burden {
+            height: 46px;
+            line-height:30px;
+          }
+          #item__main-box__right__column-left__method {
+            height: 46px;
+            line-height:30px;
+          }
+          #item__main-box__right__column-left__region {
+            height: 46px;
+            line-height:30px;
+          }
+          #item__main-box__right__column-left__indication {
+            height: 46px;
+            line-height:30px;
+          }
+        }
+        &__column-right {
+          &__box {
+            color: $font;
+            box-sizing: border-box;
+            padding: 8px;
+            font-size: 14px;
+            border-bottom: 1px solid #EEEEEE;
+            border-right: 1px solid #EEEEEE;
+          }
+          #item__main-box__right__column-right__exhibitor {
+            border-top: 1px solid #EEEEEE;
+            &__exhibitor-top {
+              a {
+                &__link-text p {
+
+                }
+              }
+            }
+            &__exhibitor-bottom {
+              &__box-good {
+                .fa-laugh {
+
+                }
+                &__value p {
+
+                }
+              }
+              &__box-normal {
+                .fa-meh {
+
+                }
+                &__value p {
+
+                }
+              }
+              &__box-bad {
+                .fa-frown {
+
+                }
+                &__value p {
+
+                }
+              }
+            }
+          }
+          #item__main-box__right__column-right__category {
+            .item__main-box__right__column-right__box__category-large {
+              a {
+                .item__main-box__right__column-right__box__category-large__link-text p {
+                }
+              }
+            }
+            &__category-medium {
+              background-color: red;
+              a {
+                .item__main-box__right__column-right__box__category-medium__link-text {
+                  &__icon {
+                    .df {
+
+                    }
+                    // background-color: red;
+
+                    color: #0/099e8;
+
+                  }
+                  &__string {
+
+                  }
+                }
+              }
+            }
+            &__category-small {
+              a {
+                .item__main-box__right__column-right__box__category-small__link-text p {
+
+                }
+              }
+            }
+          }
+          #item__main-box__right__column-right__brand {
+            a {
+              .item__main-box__right__column-right__box__link-text p {
+
+              }
+            }
+          }
+          #item__main-box__right__column-right__state {
+
+          }
+          #item__main-box__right__column-right__burden {
+
+          }
+          #item__main-box__right__column-right__method {
+
+          }
+          #item__main-box__right__column-right__region {
+            a {
+              .item__main-box__right__column-right__box__link-text p {
+
+              }
+            }
+          }
+          #item__main-box__right__column-right__indication {
+
+          }
+        }
+      }
+    }
+    &__price-box {
+      &__price p {
+
+      }
+      &__tax p {
+
+      }
+      &__cost p {
 
       }
     }
-    &__main-box
-      &__left
-        &__image-big
-        &__image-box
-          &__contents-image
-          #item__main-box__left__image-box__contents1
-          #item__main-box__left__image-box__contents2
-          #item__main-box__left__image-box__contents3
-          #item__main-box__left__image-box__contents4
-          #item__main-box__left__image-box__contents5
-          #item__main-box__left__image-box__contents6
-          #item__main-box__left__image-box__contents7
-          #item__main-box__left__image-box__contents8
-          #item__main-box__left__image-box__contents9
-          #item__main-box__left__image-box__contents10
+    &__confirmation-box {
+      a {
+        .item__confirmation-box__link-text {
 
-      &__right
-        &__column-left
-          &__box
-          #item__main-box__right__column-left__exhibitor th
-          #item__main-box__right__column-left__category th
-          #item__main-box__right__column-left__brand th
-          #item__main-box__right__column-left__state th
-          #item__main-box__right__column-left__burden th
-          #item__main-box__right__column-left__method th
-          #item__main-box__right__column-left__region th
-          #item__main-box__right__column-left__indication th
+        }
+      }
+    }
+    &__text-box {
+      &__text p {
 
-        &__column-right
-          &__box
-          #item__main-box__right__column-right__exhibitor td
-            &__exhibitor-top
-              a
-                &__link-text p
+      }
+    }
+    &__bottom-box {
+      &__left {
+        a {
+          .item__bottom-box__left__inner-box {
+            &__icon {
+              .fa-heart {
 
-            &__exhibitor-bottom
-              &__box-good
-                .fa-laugh
-                &__value p
-              &__box-normal
-                .fa-meh
-                &__value p
-              &__box-bad
-                .fa-frown
-                &__value p
-          #item__main-box__right__column-right__category td
-            &__category-large
-              a
-                .item__main-box__right__column-right__box__category-large__link-text p
-            &__category-medium
-              a
-                .item__main-box__right__column-right__box__category-medium__link-text p
-            &__category-small
-              a
-                .item__main-box__right__column-right__box__category-small__link-text p
-          #item__main-box__right__column-right__brand td
-            a
-              .item__main-box__right__column-right__box__link-text p
-          #item__main-box__right__column-right__state td
-          #item__main-box__right__column-right__burden td
-          #item__main-box__right__column-right__method td
-          #item__main-box__right__column-right__region td
-            a
-              .item__main-box__right__column-right__box__link-text p
-          #item__main-box__right__column-right__indication td
+              }
+            }
+            &__text {
 
-    &__price-box
-      &__price p
-      &__tax p
-      &__cost p
-    &__confirmation-box
-      a
-        .item__confirmation-box__link-text
-    &__text-box
-      &__text p
-    &__bottom-box
-      &__left
-        a
-          .item__bottom-box__left__inner-box
-            &__icon
-              .fa-heart
-            &__text
-            &__value
-      &__middle
-        a
-          .item__bottom-box__middle__inner-box
-            &__icon
-              .fa-flag
-            &__text
-      &__right
-        a
-          .item__bottom-box__right__inner-box__icon
-            .fa-lock
-          .item__bottom-box__right__inner-box__text
+            }
+            &__value {
 
-  .comment
-    &__comments-box
-      &__comment
-        &__left
-          a
-            .comment__comments-box__comment__left__image
-              img
-            .comment__comments-box__comment__left__text
-        &__right
-          &__title
-          &__message
-            &__text
-            &__bottom
-              &__icon-left
-                .fa-clock
-                &__day
-              &__icon-right
-                .fa-flag
+            }
+          }
+        }
+      }
+      &__middle {
+        a {
+          .item__bottom-box__middle__inner-box {
+            &__icon {
+              .fa-flag {
 
-    &__form-box
+              }
+            }
+            &__text {
+
+            }
+          }
+        }
+      }
+      &__right {
+        a {
+          .item__bottom-box__right__inner-box__icon {
+            .fa-lock {
+
+            }
+          }
+          .item__bottom-box__right__inner-box__text {
+
+          }
+        }
+      }
+    }
+  }
+
+  .comment {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: $white;
+    padding: 24px;
+    width: 700px;
+    &__comments-box {
+      &__comment {
+        &__left {
+          a {
+            .comment__comments-box__comment__left__image {
+              img {
+
+              }
+            }
+            .comment__comments-box__comment__left__text {
+
+            }
+          }
+        }
+        &__right {
+          &__title {
+
+          }
+          &__message {
+            &__text {
+
+            }
+            &__bottom {
+              &__icon-left {
+                .fa-clock {
+
+                }
+                &__day {
+
+                }
+              }
+              &__icon-right{
+                .fa-flag {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__form-box {
       // = form_for [@items, @comment] do |f|
-      &__top-text p
-      &__input
-      &__action-btn
+      &__top-text p {
 
-  .nav
-    &__left
-      a
-        .nav__left__box
-          .fa-angle-left
-          &__text p
-    &__right
-      a
-        .nav__right__box
-          .fa-angle-right
-          &__text p
-  .social-media
-    &__box
-      &__inner-box
-        &__facebook
-          a
-            .fa-facebook
-        &__twitter
-          a
-            .fa-twitter
-        &__line
-          a
-            .fa-line
-        &__pinterest
-          a
-            .fa-pinterest
+      }
+      &__input {
 
+      }
+      &__action-btn {
 
+      }
+    }
+  }
+  .nav {
+    width: 700px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding:24px 0;
+    &__left {
+      a {
+        .nav__left__box {
+          .fa-angle-left {
 
+          }
+          &__text p {
 
+          }
+        }
+      }
+    }
+    &__right {
+      a {
+        .nav__right__box {
+          .fa-angle-right {
 
+          }
+          &__text p {
 
-.item__main-box__right__column-right__box__links {
+          }
+        }
+      }
+    }
+  }
+  .social-media {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: $white;
+    padding: 32px 0 24px;
+    width: 700px;
+    &__box {
+      &__inner-box {
+        &__facebook {
+          a {
+            .fa-facebook {
 
+            }
+          }
+        }
+        &__twitter {
+          a {
+            .fa-twitter {
+
+            }
+          }
+        }
+        &__line {
+          a {
+            .fa-line {
+
+            }
+          }
+        }
+        &__pinterest {
+          a {
+            .fa-pinterest {
+
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+.item__main-box__right__column-right__box__links {
+  color: #0099e8;
+}
 
 
 
