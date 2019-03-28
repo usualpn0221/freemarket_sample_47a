@@ -1,0 +1,60 @@
+.default-container
+  %main.l-container
+    = render 'shared/mypage-left-bar'
+    .right-content.credit-content
+      .sell__form__introduction
+        本人情報の登録
+      .profile-cover
+        .profile-cover__intro
+        お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .profile-cover__notice
+          %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}本人確認書類のアップロードについて >
+        .profile-cover__userinfo
+          .profile-cover__userinfo__intro
+          お名前
+          .profile-cover__userinfo__privateinfo
+          techexpert
+        .profile-cover__userinfo
+          .profile-cover__userinfo__intro
+          お名前カナ
+          .profile-cover__userinfo__privateinfo
+          テックエキスパート
+        .profile-cover__userinfo
+          .profile-cover__userinfo__intro
+          生年月日
+          .profile-cover__userinfo__privateinfo
+          2019/3/28
+        .profile-cover__useraddress
+          .profile-cover__useraddress__intro
+          郵便番号
+          %span.profile-cover--need 任意
+          .profile-cover__useraddress__input
+            %input.profile-cover__input__box{type:"text",placeholder:"例）1234567"}
+        .profile-cover__useraddress
+          .profile-cover__useraddress__intro
+          都道府県
+          %span.profile-cover--need 任意
+          .profile-cover__useraddress__input
+            %input.profile-cover__input__box{type:"text",placeholder:"東京都"}
+        .profile-cover__useraddress
+          .profile-cover__useraddress__intro
+          市区町村
+          %span.profile-cover--need 任意
+          .profile-cover__useraddress__input
+            %input.profile-cover__input__box{type:"text",placeholder:"例）横浜市緑区"}
+        .profile-cover__useraddress
+          .profile-cover__useraddress__intro
+          番地
+          %span.profile-cover--need 任意
+          .profile-cover__useraddress__input
+            %input.profile-cover__input__box{type:"text",placeholder:"例）青山1-1-1"}
+        .profile-cover__useraddress
+          .profile-cover__useraddress__intro
+          建物名
+          %span.profile-cover--need 任意
+          .profile-cover__useraddress__input
+            %input.profile-cover__input__box{type:"text",placeholder:"例）柳ビル103"}
+        .profile-cover__button
+          %input.profile-cover__button__submit{type:"submit",value:"登録する"}
+        .profile-cover__notice
+          %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}本人情報の登録について >
