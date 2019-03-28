@@ -1,11 +1,19 @@
 .wallpaper
   .item
     &__top-box
+<<<<<<< Updated upstream
       %h2.item__top-box__item-name
     .item__main-box
       .item__main-box__left
         .item__main-box__left__image-big
         .item__main-box__left__image-box
+=======
+      &__item-name h2
+    &__main-box
+      &__left
+        &__image-big
+        &__image-box
+>>>>>>> Stashed changes
           #item__main-box__left__image-box__contents1.item__main-box__left__image-box__contents-image
           #item__main-box__left__image-box__contents2.item__main-box__left__image-box__contents-image
           #item__main-box__left__image-box__contents3.item__main-box__left__image-box__contents-image
@@ -17,7 +25,11 @@
           #item__main-box__left__image-box__contents9.item__main-box__left__image-box__contents-image
           #item__main-box__left__image-box__contents10.item__main-box__left__image-box__contents-image
 
+<<<<<<< Updated upstream
       .item__main-box__right
+=======
+      &__right
+>>>>>>> Stashed changes
         .item__main-box__right__column-left
           %th#item__main-box__right__column-left__exhibitor.item__main-box__right__column-left__box
           %th#item__main-box__right__column-left__category.item__main-box__right__column-left__box
@@ -98,12 +110,21 @@
     .comment__comments-box
       .comment__comments-box__comment
         .comment__comments-box__comment__left
+<<<<<<< Updated upstream
           = link_to root_path do
             .comment__comments-box__comment__left__image
               %img{alt: "user-icon", width:"40", height: "40",src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
             .comment__comments-box__comment__left__text 出品者
         .comment__comments-box__comment__right
           .comment__comments-box__comment__right__title テックエキスパート
+=======
+          a
+            .comment__comments-box__comment__left__image
+              img
+            .comment__comments-box__comment__left__text
+        .comment__comments-box__comment__right
+          .comment__comments-box__comment__right__title
+>>>>>>> Stashed changes
           .comment__comments-box__comment__right__message
             .comment__comments-box__comment__right__message__text
             .comment__comments-box__comment__right__message__bottom
@@ -114,6 +135,7 @@
                   %i.far.fa-flag
 
     .comment__form-box
+<<<<<<< Updated upstream
       = form_for [@items, @comment] do |f|
         %p.comment__form-box__top-text
           相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -131,10 +153,29 @@
         .nav__right__box
           %i.fas.fa-angle-right
           %p.nav__right__box__text 装備一式
+=======
+      // = form_for [@items, @comment] do |f|
+      %p.comment__form-box__top-text
+      .comment__form-box__input
+      .comment__form-box__action-btn
+
+  .nav
+    .nav__left
+      a
+        .nav__left__box
+          %i.fas.fa-angle-left
+          %p.nav__left__box__text
+    .nav__right
+      a
+        .nav__right__box
+          %i.fas.fa-angle-right
+          %p.nav__right__box__text
+>>>>>>> Stashed changes
   .social-media
     .social-media__box
       .social-media__box__inner-box
         .social-media__box__inner-box__facebook
+<<<<<<< Updated upstream
           = link_to root_path do
             %i.fab.fa-facebook
         .social-media__box__inner-box__twitter
@@ -145,6 +186,18 @@
             %i.fab.fa-line
         .social-media__box__inner-box__pinterest
           = link_to root_path do
+=======
+          a
+            %i.fab.fa-facebook
+        .social-media__box__inner-box__twitter
+          a
+            %i.fab.fa-twitter
+        .social-media__box__inner-box__line
+          a
+            %i.fab.fa-line
+        .social-media__box__inner-box__pinterest
+          a
+>>>>>>> Stashed changes
             %i.fab.fa-pinterest
 
 
@@ -159,6 +212,7 @@
 
 
 
+<<<<<<< Updated upstream
   .exhibition
     .exhibition__name
     .exhibition__box
@@ -166,3 +220,21 @@
   .other-item
     .other-item__top
     .other-item__box
+=======
+.exhibition {
+  &__name {
+
+  }
+  &__box {
+
+  }
+}
+.other-item {
+  &__top {
+
+  }
+  &__box {
+ }
+}
+
+>>>>>>> Stashed changes
