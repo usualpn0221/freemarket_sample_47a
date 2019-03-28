@@ -1,0 +1,168 @@
+.wallpaper
+  .item
+    &__top-box
+      %h2.item__top-box__item-name
+    .item__main-box
+      .item__main-box__left
+        .item__main-box__left__image-big
+        .item__main-box__left__image-box
+          #item__main-box__left__image-box__contents1.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents2.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents3.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents4.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents5.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents6.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents7.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents8.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents9.item__main-box__left__image-box__contents-image
+          #item__main-box__left__image-box__contents10.item__main-box__left__image-box__contents-image
+
+      .item__main-box__right
+        .item__main-box__right__column-left
+          %th#item__main-box__right__column-left__exhibitor.item__main-box__right__column-left__box
+          %th#item__main-box__right__column-left__category.item__main-box__right__column-left__box
+          %th#item__main-box__right__column-left__brand.item__main-box__right__column-left__box
+          %th#item__main-box__right__column-left__state.item__main-box__right__column-left__box
+          %th#item__main-box__right__column-left__burden.item__main-box__right__column-left__box
+          %th#item__main-box__right__column-left__method.item__main-box__right__column-left__box
+          %th#item__main-box__right__column-left__region.item__main-box__right__column-left__box
+          %th#item__main-box__right__column-left__indication.item__main-box__right__column-left__box
+
+        .item__main-box__right__column-right
+          %td#item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
+            .item__main-box__right__column-right__box__exhibitor-top
+              a
+                %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
+
+            .item__main-box__right__column-right__box__exhibitor-bottom
+              .item__main-box__right__column-right__box__exhibitor-bottom__box-good
+                %i.fas.fa-laugh
+                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-good__value
+              .item__main-box__right__column-right__box__exhibitor-bottom__box-normal
+                %i.fas.fa-meh
+                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value
+              .item__main-box__right__column-right__box__exhibitor-bottom__box-bad
+                %i.fas.fa-frown
+                %p.item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value
+          %td#item__main-box__right__column-right__category.item__main-box__right__column-right__box
+            .item__main-box__right__column-right__box__category-large
+              a
+                %p.item__main-box__right__column-right__box__category-large__link-text.item__main-box__right__column-right__box__links
+            .item__main-box__right__column-right__box__category-medium
+              a
+                %p.item__main-box__right__column-right__box__category-medium__link-text.item__main-box__right__column-right__box__links
+            .item__main-box__right__column-right__box__category-small
+              a
+                %p.item__main-box__right__column-right__box__category-small__link-text.item__main-box__right__column-right__box__links
+          %td#item__main-box__right__column-right__brand.item__main-box__right__column-right__box
+            a
+              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
+          %td#item__main-box__right__column-right__state.item__main-box__right__column-right__box
+          %td#item__main-box__right__column-right__burden.item__main-box__right__column-right__box
+          %td#item__main-box__right__column-right__method.item__main-box__right__column-right__box
+          %td#item__main-box__right__column-right__region.item__main-box__right__column-right__box
+            a
+              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
+          %td#item__main-box__right__column-right__indication.item__main-box__right__column-right__box
+
+    .item__price-box
+      %p.item__price-box__price
+      %p.item__price-box__tax
+      %p.item__price-box__cost
+    .item__confirmation-box
+      a
+        .item__confirmation-box__link-text
+    .item__text-box
+      %p.item__text-box__text
+    .item__bottom-box
+      .item__bottom-box__left
+        a
+          .item__bottom-box__left__inner-box
+            .item__bottom-box__left__inner-box__icon
+              %i.fas.fa-heart
+            .item__bottom-box__left__inner-box__text
+            .item__bottom-box__left__inner-box__value
+      .item__bottom-box__middle
+        a
+          .item__bottom-box__middle__inner-box
+            .item__bottom-box__middle__inner-box__icon
+              %i.far.fa-flag
+            .item__bottom-box__middle__inner-box__text
+      .item__bottom-box__right
+        a
+          .item__bottom-box__right__inner-box__icon
+            %i.fas.fa-lock
+          .item__bottom-box__right__inner-box__text
+
+  .comment
+    .comment__comments-box
+      .comment__comments-box__comment
+        .comment__comments-box__comment__left
+          = link_to root_path do
+            .comment__comments-box__comment__left__image
+              %img{alt: "user-icon", width:"40", height: "40",src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+            .comment__comments-box__comment__left__text 出品者
+        .comment__comments-box__comment__right
+          .comment__comments-box__comment__right__title テックエキスパート
+          .comment__comments-box__comment__right__message
+            .comment__comments-box__comment__right__message__text
+            .comment__comments-box__comment__right__message__bottom
+              .comment__comments-box__comment__right__message__bottom__icon-left
+                  %i.far.fa-clock
+                .comment__comments-box__comment__right__message__bottom__day
+                .comment__comments-box__comment__right__message__bottom__icon-right
+                  %i.far.fa-flag
+
+    .comment__form-box
+      = form_for [@items, @comment] do |f|
+        %p.comment__form-box__top-text
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = f.text_field :text, class: 'comment__form-box__input'
+        = f.submit 'コメントする', class: 'comment__form-box__action-btn'
+
+  .nav
+    .nav__left
+      = link_to root_path do
+        .nav__left__box
+          %i.fas.fa-angle-left
+          %p.nav__left__box__text オーブ なめらか質感ひと塗りルージュ BE41
+    .nav__right
+      = link_to root_path do
+        .nav__right__box
+          %i.fas.fa-angle-right
+          %p.nav__right__box__text 装備一式
+  .social-media
+    .social-media__box
+      .social-media__box__inner-box
+        .social-media__box__inner-box__facebook
+          = link_to root_path do
+            %i.fab.fa-facebook
+        .social-media__box__inner-box__twitter
+          = link_to root_path do
+            %i.fab.fa-twitter
+        .social-media__box__inner-box__line
+          = link_to root_path do
+            %i.fab.fa-line
+        .social-media__box__inner-box__pinterest
+          = link_to root_path do
+            %i.fab.fa-pinterest
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .exhibition
+    .exhibition__name
+    .exhibition__box
+
+  .other-item
+    .other-item__top
+    .other-item__box
