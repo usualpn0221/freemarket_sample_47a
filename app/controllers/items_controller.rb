@@ -1,5 +1,14 @@
 class ItemsController < ApplicationController
+
+
+
+  def show
+    @items = Item.new
+    @comment = Comment.new
+    @items.id = 1
+  end
   def new
+
 
   end
 
@@ -12,5 +21,7 @@ class ItemsController < ApplicationController
   private
   def item_params
       params.permit(:image,:name, :description,:price,:condition,:postage,:region,:shipping_date)
+
+
   end
 end
