@@ -9,15 +9,20 @@
   margin-top: 40px;
 
 }
-.single__footer__information{
-  display: inline-block;
-  margin-left: 18px;
+.single__footer{
+  font-size: 12px;
+  &__information{
+    display: inline-block;
+    margin-left: 18px;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+  }
 }
 
 .footer-logo{
   margin-top: 40px;
 }
 
-.single__footer{
-  font-size: 14px;
-}
+
