@@ -15,11 +15,11 @@
               %span.bold 0
       %user-information_tab
         .tabs
-          %input#notice{:checked => "checked", :name => "tab_user", :type => "radio"}
-          %label.tab_item{:for =>"notice"}
+          %input#notice{checked: "checked", name: "tab_user", type: "radio"}
+          %label.tab_item{for: "notice"}
             お知らせ
-          %input#todo{:name => "tab_user", :type => "radio"}/
-          %label.tab_user{:for => "todo"}
+          %input#todo{name: "tab_user", type: "radio"}/
+          %label.tab_user{for: "todo"}
             やることリスト
           #notice_content.tab_content
             %ul.tab-content
@@ -33,11 +33,11 @@
         %h2.trade-information__tab
           購入した商品
         .tabs
-          %input#trade-now{:checked => "checked", :name => "tab_item", :type => "radio"}/
-          %label.tab_now{:for => "trade-now"}
+          %input#trade-now{checked: "checked", name: "tab_item", type: "radio"}/
+          %label.tab_now{for: "trade-now"}
             取引中
-          %input#trade-kako{:name => "tab_item", :type => "radio"}/
-          %label.tab_kako{:for => "trade-kako"}
+          %input#trade-kako{name: "tab_item", type: "radio"}/
+          %label.tab_kako{for: "trade-kako"}
             過去の取引
           #trade-now_content.tab_content
             %ul.trade-now-content
