@@ -15,28 +15,17 @@
           %li.inner-header__under__left__list
           %i.fas.fa-list-ul
           %span カテゴリーから探す
-          %li.inner-header__under__left__list
-          %i.fas.fa-tags
-          %span ブランドから探す
-      .inner-header__under__right
-        %ul.inner-header__under__right__lists
-          - if user_signed_in?
-            %li.inner-header__under__right__list
-            %i.fas.fa-bell
-            %a{href:"/users/show"}マイページ
-            %li.inner-header__under__right__list
-            %i.fas.fa-check
-            %span お知らせ
-            %li.inner-header__under__right__list
-            %i.fas.fa-user-circle
-            %span やることリスト
-          - else
-            %a{href:"/users/show"}マイページ
-            = link_to "商品出品", "/items/new"
-            = link_to "商品詳細", "/items/show"
-            %li.inner-header__under__right__list
-              = link_to new_user_session_path do
-                ログイン
-            %li.inner-header__under__right__list
-              = link_to new_user_path do
-                新規会員登録
+          %li.inner-header__under__right__list
+          %i.fas.fa-bell
+          %a{href:"/users/show"}マイページ
+          %li.inner-header__under__right__list
+          %i.fas.fa-check
+          %span お知らせ
+          %li.inner-header__under__right__list
+          %i.fas.fa-user-circle
+          %span やることリスト
+          %a{href:"/users/show"}マイページ
+          = link_to "商品出品", "/items/new"
+          %li.inner-header__under__right__list
+            = link_to new_user_path do
+              新規会員登録
