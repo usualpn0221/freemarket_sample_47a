@@ -47,7 +47,8 @@
 }
 
 
-.user-profile--container__text{
+.user-profile--container
+  &__text {
     width: 668px;
     height:216px;
     margin:0 auto;
@@ -56,17 +57,14 @@
     line-height: 1.5;
     border-style: none;
     color:#333333;
-
+    &-area {
+      width: 668px;
+      height:216px;
+      padding: 10px ;
+      box-sizing: border-box;
+    }
   }
-
-  .user-profile--container__text-area {
-    width: 668px;
-    height:216px;
-    padding: 10px ;
-    box-sizing: border-box;
-  }
-
-  .user-profile--container__button{
+  &__button {
     width: 668px;
     height:50px;
     margin:16px 0 0 ;
@@ -86,9 +84,10 @@
       cursor: pointer;
     }
   }
+}
 
-  .user-icon-image {
-      border-radius: 50px;
-    }
+.user-icon-image {
+  border-radius: 50px;
+}
 
 
