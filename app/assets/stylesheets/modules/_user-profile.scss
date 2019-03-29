@@ -3,43 +3,45 @@
   background:$white;
   padding-bottom:40px;
   right: 0;
-    &__title {
-      height:50px;
-      padding: 8px 24px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 34px;
-      box-sizing: border-box;
-      color:#333333;
-    }
-    &__icon {
-      padding:72px 16px 24px;
-      background: url(user-bg.jpg);
-      &__body {
-        height: 60px;
-        display:flex;
-        justify-content: center;
         margin:0 auto;
-        &__user-image {
           width: 60px;
-          height:60px;
-          background: url(member_photo_noimage_thumb.png);
-        }
-        &__user-name {
+  &__title {
+    height:50px;
+    padding: 8px 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    box-sizing: border-box;
+    color:#333333;
+  }
+  &__icon {
+    padding:72px 16px 24px;
+    background: url(user-bg.jpg);
+    &__body {
+      height: 60px;
+      display:flex;
+      justify-content: center;
+      margin:0 auto;
+      &__user-image {
+        width: 60px;
+        height:60px;
+        background: url(member_photo_noimage_thumb.png);
+      }
+      &__user-name {
+        width: 220px;
+        height:44.7px;
+        margin:0px 0px 0px 8px;
+        padding:10px 16px 8px;
+        font-size: 16px;
+        color:#333333;
+        &__input {
+          border-radius: 3px ;
+          border: none;
           width: 220px;
-          height:44.7px;
-          margin:0px 0px 0px 8px;
-          padding:10px 16px 8px;
-          font-size: 16px;
-          color:#333333;
-          &__input {
-            border-radius: 3px ;
-            border: none;
-            width: 220px;
-            height:43.2px;
-            border: 0.4px solid #ccc;
-            align-items: center;
+          height:43.2px;
+          border: 0.4px solid #ccc;
+          align-items: center;
         }
       }
     }
@@ -47,7 +49,7 @@
 }
 
 
-.user-profile--container
+.user-profile--container {
   &__text {
     width: 668px;
     height:216px;
