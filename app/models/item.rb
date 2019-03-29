@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
-  belongs_to :saler, class_name: "User"
-  belongs_to :buyer, class_name: "User"
+  belongs_to :saler, class_name: "User", optional: true
+  belongs_to :buyer, class_name: "User", optional: true
   has_many :images
-  belongs_to :brand
-  belongs_to :bigcategory
-  belongs_to :middlecategory
-  belongs_to :smallcategory
+  belongs_to :brand, optional: true
+  belongs_to :bigcategory, optional: true
+  belongs_to :middlecategory, optional: true
+  belongs_to :smallcategory, optional: true
 end
