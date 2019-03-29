@@ -1,0 +1,83 @@
+.user-profile--container{
+  width: 700px;
+  background:#F6F6F6;
+  padding-bottom:50px;
+    &__title {
+      height:50px;
+      padding: 8px 24px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    &__icon {
+      padding:72px 16px 24px;
+      background: url(user-bg.jpg);
+      &__body {
+        height: 60px;
+        display:flex;
+        justify-content: center;
+        margin:0 auto;
+        &__user-image {
+          width: 60px;
+          height:60px;
+          background: url(member_photo_noimage_thumb.png);
+        }
+        &__user-name {
+          width: 220px;
+          height:48px;
+          margin:0px 0px 0px 8px;
+          padding:10px 16px 8px;
+          font-size: 16px;
+          &__input {
+            border-radius: 3px ;
+            border: none;
+            width: 220px;
+            height:48px;
+        }
+      }
+    }
+  }
+}
+
+
+.user-profile--container__text{
+    width: 668px;
+    height:216px;
+    margin:0 auto;
+    padding: 40px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-style: none;
+  }
+
+  .user-profile--container__text-area {
+    width: 668px;
+    height:216px;
+  }
+
+  .user-profile--container__button{
+    width: 668px;
+    height:50px;
+    margin:16px 0 0 ;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#EA352D;
+    &__input {
+      height:50px;
+      width: 668px;
+      background:#EA352D;
+      border-style: none;
+      color: #FFFFFF;
+      font-size: 13px;
+      cursor: pointer;
+    }
+  }
+
+  .user-icon-image {
+      border-radius: 50px;
+    }
+
+

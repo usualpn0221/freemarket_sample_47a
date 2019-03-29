@@ -1,3 +1,19 @@
+.user-profile--container
+  .user-profile--container__title プロフィール
+  .user-profile--container__icon
+    .user-profile--container__icon__body
+      .user-profile--container__icon__body__user-image
+        = image_tag "member_photo_noimage_thumb.png" ,size: "60x60",class: "user-icon-image"
+      .user-profile--container__icon__body__user-name
+        %form
+          %input.user-profile--container__icon__body__user-name__input{type: "text"}/
+  .user-profile--container__text
+    %textarea.user-profile--container__text-area{placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+  .user-profile--container__button
+    %input.user-profile--container__button__input{type:"button",value:"変更する"}
+
+
+
 .top-page-view
   .top-page-view--title ピックアップカテゴリー
   = render "shared/items-boxs-container"
