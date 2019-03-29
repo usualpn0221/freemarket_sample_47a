@@ -1,8 +1,7 @@
 .link-fake-box
-  %a{href:"/users/show"}マイページ
-  = link_to "商品出品", "/items/new"
-  = link_to "商品詳細", "/items/show"
-  = link_to new_user_session_path do
-    ログイン
-  = link_to new_user_path do
-    新規会員登録
+  = link_to "マイページ", "users_path"
+  = link_to "商品出品", "new_item_path"
+  = link_to "商品詳細", "items_path"
+  = link_to "ログイン","new_user_session_path"
+  = link_to "新規会員登録", "new_user_path"
+
