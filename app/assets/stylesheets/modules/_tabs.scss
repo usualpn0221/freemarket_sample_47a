@@ -1,11 +1,11 @@
 .tabs{
-  background: gray;
+  background: #eee;
   width:700px;
 }
 input[name="tab_item"] , input[name="tab_user"] {
     display: none;
   }
-.tab_item,.tab_user {
+.tab_now,.tab_user,.tab_kako,.tab_item {
   width: calc(100%/2);
   height: 74px;
   font-size: 16px;
@@ -29,4 +29,12 @@ input[name="tab_item"] , input[name="tab_user"] {
 #todo:checked ~ #todo_content , #trade-now:checked ~ #trade-now_content,
 #trade-kako:checked ~ #trade-kako_content {
   display: block;
+}
+
+#notice:checked ~ .tab_item,
+#todo:checked ~ .tab_user,
+#trade-now:checked ~ .tab_now,
+#trade-kako:checked ~ .tab_kako{
+  background: white;
+  border-top: 1px solid red;
 }

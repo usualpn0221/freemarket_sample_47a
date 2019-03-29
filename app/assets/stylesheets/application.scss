@@ -1,9 +1,11 @@
 @import "./reset";
 @import "mixins/clearfix";
+@import "./variable";
 @import "modules/mypage";
 @import "modules/mypage-left-bar";
 @import "modules/tabs";
 @import "modules/footer";
+@import "modules/items-show";
 @import "modules/signin-signup-header-footer";
 @import "modules/signin";
 @import "modules/header";
@@ -13,4 +15,9 @@
 @import "modules/creditcards";
 @import "modules/user-profile";
 @import "./variable";
+@font-face {
+  font-family: 'source-sans-pro';
+  src: url('./fonts/source-sans-pro') format('ttf'),
+}
 @import "users";
+@import "modules/link-fake";
