@@ -113,7 +113,7 @@ Things you may want to cover:
 |middlecategory|references|null: false|
 |smallcategory|references|null: false|
 
-<!-- condition(商品の状態),postage(配送料の負担),region(発送元地域),shipping_date(発送までの日数) -->
+<!-- state(商品の状態),postage(配送料の負担),region(発送元地域),shipping_date(発送までの日数) -->
 
 ### Association
 - belongs_to :saler, class_name: "User"
