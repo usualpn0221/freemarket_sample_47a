@@ -113,11 +113,13 @@ Things you may want to cover:
 |name|string|index: true,null: false|
 |description|text|null: false|
 |state|string|null: false|
+|status|string|null: false|
 |price|integer|null: false|
 |saler|references|null: false|
 |category|references|null: false|
 
-<!-- state(商品の状態) -->
+
+<!-- state(商品の状態)status(商品の取引状態) -->
 
 ### Association
 - belongs_to :saler, class_name: "User"
