@@ -1,0 +1,2 @@
+class Uservaluation < ApplicationRecord
+end
