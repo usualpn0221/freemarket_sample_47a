@@ -37,9 +37,8 @@ Things you may want to cover:
 <!-- passより下のカラムはdeviseで自動で作成される -->
 
 ### Association
-- has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
-- has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
-- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+- has_many :items
+- has_many :transactions
 - has_many :creditcards
 - has_many :comments
 - has_many :uservaluations,foreign_key: "evaluateduser_id", class_name: "Uservaluation"
@@ -114,27 +113,39 @@ Things you may want to cover:
 |name|string|index: true,null: false|
 |description|text|null: false|
 |state|string|null: false|
-|postage|string|null: false|
-|region|string|null: false|
-|shipping_date|string|null: false|
 |price|integer|null: false|
 |saler|references|null: false|
-|buyer|references|  |
-|bigcategory|references|null: false|
-|middlecategory|references|null: false|
-|smallcategory|references|null: false|
+|category|references|null: false|
 
-<!-- state(商品の状態),postage(配送料の負担),region(発送元地域),shipping_date(発送までの日数) -->
+<!-- state(商品の状態) -->
 
 ### Association
 - belongs_to :saler, class_name: "User"
-- belongs_to :buyer, class_name: "User"
+- has_one  :transaction
 - has_many :images
 - belongs_to :brand
-- belongs_to :bigcategory
-- belongs_to :middlecategory
-- belongs_to :smallcategory
+- belongs_to :category
 - accepts_nested_attributes_for :images
+- accepts_nested_attributes_for :transaction
+
+## transactionsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|item|references|  |
+|buyer|references|  |
+|postage|string|null: false|
+|delivery|string|null: false|
+|region|string|null: false|
+|shipping_date|string|null: false|
+
+<!-- postage(配送料の負担),delivery(配送方法),region(発送元地域),shipping_date(発送までの日数) -->
+
+### Association
+- belongs_to :item, optional: true
+- belongs_to :buyer, class_name: "User"
+
+
 
 ## commentsテーブル
 
@@ -168,38 +179,18 @@ Things you may want to cover:
 ### Association
 - has_many :items
 
-## bigcategorysテーブル
+## categorysテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false,index: true|
-
-
-### Association
-- has_many :items
-- has_many :middlecategorys
-
-## middlecategorysテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|bigcategory_id|references|    |
-|name|string|null: false,index: true|
-
-### Association
-- has_many :items
-- has_many :smallcategorys
-- belongs_to :bigcategory
-
-## smallcategorysテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|middlecategory_id|references|    |
-|name|string|null: false,index: true|
+|grandparent|references|    |
+|parent|references|    |
 
 
 
 ### Association
-- has_many :items
-- belongs_to :middlecategory
+- belongs_to :grandparent, class_name: :Category
+- has_many :children, class_name: :Category, foreign_key: :grandparent_id
+- belongs_to :parent, class_name: :Category
+- has_many :grandsons, class_name: :Category, foreign_key: :parent_id
