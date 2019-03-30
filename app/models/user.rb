@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
-  has_many :transactions
+  has_many :trades
   has_many :creditcards
   has_many :comments
   has_many :uservaluations,foreign_key: "evaluateduser_id", class_name: "Uservaluation"
