@@ -1,6 +1,6 @@
 .sell
   .sell__icon
-  =form_tag('/items', method: :post,class:"sell__form",id:"itemsell__new",:multipart => true) do
+  = form_for @item, html:{class:"sell__form"} do |f|
     .sell__form__introduction
       商品の情報を入力
     .sell__form__image
@@ -10,16 +10,18 @@
       .sell__form__image__intro
         最大10枚までアップロードできます
       .sell__form__image__uproad
-        %input{placeholder:"ドラッグアンドドロップ またはクリックしてファイルをアップロード",type:"file",name:"image"}
+        = f.fields_for :images do |m|
+          = m.file_field :image, placeholder:"ドラッグアンドドロップ またはクリックしてファイルをアップロード"
+
     .sell__form__itemname
       .sell__form__itemname__intro
         商品名
         %span.sell__form--need 必須
-        %input.sell__form__itemname__input{type:"text",placeholder:"商品名（必須40文字まで)",name:"name"}
+        = f.text_field :name,class:'sell__form__itemname__input',placeholder:"商品名（必須40文字まで)"
       .sell__form__itemname__explanationintro
         商品の説明
         %span.sell__form--need 必須
-        %textarea.sell__form__itemname__explanationinput{name:"description",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+        = f.text_area :description,class:'sell__form__itemname__explanationinput',placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
 
     .sell__form__itemdescription
       .sell__form__itemdescription__left
@@ -28,16 +30,13 @@
         .sell__form__itemdescription__right__description
           カテゴリー
           %span.sell__form--need 必須
-          %select.sell__form__itemdescription__right__descriptionselect{name:"category"}
-            %option{value:"新品、未使用"} 新品、未使用
-            %option{value:"未使用に近い"} 未使用に近い
+          = f.select :saler_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
 
         .sell__form__itemdescription__right__description
           商品の状態
           %span.sell__form--need 必須
-          %select.sell__form__itemdescription__right__descriptionselect{name:"condition"}
-            %option{value:"新品、未使用"} 新品、未使用
-            %option{value:"未使用に近い"} 未使用に近い
+          = f.select :condition,["新品、未使用","未使用に近い"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+
 
 
     .sell__form__delivery
@@ -47,22 +46,15 @@
         .sell__form__itemdescription__right__description
           配送料の負担
           %span.sell__form--need 必須
-          %select.sell__form__itemdescription__right__descriptionselect{name:"postage"}
-            %option{value:"送料込み(出品者負担"} 送料込み(出品者負担)
-            %option{value:"着払い(購入者負担)"} 着払い(購入者負担)
+          = f.select :postage,["送料込み(出品者負担","着払い(購入者負担)"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
         .sell__form__itemdescription__right__description
           発送元の地域
           %span.sell__form--need 必須
-          %select.sell__form__itemdescription__right__descriptionselect{name:"region"}
-            %option{value:"東京"} 東京
-            %option{value:"大阪"} 大阪
+          = f.select :region,["東京","大阪"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
         .sell__form__itemdescription__right__description
           発送までの日数
           %span.sell__form--need 必須
-          %select.sell__form__itemdescription__right__descriptionselect{name:"shipping_date"}
-            %option{value:"1〜2日で発送"} 1〜2日で発送
-            %option{value:"2〜3日で発送"} 2〜3日で発送
-            %option{value:"4〜7日で発送"} 4〜7日で発送
+          = f.select :shipping_date,["1〜2日で発送","2〜3日で発送","4〜7日で発送"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
 
     .sell__form__price
       .sell__form__itemdescription__left
@@ -73,8 +65,7 @@
           %span.sell__form--need 必須
           .sell__form__itemdescription__right__profit__input
             ¥
-            %input.sell__form__itemdescription__right__profit__input__box{name:"price",type:"text",placeholder:"例) 300"}
-
+            = f.text_field :price,class:'sell__form__itemdescription__right__profit__input__box',placeholder:"例) 300"
         .sell__form__itemdescription__right__profit
           販売手数料 (10%)
         .sell__form__itemdescription__right__margin
@@ -82,24 +73,24 @@
 
     .sell__form__button
       .sell__form__button__notice
-        %a.itemsnewlink.itemsnewlink__notice{href:""}<>禁止されている出品
+        = link_to "禁止されている出品","", class:'itemsnewlink itemsnewlink__notice'
         、
-        %a.itemsnewlink.itemsnewlink__notice{href:""}<>行為
+        = link_to "行為","", class:'itemsnewlink itemsnewlink__notice'
         を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。
-        %a.itemsnewlink.itemsnewlink__notice{href:""}<>偽ブランドの販売
+        = link_to "偽ブランドの販売","", class:'itemsnewlink itemsnewlink__notice'
         は犯罪であり処罰される可能性があります。また、出品をもちまして
-        %a.itemsnewlink.itemsnewlink__notice{href:""}<>加盟店規約
+        = link_to "加盟店規約","", class:'itemsnewlink itemsnewlink__notice'
         に同意したことになります。
       .sell__form__button__button
-        %input.sell__form__button__button__input{type:"submit",value:"出品する"}
+        = f.submit '出品する', class:'sell__form__button__button__input'
       .sell__form__button__back
-        %a.itemsnewlink__backbutton{href:"/users/show"}もどる
+        = link_to "もどる",user_path(1),class:'itemsnewlink__backbutton'
 
   .sell__footer
     .sell__footer__link
-      %a.itemsnewlink.itemsnewlink__footer{href:""}プライバシーポリシー
-      %a.itemsnewlink.itemsnewlink__footer{href:""}メルカリ利用規約
-      %a.itemsnewlink.itemsnewlink__footer{href:""}特定商取引に関する表記
+      = link_to "プライバシーポリシー","", class:'itemsnewlink itemsnewlink__footer'
+      = link_to "メルカリ利用規約","", class:'itemsnewlink itemsnewlink__footer'
+      = link_to "特定商取引に関する表記","", class:'itemsnewlink itemsnewlink__footer'
     .sell__footer__logo
     © 2019 Mercari
 

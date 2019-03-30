@@ -7,20 +7,21 @@ class ItemsController < ApplicationController
     @comment = Comment.new
     @items.id = 1
   end
-  def new
 
+  def new
+      @item =Item.new
+      @item.images.build
 
   end
 
   def create
-    @item=Item.create(name: item_params[:name],description: item_params[:description],price:item_params[:price],condition:item_params[:condition],postage:item_params[:postage],region:item_params[:region],shipping_date:item_params[:shipping_date],saler_id:"1")
-    Image.create(image:item_params[:image],item_id: @item.id)
-    redirect_to "/items"
+    @item=Item.create(item_params)
+    redirect_to items_path
   end
 
   private
   def item_params
-      params.permit(:image,:name, :description,:price,:condition,:postage,:region,:shipping_date)
+      params.require(:item).permit(:name, :description,:price,:condition,:postage,:region,:shipping_date,:saler_id,images_attributes: [:image])
 
   end
 end

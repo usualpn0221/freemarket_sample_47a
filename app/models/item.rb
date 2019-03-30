@@ -6,4 +6,5 @@ class Item < ApplicationRecord
   belongs_to :bigcategory, optional: true
   belongs_to :middlecategory, optional: true
   belongs_to :smallcategory, optional: true
+  accepts_nested_attributes_for :images
 end
