@@ -1,7 +1,8 @@
 .wallpaper
   .item
     .item__top-box
-      %h2.item__top-box__item-name @item 商品名
+      %h2.item__top-box__item-name
+        = @item.name
     .item__main-box
       .item__main-box__left
         .item__main-box__left__image-big
@@ -9,25 +10,25 @@
           大きな画像
         .item__main-box__left__image-box
           #item__main-box__left__image-box__contents1.item__main-box__left__image-box__contents-image
-            画像1
+            = @item.image 画像1
           #item__main-box__left__image-box__contents2.item__main-box__left__image-box__contents-image
-            画像2
+            = @item.image 画像2
           #item__main-box__left__image-box__contents3.item__main-box__left__image-box__contents-image
-            画像3
+            = @item.image 画像3
           #item__main-box__left__image-box__contents4.item__main-box__left__image-box__contents-image
-            画像4
+            = @item.image 画像4
           #item__main-box__left__image-box__contents5.item__main-box__left__image-box__contents-image
-            画像5
+            = @item.image 画像5
           #item__main-box__left__image-box__contents6.item__main-box__left__image-box__contents-image
-            画像6
+            = @item.image 画像6
           #item__main-box__left__image-box__contents7.item__main-box__left__image-box__contents-image
-            画像7
+            = @item.image 画像7
           #item__main-box__left__image-box__contents8.item__main-box__left__image-box__contents-image
-            画像8
+            = @item.image 画像8
           #item__main-box__left__image-box__contents9.item__main-box__left__image-box__contents-image
-            画像9
+            = @item.image 画像9
           #item__main-box__left__image-box__contents10.item__main-box__left__image-box__contents-image
-            画像10
+            = @item.image 画像10
 
       .item__main-box__right
         .item__main-box__right__column-left
@@ -51,8 +52,9 @@
         .item__main-box__right__column-right
           #item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__exhibitor-top
-              = link_to root_path do
-                %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links 田中星矢（出品者名）
+              = link_to user_show_path(params[:user_id]) do
+                %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
+                  = @user.name 出品者庄司
 
             .item__main-box__right__column-right__box__exhibitor-bottom
               .item__main-box__right__column-right__box__exhibitor-bottom__box-good
@@ -84,16 +86,17 @@
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links ナイキ
           #item__main-box__right__column-right__state.item__main-box__right__column-right__box
-            新品、未使用
+            = @item.condition 新品
           #item__main-box__right__column-right__burden.item__main-box__right__column-right__box
-            送料込み(出品者負担)
+            = @item.postage 着払い
           #item__main-box__right__column-right__method.item__main-box__right__column-right__box
-            らくらくメルカリ便
+            = @item.shipping_method らくらくメルカリ便
           #item__main-box__right__column-right__region.item__main-box__right__column-right__box
             = link_to root_path do
-              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links 東京都
+              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
+                = @item.region 東京都
           #item__main-box__right__column-right__indication.item__main-box__right__column-right__box
-            1〜2日で発送
+            = @item.shipping_date 1〜2日で発送
 
     .item__price-box
       .item__price-box__price
