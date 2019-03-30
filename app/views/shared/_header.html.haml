@@ -2,8 +2,8 @@
   .inner-header
     .inner-header__upper
       .inner-header__upper__left
-        %a{href: "https://www.mercari.com/jp/"}
-          %img{alt: "mercari", width:"134", height: "36", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?454567723"}/
+        = link_to root_path do
+          = image_tag "mercari_header.jpeg" ,width: "134px",class: ".inner-header__upper__left__mercari"
       .inner-header__upper__right
         %form.inner-header__upper__right__form
           %input.inner-header__upper__right__input{type: "text",placeholder:"何かお探しですか？"}/
