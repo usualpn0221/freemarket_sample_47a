@@ -1,9 +1,13 @@
 class ItemsController < ApplicationController
 
 
+  def index
+
+  end
 
   def show
-    @item = Item.find(params[:id]).includes(:saler_id)
+    @item = Item.find(params[:id]).includes(:user)
+
     @items = Item.new
     @comment = Comment.new
     @items.id = 1
