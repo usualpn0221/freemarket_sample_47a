@@ -739,10 +739,16 @@
   color: #0099e8;
 }
 
+.item__main-box__left__image-box__contents-image {
+  img {
+    object-fit: cover;
+  }
+}
 
-
-
-
+.item__main-box__left__image-big
+  img {
+    object-fit: contain;
+  }
 
 .exhibition {
   &__name {
@@ -759,4 +765,3 @@
   &__box {
  }
 }
-
