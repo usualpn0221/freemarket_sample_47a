@@ -57,6 +57,7 @@ Things you may want to cover:
 - belongs_to :prefecture
 - has_many :comments
 - has_many :uservaluations,foreign_key: "evaluateduser_id", class_name: "Uservaluation"
+- has_one :user
 
 ## creditcardsテーブル
 
@@ -83,6 +84,17 @@ Things you may want to cover:
 
 ### Association
 - has_many :users
+
+## profilesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|      |
+|description|text|      |
+
+
+### Association
+- belongs_to :user
 
 ## uservaluationsテーブル
 
