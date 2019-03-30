@@ -29,19 +29,6 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|index: true, null: false|
 |email|string|null: false, unique:true|
-|lastname|string|null: false|
-|firstname|string|null: false|
-|lastnamekana|string|null: false|
-|firstnamekana|string|null: false|
-|birthyear|integer|null: false|
-|birthmonth|integer|null: false|
-|birthday|integer|null: false|
-|postnumber|string|null: false|
-|prefecture|references|null: false|
-|shikuchouson|string|null: false|
-|banchi|string|null: false|
-|tatemonomei|string||
-|phonenumber|string|null false|
 |encrypted_password|string|null: false, default: ""|
 |reset_password_token|string|
 |reset_password_sent_at|datetime|
@@ -54,10 +41,9 @@ Things you may want to cover:
 - has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
 - has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 - has_many :creditcards
-- belongs_to :prefecture
 - has_many :comments
 - has_many :uservaluations,foreign_key: "evaluateduser_id", class_name: "Uservaluation"
-- has_one :user
+- has_one  :profile
 
 ## creditcardsテーブル
 
@@ -83,13 +69,26 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :users
+
 
 ## profilesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user|references|      |
+|lastname|string|null: false|
+|firstname|string|null: false|
+|lastnamekana|string|null: false|
+|firstnamekana|string|null: false|
+|birthyear|integer|null: false|
+|birthmonth|integer|null: false|
+|birthday|integer|null: false|
+|postnumber|string|null: false|
+|prefecture|string|null: false|
+|shikuchouson|string|null: false|
+|banchi|string|null: false|
+|tatemonomei|string||
+|phonenumber|string|null false|
 |description|text|      |
 
 
