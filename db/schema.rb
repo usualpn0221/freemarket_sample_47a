@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190325074654) do
+ActiveRecord::Schema.define(version: 20190330083642) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -43,17 +43,18 @@ ActiveRecord::Schema.define(version: 20190325074654) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",          null: false
-    t.string   "description",   null: false
-    t.string   "condition",     null: false
-    t.string   "postage",       null: false
-    t.string   "region",        null: false
-    t.string   "shipping_date", null: false
-    t.string   "price",         null: false
-    t.integer  "saler_id",      null: false
+    t.string   "name",            null: false
+    t.string   "description",     null: false
+    t.string   "condition",       null: false
+    t.string   "postage",         null: false
+    t.string   "region",          null: false
+    t.string   "shipping_date",   null: false
+    t.string   "price",           null: false
+    t.integer  "saler_id",        null: false
     t.integer  "buyer_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "shipping_method"
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["name"], name: "index_items_on_name", using: :btree
     t.index ["saler_id"], name: "index_items_on_saler_id", using: :btree
