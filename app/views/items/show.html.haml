@@ -9,29 +9,42 @@
     .item__main-box
       .item__main-box__left
         .item__main-box__left__image-big
-          / = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-          = image_tag @item.images[0].image, size:'300x300' , class: 'item__main-box__left__image-box__contents-image-big'
+          - unless @item.images[0] == []
+            = image_tag @item.images[0].image, size:'300x300' , class: 'item__main-box__left__image-box__contents-image-big'
+          - else
+            iii
+
         .item__main-box__left__image-box
           #item__main-box__left__image-box__contents1.item__main-box__left__image-box__contents-image
             = image_tag @item.images[0].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents2.item__main-box__left__image-box__contents-image
             = image_tag @item.images[1].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents3.item__main-box__left__image-box__contents-image
             = image_tag @item.images[2].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents4.item__main-box__left__image-box__contents-image
             = image_tag @item.images[3].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents5.item__main-box__left__image-box__contents-image
             = image_tag @item.images[4].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents6.item__main-box__left__image-box__contents-image
             = image_tag @item.images[5].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents7.item__main-box__left__image-box__contents-image
             = image_tag @item.images[6].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents8.item__main-box__left__image-box__contents-image
             = image_tag @item.images[7].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents9.item__main-box__left__image-box__contents-image
             = image_tag @item.images[8].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
           #item__main-box__left__image-box__contents10.item__main-box__left__image-box__contents-image
             = image_tag @item.images[9].image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
+
 
       .item__main-box__right
         .item__main-box__right__column-left
@@ -55,7 +68,7 @@
         .item__main-box__right__column-right
           #item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__exhibitor-top
-              / = link_to user_show_path(params[:user_id]) do
+              / = link_to user_path(user_id) do
               %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
                 / = @item.user.name
                 /   出品者庄司
@@ -90,21 +103,22 @@
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links ナイキ
           #item__main-box__right__column-right__state.item__main-box__right__column-right__box
-            / = @item.condition 新品
+            = @item.condition
           #item__main-box__right__column-right__burden.item__main-box__right__column-right__box
-            / = @item.postage 着払い
+            = @item.postage
           #item__main-box__right__column-right__method.item__main-box__right__column-right__box
-            / = @item.shipping_method らくらくメルカリ便
+            = @item.shipping_method
           #item__main-box__right__column-right__region.item__main-box__right__column-right__box
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
-                / = @item.region 東京都
+                = @item.region
           #item__main-box__right__column-right__indication.item__main-box__right__column-right__box
-            / = @item.shipping_date 1〜2日で発送
+            = @item.shipping_date
 
     .item__price-box
       .item__price-box__price
-        / = @item.price ¥21,400
+        = "¥ #{number_with_delimiter(@item.price)}"
+        / = converting_to_jpy("#{@item.price}")
       .item__price-box__tax
         (税込)
       .item__price-box__cost
@@ -114,12 +128,7 @@
         .item__confirmation-box__link-text 購入画面に進む
     .item__text-box
       %p.item__text-box__text
-        / = @item.description
-        NIKE LEBRON 16 LOW ナイキ レブロン 16
-        27.5cm、黒タグです。
-
-        NIKEオンラインで購入。
-        ※個人情報をきりとった納品書を添付します。
+        = @item.description
     .item__bottom-box
       .item__bottom-box__left
         = link_to root_path do
