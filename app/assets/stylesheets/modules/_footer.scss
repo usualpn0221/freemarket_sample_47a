@@ -32,21 +32,23 @@
   }
 }
 
-.fa-twitter-square {
+.fa-twitter {
     font-size: 30px;
-    display:inline-block;
+    color: #f0f8ff;
+    font-weight: 400;
 }
 
 .fa-facebook {
     font-size: 30px;
-    display:inline-block;
+    color: #f0f8ff;
+    font-weight: 400;
 }
 
 .under-footer--sociallinks {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 100px;
+  width: 80px;
 }
 
 #privacy {
@@ -84,8 +86,8 @@
 }
 
 .under-footer--list li a:hover {
-        text-decoration: underline;
-    }
+  text-decoration: underline;
+}
 
 #title1,#title2,#title3,#title4 {
   font-weight: 500;
@@ -100,8 +102,8 @@
     width: 124px;
     vertical-align: middle;
     position: absolute;
-    left: 125px;
-    bottom:7px
+    left: 145px;
+    bottom:-10px
   }
   &__text {
     vertical-align: middle;
