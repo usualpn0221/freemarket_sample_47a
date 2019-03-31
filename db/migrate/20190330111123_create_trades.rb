@@ -1,6 +1,7 @@
-class CreateTransactions < ActiveRecord::Migration[5.0]
+class CreateTrades < ActiveRecord::Migration[5.0]
   def change
-    create_table :transactions do |t|
+    create_table :trades do |t|
+      t.references :item
       t.references :buyer
       t.string :postage,null: false
       t.string :delivery,null: false
