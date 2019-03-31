@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
-
+  def index
+    @items = Item.all.limit(4).order("created_at DESC")
+  end
 
   def show
     @items = Item.new
