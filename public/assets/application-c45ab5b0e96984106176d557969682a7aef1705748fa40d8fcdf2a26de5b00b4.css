@@ -1,0 +1,2383 @@
+/*!
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
+ */
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+/* line 11, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+    TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+    TODO test putting a class on HEAD.
+        - Fails on FF.
+*/
+/* line 22, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 50, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 54, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+    TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+/* line 61, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 74, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 79, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+caption,
+th {
+  text-align: left;
+}
+
+/* line 83, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* line 92, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+q:before,
+q:after {
+  content: '';
+}
+
+/* line 96, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+/* line 102, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+sup {
+  vertical-align: text-top;
+}
+
+/* line 105, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+sub {
+  vertical-align: text-bottom;
+}
+
+/* line 108, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+/* line 116, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+input,
+textarea,
+select {
+  *font-size: 100%;
+}
+
+/*because legend doesn't inherit in IE */
+/* line 122, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+legend {
+  color: #000;
+}
+
+/* YUI CSS Detection Stamp */
+/* line 126, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/_reset.scss */
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container {
+  background: #f5f5f5;
+  height: 100vw;
+}
+/* line 4, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container {
+  margin: 0 auto;
+  width: 1020px;
+  padding: 40px 0;
+}
+/* line 2, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/mixins/_clearfix.scss */
+.default-container .l-container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* line 9, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content {
+  float: right;
+  width: 700px;
+}
+/* line 12, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content__user {
+  height: 160px;
+  background: url(user-bg.jpg);
+  position: relative;
+  padding-top: 40px;
+}
+/* line 17, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content__user__page {
+  position: absolute;
+  text-decoration: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+/* line 23, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content__user__page figure {
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+/* line 30, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content__user__page h2 {
+  text-align: center;
+  font-size: 14px;
+}
+/* line 34, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content__user__page .right-content__user__number {
+  display: block;
+  text-align: center;
+  font-size: 0;
+}
+/* line 38, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content__user__page .right-content__user__number div {
+  display: inline-block;
+  font-size: 14px;
+  padding-left: 14px;
+}
+/* line 42, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.default-container .l-container .right-content__user__page .right-content__user__number div span {
+  margin: 0 0 0 8px;
+  font-size: 14px;
+}
+
+/* line 53, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.tab_content {
+  text-align: center;
+  padding: 160px 0 60px;
+  background: url(user-joukyo.png);
+}
+
+/* line 58, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.trade-information__tab {
+  line-height: 72px;
+  background: #fafafa;
+  margin-top: 40px;
+}
+
+/* line 64, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage.scss */
+.notice_content, .todo_content, .trade-now_content, #trade-kako_content {
+  color: black;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage-left-bar.scss */
+.left-side-bar {
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+}
+/* line 6, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage-left-bar.scss */
+.left-side-bar .mypage-nav__head {
+  color: black;
+}
+/* line 9, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage-left-bar.scss */
+.left-side-bar .mypage-nav__list {
+  list-style: none;
+}
+/* line 12, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage-left-bar.scss */
+.left-side-bar .mypage-nav__list li .mypage-nav__list__item {
+  border-top: 1px solid #f5f5f5;
+  list-style: none;
+  position: relative;
+  display: block;
+  padding: 16px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+/* line 22, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage-left-bar.scss */
+.left-side-bar .mypage-nav__list li .mypage-nav__list__item .fas {
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  color: #ccc;
+  top: 16px;
+}
+/* line 32, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_mypage-left-bar.scss */
+.left-side-bar .mypage-nav h3 {
+  margin-top: 40px;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_tabs.scss */
+.tabs {
+  background: #eee;
+  width: 700px;
+}
+
+/* line 5, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_tabs.scss */
+input[name="tab_item"], input[name="tab_user"] {
+  display: none;
+}
+
+/* line 8, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_tabs.scss */
+.tab_now, .tab_user, .tab_kako, .tab_item {
+  width: calc(100%/2);
+  height: 74px;
+  font-size: 16px;
+  line-height: 74px;
+  text-align: center;
+  color: black;
+  display: block;
+  float: left;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* line 20, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_tabs.scss */
+.tab_content {
+  display: none;
+  background-color: white;
+  clear: both;
+  overflow: hidden;
+}
+
+/* line 28, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_tabs.scss */
+#notice:checked ~ #notice_content,
+#todo:checked ~ #todo_content, #trade-now:checked ~ #trade-now_content,
+#trade-kako:checked ~ #trade-kako_content {
+  display: block;
+}
+
+/* line 34, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_tabs.scss */
+#notice:checked ~ .tab_item,
+#todo:checked ~ .tab_user,
+#trade-now:checked ~ .tab_now,
+#trade-kako:checked ~ .tab_kako {
+  background: white;
+  border-top: 1px solid red;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.top-app-baner {
+  color: white;
+  height: 260px;
+  width: 100vw;
+  background-image: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?78405350");
+}
+/* line 6, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.top-app-baner__content {
+  height: 260px;
+  width: 750px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 12, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.top-app-baner__content__inner {
+  width: 420px;
+  align-self: center;
+}
+/* line 15, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.top-app-baner__content__inner__introduction {
+  font-size: 24px;
+}
+/* line 18, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.top-app-baner__content__inner p {
+  font-size: 35px;
+}
+/* line 21, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.top-app-baner__content__inner ul {
+  left: 20px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 29, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.top-app-baner__content__iPhone {
+  height: 260px;
+}
+
+/* line 35, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.fa-twitter-square {
+  font-size: 30px;
+  display: inline-block;
+}
+
+/* line 40, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.fa-facebook {
+  font-size: 30px;
+  display: inline-block;
+}
+
+/* line 45, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--sociallinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+}
+
+/* line 52, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+#privacy {
+  padding-top: 38px;
+}
+
+/* line 56, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer {
+  background: #212121;
+  color: #FFFFFF;
+  padding: 0 20px 10px 20px;
+  list-style: none;
+  box-sizing: center;
+  text-decoration: none;
+}
+/* line 63, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--lists {
+  margin-top: 18px;
+  text-align: left;
+  margin: 0 auto;
+  width: 950px;
+}
+/* line 69, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--list {
+  display: inline-block;
+  vertical-align: top;
+  opacity: .7;
+  padding-right: 6px;
+}
+/* line 74, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--list li {
+  font-size: 12px;
+  margin: 14px 0 0;
+  color: #FFFFFF;
+}
+/* line 78, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--list li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* line 86, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--list li a:hover {
+  text-decoration: underline;
+}
+
+/* line 90, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+#title1, #title2, #title3, #title4 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* line 95, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--copyright {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+/* line 99, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--copyright__logo {
+  width: 124px;
+  vertical-align: middle;
+  position: absolute;
+  left: 125px;
+  bottom: 7px;
+}
+/* line 106, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--copyright__text {
+  vertical-align: middle;
+  text-align: center;
+}
+/* line 109, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_footer.scss */
+.under-footer--copyright__text small {
+  font-size: 12px;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper {
+  background-color: #f6f6f6;
+  width: 100%;
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+/* line 7, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 24px 40px 40px;
+  width: 700px;
+}
+/* line 14, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__top-box {
+  width: 620px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+/* line 20, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__top-box__item-name {
+  font-size: 24px;
+  font-style: bold;
+  color: #333333;
+}
+/* line 26, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box {
+  width: 620px;
+  height: 420px;
+  display: flex;
+}
+/* line 30, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left {
+  width: 300px;
+  height: 420px;
+  margin-right: 20px;
+  background-color: #f6f6f6;
+}
+/* line 35, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-big {
+  width: 300px;
+  height: 300px;
+  background-color: #EEEEEE;
+}
+/* line 40, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box {
+  width: 300px;
+  height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* line 45, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box__contents-image {
+  width: 60px;
+  height: 60px;
+}
+/* line 49, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents1 {
+  background-color: #DDDDDD;
+}
+/* line 52, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents2 {
+  background-color: #CCCCCC;
+}
+/* line 55, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents3 {
+  background-color: #DDDDDD;
+}
+/* line 58, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents4 {
+  background-color: #CCCCCC;
+}
+/* line 61, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents5 {
+  background-color: #DDDDDD;
+}
+/* line 64, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents6 {
+  background-color: #CCCCCC;
+}
+/* line 67, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents7 {
+  background-color: #DDDDDD;
+}
+/* line 70, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents8 {
+  background-color: #CCCCCC;
+}
+/* line 73, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents9 {
+  background-color: #DDDDDD;
+}
+/* line 76, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__left__image-box #item__main-box__left__image-box__contents10 {
+  background-color: #CCCCCC;
+}
+/* line 81, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right {
+  width: 300px;
+  height: 420px;
+  display: flex;
+}
+/* line 85, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left {
+  height: 420px;
+  width: 117px;
+}
+/* line 88, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left__box {
+  color: #333333;
+  width: 117px;
+  font-size: 14px;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #EEEEEE;
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+}
+/* line 99, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__exhibitor {
+  height: 70px;
+  line-height: 54px;
+  border-top: 1px solid #EEEEEE;
+  font-size: 14px;
+}
+/* line 105, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__category {
+  height: 73px;
+  line-height: 57px;
+}
+/* line 109, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__brand {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 113, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__state {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 117, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__burden {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 121, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__method {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 125, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__region {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 129, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-left #item__main-box__right__column-left__indication {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 134, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right {
+  width: 183px;
+  height: 420px;
+}
+/* line 137, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right__box {
+  width: 183px;
+  color: #333333;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 14px;
+  border-bottom: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+}
+/* line 146, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor {
+  height: 70px;
+  border-top: 1px solid #EEEEEE;
+}
+/* line 149, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-top {
+  width: 167px;
+  height: 14px;
+}
+/* line 152, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-top a {
+  text-decoration: none;
+}
+/* line 155, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-top a .item__main-box__right__column-right__box__exhibitor-top__link-text {
+  width: 167px;
+}
+/* line 159, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-top a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 164, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom {
+  height: 35px;
+  width: 167px;
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 15px;
+}
+/* line 170, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-good {
+  height: 18px;
+  display: flex;
+}
+/* line 173, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-good .fa-laugh {
+  font-size: 16px;
+  color: #FF55FF;
+}
+/* line 177, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-good__value {
+  margin: 0 16px 0 3px;
+  line-height: 18px;
+}
+/* line 182, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-normal {
+  height: 18px;
+  display: flex;
+}
+/* line 185, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-normal .fa-meh {
+  font-size: 16px;
+  color: #FFD700;
+}
+/* line 189, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value {
+  margin: 0 16px 0 3px;
+  line-height: 18px;
+}
+/* line 194, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-bad {
+  height: 18px;
+  display: flex;
+}
+/* line 197, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-bad .fa-frown {
+  font-size: 16px;
+  color: #87CEFA;
+}
+/* line 201, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__exhibitor .item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value {
+  margin: 0 16px 0 3px;
+  line-height: 18px;
+}
+/* line 208, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category {
+  height: 73px;
+}
+/* line 210, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-large {
+  height: 14px;
+}
+/* line 212, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-large a {
+  text-decoration: none;
+}
+/* line 217, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-large a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 222, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-medium {
+  height: 14px;
+}
+/* line 224, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-medium a {
+  text-decoration: none;
+  width: 167px;
+}
+/* line 227, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-medium a .item__main-box__right__column-right__box__category-medium__link-text {
+  display: flex;
+}
+/* line 230, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-medium a .item__main-box__right__column-right__box__category-medium__link-text__icon .fa-angle-right {
+  font-size: 20px;
+  color: #0099e8;
+}
+/* line 239, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-medium a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 244, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-small {
+  height: 14px;
+}
+/* line 246, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-small a {
+  text-decoration: none;
+}
+/* line 248, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-small a .item__main-box__right__column-right__box__category-small__link-text {
+  display: flex;
+}
+/* line 251, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-small a .item__main-box__right__column-right__box__category-small__link-text__icon .fa-angle-right {
+  font-size: 20px;
+  color: #0099e8;
+}
+/* line 261, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__category .item__main-box__right__column-right__box__category-small a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 267, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__brand {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 270, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__brand a {
+  text-decoration: none;
+}
+/* line 276, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__brand a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 281, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__state {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 285, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__burden {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 289, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__method {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 293, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__region {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 296, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__region a {
+  text-decoration: none;
+}
+/* line 302, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__region a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 307, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__main-box__right__column-right #item__main-box__right__column-right__indication {
+  height: 46px;
+  line-height: 30px;
+}
+/* line 314, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__price-box {
+  margin-top: 24px;
+  width: 620px;
+  height: 50px;
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 28%;
+}
+/* line 321, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__price-box__price {
+  font-size: 40px;
+  font-weight: 700;
+  margin-right: 16px;
+}
+/* line 326, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__price-box__tax {
+  font-size: 10px;
+  padding-top: 32px;
+  box-sizing: border-box;
+}
+/* line 331, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__price-box__cost {
+  font-size: 16px;
+  padding-top: 25px;
+  box-sizing: border-box;
+}
+/* line 337, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__confirmation-box {
+  width: 620px;
+  height: 60px;
+  margin-top: 16px;
+  background-color: #ea352d;
+}
+/* line 342, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__confirmation-box a {
+  text-decoration: none;
+  width: 620px;
+  height: 60px;
+  line-height: 60px;
+}
+/* line 347, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__confirmation-box a .item__confirmation-box__link-text {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+/* line 355, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__text-box {
+  margin-top: 20px;
+  padding-top: 32px;
+  box-sizing: border-box;
+}
+/* line 359, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__text-box__text {
+  font-size: 18px;
+  color: #333333;
+}
+/* line 364, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box {
+  width: 620px;
+  height: 33px;
+  margin-top: 16px;
+  display: flex;
+  position: relative;
+}
+/* line 370, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__left {
+  width: 120px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  border-radius: 17px;
+}
+/* line 376, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__left a {
+  text-decoration: none;
+}
+/* line 378, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__left a .item__bottom-box__left__inner-box {
+  display: flex;
+  height: 17px;
+}
+/* line 381, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__left a .item__bottom-box__left__inner-box .fa-heart {
+  margin-top: 3px;
+  font-size: 14px;
+  color: #CCCCCC;
+}
+/* line 386, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__left a .item__bottom-box__left__inner-box__text {
+  height: 14px;
+  font-size: 14px;
+  margin: 0 3px;
+  color: #333333;
+}
+/* line 392, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__left a .item__bottom-box__left__inner-box__value {
+  font-size: 14px;
+  height: 14px;
+  color: #333333;
+}
+/* line 400, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__middle {
+  width: 180px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  border-radius: 17px;
+  margin-left: 16px;
+}
+/* line 407, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__middle a {
+  text-decoration: none;
+}
+/* line 409, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__middle a .item__bottom-box__middle__inner-box {
+  display: flex;
+}
+/* line 411, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__middle a .item__bottom-box__middle__inner-box .fa-flag {
+  margin-top: 3px;
+  font-size: 14px;
+  color: #333333;
+}
+/* line 416, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__middle a .item__bottom-box__middle__inner-box__text {
+  font-size: 14px;
+  color: #333333;
+  margin-left: 8px;
+}
+/* line 424, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__right {
+  position: absolute;
+  width: 230px;
+  height: 33px;
+  box-sizing: border-box;
+  padding-top: 9px;
+  right: 0;
+}
+/* line 431, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__right a {
+  text-decoration: none;
+  display: flex;
+}
+/* line 434, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__right a .fa-lock {
+  font-size: 14px;
+  margin-top: 3px;
+  color: #0099e8;
+}
+/* line 439, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .item__bottom-box__right a .item__bottom-box__right__inner-box__text {
+  font-size: 14px;
+  color: #0099e8;
+  margin-left: 7px;
+}
+/* line 449, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment {
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #ffffff;
+  width: 700px;
+}
+/* line 454, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box {
+  background-color: #ffffff;
+  width: 700px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+/* line 459, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment {
+  width: 652px;
+  min-height: 84px;
+  margin-top: 38px;
+  display: flex;
+}
+/* line 464, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__left {
+  width: 44px;
+  height: 68px;
+}
+/* line 467, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__left a {
+  width: 44px;
+  height: 68px;
+  text-decoration: none;
+}
+/* line 472, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__left a .comment__comments-box__comment__left__image img {
+  border-radius: 20px;
+}
+/* line 476, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__left a .comment__comments-box__comment__left__text {
+  width: 44px;
+  height: 20px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  background-color: #eef0f4;
+  color: #000000;
+  font-size: 12px;
+  line-height: 20px;
+}
+/* line 485, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__left a .comment__comments-box__comment__left__text__name {
+  top: 4px;
+  padding-left: 4px;
+}
+/* line 492, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right {
+  width: 600px;
+  margin-left: 10px;
+}
+/* line 495, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__title {
+  font-size: 14px;
+  font-weight: 700;
+  box-sizing: border-box;
+  padding-left: 3px;
+  margin-bottom: 4px;
+}
+/* line 502, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__message {
+  width: 600px;
+  background-color: #eef0f4;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 16px 16px 10px 16px;
+}
+/* line 508, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__message__text {
+  font-size: 14px;
+  color: #333333;
+}
+/* line 512, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__message__bottom {
+  display: flex;
+  width: 568px;
+  height: 23px;
+  margin-top: 14px;
+  position: relative;
+}
+/* line 518, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__message__bottom__icon-left {
+  display: flex;
+  width: 72px;
+  height: 23px;
+  position: relative;
+}
+/* line 523, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__message__bottom__icon-left .fa-clock {
+  font-size: 16px;
+  color: #AAAAAA;
+}
+/* line 527, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__message__bottom__icon-left__day {
+  font-size: 12px;
+  color: #AAAAAA;
+  position: absolute;
+  font-weight: 500;
+  bottom: 8px;
+  left: 20px;
+}
+/* line 538, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__comments-box__comment__right__message__bottom__icon-right a .fa-flag {
+  right: 0;
+  bottom: 4px;
+  position: absolute;
+  font-size: 12px;
+  color: #AAAAAA;
+}
+/* line 552, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__form-box {
+  width: 700px;
+  background-color: #ffffff;
+  padding: 24px;
+  box-sizing: border-box;
+}
+/* line 558, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__form-box__top-text {
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #fff6de;
+  color: #333333;
+}
+/* line 565, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__form-box__input {
+  width: 652px;
+  height: 104px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  background-color: #f5f5f5;
+  border: 1px solid #CCCCCC;
+}
+/* line 574, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__form-box__action-box {
+  width: 652px;
+  line-height: 50px;
+  text-align: center;
+  height: 50px;
+  background-color: #aaaaaa;
+  margin-top: 8px;
+}
+/* line 581, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .comment__form-box__action-box__btn {
+  color: #ffffff;
+  height: 50px;
+  background-color: #aaaaaa;
+  font-size: 14px;
+  width: 652px;
+  border-style: none;
+  cursor: pointer;
+}
+/* line 593, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav {
+  width: 700px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px 0 30px 0;
+  display: flex;
+  position: relative;
+}
+/* line 601, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__left a {
+  text-decoration: none;
+}
+/* line 603, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__left a .nav__left__box {
+  display: flex;
+}
+/* line 605, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__left a .nav__left__box .fa-angle-left {
+  color: #0099e8;
+  font-size: 20px;
+  margin-right: 5px;
+}
+/* line 610, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__left a .nav__left__box__text {
+  color: #0099e8;
+  font-size: 14px;
+}
+/* line 616, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__left a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 621, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__right {
+  position: absolute;
+  right: 0;
+}
+/* line 624, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__right a {
+  text-decoration: none;
+}
+/* line 626, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__right a .nav__right__box {
+  display: flex;
+}
+/* line 628, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__right a .nav__right__box .fa-angle-right {
+  color: #0099e8;
+  font-size: 20px;
+  margin-left: 5px;
+}
+/* line 633, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__right a .nav__right__box__text {
+  color: #0099e8;
+  font-size: 14px;
+}
+/* line 639, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .nav__right a:hover {
+  text-decoration: underline;
+  color: #0099e8;
+}
+/* line 645, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media {
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 32px 0 24px 0;
+  width: 700px;
+  height: 138px;
+}
+/* line 652, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box {
+  box-sizing: border-box;
+  padding-top: 31px;
+}
+/* line 655, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box {
+  width: 200px;
+  display: flex;
+  margin: 0 auto;
+  height: 50px;
+}
+/* line 660, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a {
+  width: 44px;
+  height: 44px;
+  margin-right: 8px;
+  text-decoration: none;
+}
+/* line 665, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__facebook {
+  width: 44px;
+  height: 44px;
+  background-color: #385185;
+  border-radius: 8px;
+  line-height: 44px;
+  text-align: center;
+  position: relative;
+  margin-top: 4px;
+}
+/* line 674, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__facebook .fa-facebook {
+  position: absolute;
+  color: #ffffff;
+  top: 8px;
+  left: 9px;
+}
+/* line 684, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__twitter {
+  width: 44px;
+  height: 44px;
+  background-color: #5d9dc9;
+  border-radius: 8px;
+  line-height: 44px;
+  text-align: center;
+  position: relative;
+  margin-top: 4px;
+}
+/* line 693, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__twitter .fa-twitter {
+  color: #ffffff;
+  font-size: 28px;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+}
+/* line 704, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__line {
+  height: 44px;
+  width: 44px;
+  position: relative;
+}
+/* line 708, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__line .fa-line {
+  top: 0;
+  position: absolute;
+  font-size: 50px;
+  color: #00c137;
+}
+/* line 718, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__pinterest {
+  width: 44px;
+  height: 44px;
+  background-color: #aa262a;
+  border-radius: 8px;
+  line-height: 44px;
+  text-align: center;
+  margin-top: 4px;
+}
+/* line 726, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.wallpaper .social-media__box__inner-box a .social-media__box__inner-box__pinterest .fa-pinterest {
+  color: #ffffff;
+  font-size: 19px;
+}
+
+/* line 738, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_items-show.scss */
+.item__main-box__right__column-right__box__links {
+  color: #0099e8;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin-signup-header-footer.scss */
+.single-header {
+  height: 128px;
+  text-align: center;
+  padding-top: 50px;
+  font: 50px;
+}
+
+/* line 7, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin-signup-header-footer.scss */
+.mercari-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* line 12, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin-signup-header-footer.scss */
+.single__footer {
+  font-size: 12px;
+}
+/* line 14, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin-signup-header-footer.scss */
+.single__footer__information {
+  display: inline-block;
+  margin-left: 18px;
+}
+/* line 17, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin-signup-header-footer.scss */
+.single__footer__information a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 24, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin-signup-header-footer.scss */
+.footer-logo {
+  margin-top: 40px;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.single-main {
+  text-align: center;
+}
+
+/* line 4, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel {
+  margin: 0 auto;
+  width: 456px;
+  background: white;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+/* line 11, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__no-account {
+  padding: 40px 64px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+/* line 15, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__no-account .signin-box {
+  width: 330px;
+  margin-top: 8px;
+  line-height: 48px;
+  background: #0099e8;
+}
+/* line 21, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__no-account a {
+  color: white;
+  line-height: 8px;
+  text-decoration: none;
+}
+
+/* line 27, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login {
+  margin: 40px;
+}
+/* line 29, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login .facebook-box {
+  background: #385185;
+  width: 330px;
+  margin: 0 auto;
+  height: 48px;
+  line-height: 48px;
+}
+/* line 36, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login__facebook {
+  position: relative;
+}
+/* line 38, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login__facebook a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+/* line 43, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login__facebook .fa-facebook {
+  position: absolute;
+  left: 30px;
+  top: 20%;
+  background: #385185;
+  color: white;
+}
+/* line 51, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login__google {
+  margin-top: 20px;
+  position: relative;
+}
+/* line 54, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login__google .google-box {
+  background: white;
+  border: 1px solid #f5f5f5;
+  margin: 0 auto;
+  width: 330px;
+  height: 48px;
+  line-height: 48px;
+}
+/* line 62, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login__google a {
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+}
+/* line 67, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login__google img {
+  position: absolute;
+  left: 30px;
+  top: 20%;
+  background: #385185;
+  color: white;
+}
+/* line 75, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login .siginin-field {
+  width: 330px;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 0 15px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px #ccc solid;
+  background: #e8f0fe;
+}
+/* line 85, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.login-panel__login .signin-btn {
+  background: #ea352a;
+  color: white;
+  width: 330px;
+  height: 48px;
+  margin: 20px;
+}
+
+/* line 93, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.g-recaptcha {
+  margin-top: 20px;
+}
+
+/* line 98, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.forget-passward {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px;
+}
+/* line 102, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.forget-passward a {
+  position: absolute;
+  left: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  color: blue;
+}
+
+/* line 110, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signin.scss */
+.main-content {
+  background: #f5f5f5;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+* {
+  font-family: 'source-sans-pro', sans-serif;
+}
+
+/* line 5, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.header {
+  height: 108px;
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+/* line 11, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header {
+  width: 1020px;
+  height: 108px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+  box-sizing: border-box;
+}
+/* line 17, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__upper {
+  height: 50px;
+  display: flex;
+}
+/* line 20, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__upper__left {
+  padding-top: 7px;
+  height: 43px;
+}
+/* line 24, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__upper__right {
+  height: 50px;
+  width: 791px;
+  margin: 0 0 0 auto;
+  background: #E6E6E6;
+  padding: 0 20px 0 10px;
+}
+/* line 30, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__upper__right__form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+/* line 35, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__upper__right__input {
+  height: 50px;
+  width: 881px;
+  background: #E6E6E6;
+  border-style: none;
+  box-sizing: border-box;
+}
+/* line 44, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under {
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+  margin: 8px 0 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  vertical-align: middle;
+}
+/* line 52, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__left {
+  height: 42px;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 56, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__left__category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 148px;
+}
+/* line 61, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__left__category__text {
+  font-weight: 550;
+  display: flex;
+  justify-content: center;
+  opacity: .8;
+}
+/* line 68, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__left__brand {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 136px;
+  padding-left: 22px;
+}
+/* line 74, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__left__brand__text {
+  font-weight: 550;
+  opacity: .8;
+}
+/* line 80, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__right {
+  display: flex;
+}
+/* line 82, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__right__notice {
+  width: 86px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 87, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__right__notice__text {
+  margin-left: 10px;
+  opacity: .9;
+}
+/* line 92, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__right__to-do-list {
+  width: 129px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 28px;
+}
+/* line 98, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__right__to-do-list__text {
+  margin: 0 0 0 10px;
+  opacity: .9;
+}
+/* line 103, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__right__my-page {
+  width: 113px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 28px;
+}
+/* line 109, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.inner-header__under__right__my-page__text {
+  margin: 0 0 0 10px;
+  opacity: .9;
+}
+
+/* line 118, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.fas.fa-list-ul {
+  font-size: 1.0078em;
+  color: #EA352D;
+  margin-right: 4px;
+}
+
+/* line 124, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.fas.fa-search {
+  font-size: 14px;
+  opacity: .7;
+}
+
+/* line 129, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.fas.fa-tag {
+  color: #EA352D;
+  font-size: 1.0078em;
+  margin-right: 4px;
+}
+
+/* line 135, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.fas.fa-bell {
+  color: #d0d0d0;
+  font-size: 1.41em;
+}
+
+/* line 139, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.fas.fa-check {
+  color: #d0d0d0;
+  font-size: 1.41em;
+}
+
+/* line 144, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_header.scss */
+.user-icon-image-top {
+  border-radius: 50%;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.top-page-view {
+  background: #FFFFFF;
+  padding: 40px 0;
+}
+/* line 4, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.top-page-view--title {
+  font-size: 28px;
+  text-align: center;
+}
+
+/* line 10, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container {
+  height: 442px;
+  width: 940px;
+  margin: 0px 170px;
+}
+/* line 14, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--title {
+  font-size: 22px;
+  text-align: center;
+  height: 22px;
+  width: 918px;
+  margin: 0 auto;
+  margin: 26px 11px;
+}
+/* line 22, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body {
+  height: 420px;
+}
+/* line 24, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper {
+  height: 330px;
+  width: 940px;
+  margin: 0 auto;
+  display: flex;
+}
+/* line 29, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper__unit {
+  height: 330px;
+  width: 213px;
+  margin-left: 20px;
+  background: #F5F5F5;
+}
+/* line 34, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper__unit__image {
+  height: 220px;
+  width: 213px;
+}
+/* line 38, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper__unit__body {
+  height: 110px;
+  width: 213px;
+  padding: 16px;
+}
+/* line 42, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper__unit__body__title {
+  height: 48px;
+  width: 181px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+/* line 48, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper__unit__body__price {
+  height: 30px;
+  width: 181px;
+  margin: 0 auto;
+}
+/* line 52, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper__unit__body__price__upper {
+  height: 20px;
+  width: 61px;
+  margin: 0 auto;
+  margin: 8px 0 0;
+  font-size: 20px;
+}
+/* line 59, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__upper__unit__body__price__under {
+  height: 10px;
+  width: 181px;
+  margin: 0 auto;
+  font-size: 10px;
+}
+
+/* line 72, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_toppage.scss */
+.items-boxs-container--body__under {
+  height: 64px;
+  width: 935px;
+  padding: 20px 0 30px;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell {
+  background-color: #F0F0F0;
+  width: 100vw;
+}
+/* line 5, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__icon {
+  height: 128px;
+  width: 100vw;
+}
+/* line 10, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form {
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+}
+/* line 15, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__introduction {
+  text-align: center;
+  border-bottom: solid #F0F0F0;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+/* line 23, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__image {
+  padding: 30px 30px 0;
+  border-bottom: solid #F0F0F0;
+}
+/* line 27, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__image__uproad {
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+}
+/* line 34, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemname {
+  padding: 30px 30px 0;
+  border-bottom: solid #F0F0F0;
+}
+/* line 38, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemname__input {
+  width: calc(700px - 60px);
+  height: 50px;
+  font-size: 20px;
+}
+/* line 44, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemname__explanationintro {
+  margin-top: 30px;
+}
+/* line 48, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemname__explanationinput {
+  width: calc(700px - 60px);
+  height: 150px;
+  font-size: 20px;
+}
+/* line 55, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription {
+  padding: 30px 30px 0;
+  border-bottom: solid #F0F0F0;
+  overflow: hidden;
+}
+/* line 60, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription__left {
+  width: 320px;
+  float: left;
+}
+/* line 65, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription__right {
+  width: 320px;
+  float: left;
+}
+/* line 69, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription__right__descriptionselect {
+  width: 300px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+/* line 75, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription__right__profit {
+  border-bottom: solid #F0F0F0;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  clear: both;
+}
+/* line 82, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription__right__profit__input {
+  float: right;
+  clear: both;
+}
+/* line 86, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription__right__profit__input__box {
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 30px;
+  width: 150px;
+}
+/* line 95, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__itemdescription__right__margin {
+  font-size: 20px;
+}
+/* line 101, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__delivery {
+  padding: 30px 30px 0;
+  overflow: hidden;
+  border-bottom: solid #F0F0F0;
+}
+/* line 107, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__price {
+  padding: 40px 30px 30px;
+  overflow: hidden;
+  border-bottom: solid #F0F0F0;
+}
+/* line 113, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__button {
+  margin: 0 30px;
+}
+/* line 116, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__button__notice {
+  margin-top: 30px;
+}
+/* line 120, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__button__button {
+  text-align: center;
+}
+/* line 123, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__button__button__input {
+  width: 640px;
+  height: 50px;
+  color: white;
+  border: none;
+  background-color: red;
+}
+/* line 132, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form__button__back {
+  text-align: center;
+  margin-top: 30px;
+}
+/* line 138, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__form--need {
+  border: solid red;
+  color: white;
+  background-color: red;
+}
+/* line 145, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.sell__footer {
+  height: 220px;
+  width: 700px;
+  margin: 0 auto 0;
+  padding-top: 30px;
+  text-align: center;
+}
+
+/* line 154, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.itemsnewlink {
+  text-decoration: none;
+}
+/* line 157, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.itemsnewlink__notice {
+  color: dodgerblue;
+}
+/* line 160, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.itemsnewlink__footer {
+  color: black;
+}
+/* line 164, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_itemsnew.scss */
+.itemsnewlink__backbutton {
+  display: block;
+  width: 45%;
+  padding-top: 10px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  background: gray;
+  text-decoration: none;
+  color: white;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin {
+  width: 700px;
+  background: white;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+/* line 6, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__head {
+  padding: 32px 16px;
+  font: bold;
+  font-size: 22px;
+  border-bottom: 1px #f5f5f5 solid;
+}
+/* line 12, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content {
+  padding: 16px;
+}
+/* line 14, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__mail {
+  position: relative;
+  margin: 40px auto 10px;
+}
+/* line 17, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__mail a {
+  color: black;
+  padding: 10px 100px;
+  background: #f5f5f5;
+  text-decoration: none;
+  font-size: 13px;
+}
+/* line 24, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__mail .fa-envelope {
+  position: absolute;
+  left: 180px;
+  top: 5px;
+  background: #f5f5f5;
+  color: white;
+  font-size: 20px;
+}
+/* line 33, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__facebook {
+  position: relative;
+  margin: 20px 0;
+}
+/* line 36, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__facebook a {
+  color: white;
+  padding: 10px 100px;
+  background: #385185;
+  text-decoration: none;
+  font-size: 13px;
+}
+/* line 43, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__facebook .fa-facebook {
+  position: absolute;
+  left: 180px;
+  top: 0;
+  background: #385185;
+  color: white;
+}
+/* line 51, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__google {
+  position: relative;
+}
+/* line 53, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__google a {
+  color: black;
+  padding: 10px 110px;
+  background: white;
+  text-decoration: none;
+  font-size: 13px;
+  border: 1px black solid;
+}
+/* line 61, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup_toppage.scss */
+.signin__content__google img {
+  position: absolute;
+  left: 180px;
+  top: 5px;
+  background: #385185;
+  color: white;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content {
+  background-color: white;
+  width: 700px;
+}
+/* line 5, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__intro {
+  margin-top: 30px;
+  padding-left: 190px;
+}
+/* line 10, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__link {
+  background-color: red;
+  margin-bottom: 30px;
+}
+/* line 16, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__notice {
+  border-top: solid #F0F0F0;
+  padding: 50px 40px 40px 0;
+  text-align: right;
+}
+/* line 22, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__cover {
+  width: 300px;
+  margin: 0 auto;
+}
+/* line 26, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__cover__title {
+  padding-top: 30px;
+}
+/* line 29, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__cover__title__input {
+  margin-top: 10px;
+  width: 300px;
+  height: 50px;
+}
+/* line 35, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__cover__title__label {
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+}
+/* line 42, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_creditcards.scss */
+.credit-content__cover__hosoku {
+  text-align: right;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container {
+  width: 700px;
+  background: #ffffff;
+  padding-bottom: 40px;
+  right: 0;
+}
+/* line 6, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__title {
+  height: 50px;
+  padding: 8px 24px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  box-sizing: border-box;
+  color: #333333;
+}
+/* line 16, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__icon {
+  padding: 72px 16px 24px;
+  background: url(user-bg.jpg);
+}
+/* line 19, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__icon__body {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+/* line 24, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__icon__body__user-image {
+  width: 60px;
+  height: 60px;
+  background: url(member_photo_noimage_thumb.png);
+}
+/* line 29, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__icon__body__user-name {
+  width: 220px;
+  height: 44.7px;
+  margin: 0px 0px 0px 8px;
+  padding: 10px 16px 8px;
+  font-size: 16px;
+  color: #333333;
+}
+/* line 36, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__icon__body__user-name__input {
+  border-radius: 3px;
+  border: none;
+  width: 220px;
+  height: 43.2px;
+  border: 0.4px solid #ccc;
+  align-items: center;
+}
+
+/* line 51, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__text {
+  width: 668px;
+  height: 216px;
+  margin: 0 auto;
+  padding: 40px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-style: none;
+  color: #333333;
+}
+/* line 60, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__text-area {
+  width: 668px;
+  height: 216px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+/* line 67, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__button {
+  width: 668px;
+  height: 50px;
+  margin: 16px 0 0;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EA352D;
+}
+/* line 77, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-profile--container__button__input {
+  height: 50px;
+  width: 668px;
+  background: #EA352D;
+  border-style: none;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* line 89, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_user-profile.scss */
+.user-icon-image {
+  border-radius: 50px;
+}
+
+@font-face {
+  font-family: 'source-sans-pro';
+  src: url("./fonts/source-sans-pro") format("ttf");
+}
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/users.scss */
+.profile-cover {
+  padding: 50px 100px;
+}
+/* line 4, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/users.scss */
+.profile-cover__notice {
+  text-align: right;
+  margin-top: 10px;
+}
+/* line 9, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/users.scss */
+.profile-cover__userinfo {
+  margin-top: 30px;
+}
+/* line 13, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/users.scss */
+.profile-cover__useraddress {
+  margin-top: 30px;
+}
+/* line 17, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/users.scss */
+.profile-cover--need {
+  border: solid gray;
+  color: white;
+  background-color: gray;
+}
+/* line 23, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/users.scss */
+.profile-cover__input__box {
+  width: 100%;
+  height: 40px;
+}
+/* line 29, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/users.scss */
+.profile-cover__button__submit {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  margin: 30px auto;
+  padding-bottom: 10px;
+  background: red;
+  color: white;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_link-fake.scss */
+.link-fake-box {
+  display: flex;
+  background-color: #FFEEFF;
+}
+/* line 4, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_link-fake.scss */
+.link-fake-box a {
+  margin-left: 10px;
+  color: #5D99FF;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* line 1, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup__header {
+  display: flex;
+  width: 60%;
+  margin: 0 auto 40px;
+  padding-top: 40px;
+}
+/* line 6, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup__header .signup-header {
+  padding-left: 50px;
+}
+/* line 8, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup__header .signup-header h1 {
+  position: relative;
+}
+/* line 10, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup__header .signup-header h1 a {
+  padding: 24px 84px;
+  position: absolute;
+}
+
+/* line 17, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar {
+  width: 650px;
+}
+/* line 19, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar #active-text {
+  color: red;
+}
+/* line 24, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar .ul {
+  width: 700px;
+}
+/* line 27, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar li {
+  text-align: center;
+  width: 96px;
+  margin: 0 10px;
+  display: inline-block;
+  font-size: 12px;
+  z-index: 1;
+  color: #888;
+}
+/* line 36, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar li .radius {
+  background: #ccc;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  top: 5px;
+  left: 45px;
+}
+/* line 44, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar li .radius::after {
+  left: 10px;
+  position: absolute;
+  bottom: 5px;
+  z-index: 1;
+  content: '';
+  width: 120px;
+  height: 2px;
+  background: #ccc;
+}
+/* line 55, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar li .radius-last {
+  background: #ccc;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  top: 5px;
+  left: 45px;
+}
+/* line 64, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signup-bar li #active {
+  background: red;
+}
+
+/* line 69, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation {
+  width: 50%;
+  margin: 40px auto 0;
+}
+/* line 72, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group {
+  margin: 20px 0;
+  display: inline-block;
+  text-align: left;
+}
+/* line 76, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group-info-text {
+  color: #888;
+}
+/* line 79, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group__text {
+  font-size: 12px;
+  margin: 5px 0 40px;
+}
+/* line 83, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group__agree {
+  width: 80%;
+}
+/* line 87, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group #termsofservice {
+  width: 98%;
+  text-align: center;
+  font-size: 14px;
+}
+/* line 91, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group #termsofservice a {
+  text-decoration: none;
+  color: blue;
+}
+/* line 96, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group h3 {
+  font-weight: bold;
+}
+/* line 99, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group__label {
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 103, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group__span {
+  padding: 3px;
+  border-radius: 4px;
+  background: red;
+  font-size: 12px;
+  color: white;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+/* line 112, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form-group__field {
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+}
+/* line 120, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+.signin__user-infomation .ur-form__btn--submit {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  margin-top: 20px;
+  width: 100%;
+  line-height: 48px;
+}
+
+/* line 129, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+#user_birthday_2i {
+  display: none;
+}
+
+/* line 133, /Users/syojiharuki/Desktop/freemarket_sample_47a/app/assets/stylesheets/modules/_signup.scss */
+#user_birthyear_1i, #user_birthmonth_2i, #user_birthday_3i {
+  width: 140px;
+  height: 48px;
+  margin: 5px 0;
+  background: white;
+  border: 1px solid #ccc;
+}
