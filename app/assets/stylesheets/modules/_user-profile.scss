@@ -24,7 +24,7 @@
       &__user-image {
         width: 60px;
         height:60px;
-        background: image-url(member_photo_noimage_thumb.png);
+        background-image: image-url("member_photo_noimage_thumb.png");
       }
       &__user-name {
         width: 220px;
