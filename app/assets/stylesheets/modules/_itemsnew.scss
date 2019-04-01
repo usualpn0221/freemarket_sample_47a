@@ -31,9 +31,7 @@
 
 
       &__uproad{
-      height: 150px;
-      line-height: 150px;
-      text-align: center;
+      height: 210px;
       }
     }
 
@@ -181,4 +179,22 @@
     text-decoration: none;
     color: white;
   }
+}
+
+#itemnew_img_field{
+  background-color: #F0F0F0;
+  width: 640px;
+  height:160px;
+  line-height: 20px;
+  display: table-cell; /* IE8から使用可能 */
+  vertical-align: middle;
+  border: dotted 3px #F0F0F0;
+  text-align: center;
+}
+
+.itempreview{
+  width:125px;
+  height:80px;
+  float:left;
+
 }
