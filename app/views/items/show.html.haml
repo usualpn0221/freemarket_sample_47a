@@ -68,10 +68,9 @@
         .item__main-box__right__column-right
           #item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__exhibitor-top
-              / = link_to user_path(user_id) do
-              %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
-                / = @item.user.name
-                /   出品者庄司
+              = link_to user_path(@item) do
+                %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
+                  = @item.saler.nickname
 
             .item__main-box__right__column-right__box__exhibitor-bottom
               .item__main-box__right__column-right__box__exhibitor-bottom__box-good
@@ -103,22 +102,21 @@
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links ナイキ
           #item__main-box__right__column-right__state.item__main-box__right__column-right__box
-            = @item.condition
+            = @item.state
           #item__main-box__right__column-right__burden.item__main-box__right__column-right__box
-            = @item.postage
+            = @item.trade.postage
           #item__main-box__right__column-right__method.item__main-box__right__column-right__box
-            = @item.shipping_method
+            = @item.trade.delivery
           #item__main-box__right__column-right__region.item__main-box__right__column-right__box
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
-                = @item.region
+                = @item.trade.region
           #item__main-box__right__column-right__indication.item__main-box__right__column-right__box
-            = @item.shipping_date
+            = @item.trade.shipping_date
 
     .item__price-box
       .item__price-box__price
         = "¥ #{number_with_delimiter(@item.price)}"
-        / = converting_to_jpy("#{@item.price}")
       .item__price-box__tax
         (税込)
       .item__price-box__cost
