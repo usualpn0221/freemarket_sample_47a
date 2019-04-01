@@ -19,8 +19,8 @@ class ItemsController < ApplicationController
   def create
     @item=Item.create(item_params)
 
-    image_params[:images_attributes][:"0"][:image].each do |a|
-      @image = @item.images.create(image: a)
+    image_params[:images_attributes][:"0"][:image].each do |image|
+      @image = @item.images.create(image: image)
     end
     redirect_to items_path
   end
