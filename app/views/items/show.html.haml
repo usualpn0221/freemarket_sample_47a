@@ -112,8 +112,13 @@
         - else
           送料込み
     .item__confirmation-box
-      = link_to root_path do
-        .item__confirmation-box__link-text 購入画面に進む
+      - if @item.status == 3
+        = link_to buys_create_path do
+          .item__confirmation-box__link-text2 売り切れました
+      - else
+        = link_to buys_new_path do
+          .item__confirmation-box__link-text 購入画面に進む
+
     .item__text-box
       %p.item__text-box__text
         = @item.description
