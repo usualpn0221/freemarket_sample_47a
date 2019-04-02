@@ -516,6 +516,7 @@
             &__text {
               font-size: 14px;
               color: $font;
+              margin-bottom: 10px;
             }
             &__bottom {
               display: flex;
@@ -542,7 +543,10 @@
                 }
               }
               &__icon-right{
+                position: absolute;
+                right: 134px;
                 a {
+                  position: relative;
                   .fa-flag {
                     right: 0;
                     bottom: 4px;
