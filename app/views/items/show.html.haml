@@ -1,33 +1,22 @@
+= render 'shared/header'
+= render 'shared/link-fake'
+
 .wallpaper
   .item
     .item__top-box
-      %h2.item__top-box__item-name 商品名商品名商品名商品名商品名商品名
+      %h2.item__top-box__item-name
+        = @item.name
     .item__main-box
       .item__main-box__left
         .item__main-box__left__image-big
-          / = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-          大きな画像
+          = image_tag @item.images[0].image, size:'300x300' , class: 'item__main-box__left__image-box__contents-image-big'
+
+
         .item__main-box__left__image-box
-          #item__main-box__left__image-box__contents1.item__main-box__left__image-box__contents-image
-            画像1
-          #item__main-box__left__image-box__contents2.item__main-box__left__image-box__contents-image
-            画像2
-          #item__main-box__left__image-box__contents3.item__main-box__left__image-box__contents-image
-            画像3
-          #item__main-box__left__image-box__contents4.item__main-box__left__image-box__contents-image
-            画像4
-          #item__main-box__left__image-box__contents5.item__main-box__left__image-box__contents-image
-            画像5
-          #item__main-box__left__image-box__contents6.item__main-box__left__image-box__contents-image
-            画像6
-          #item__main-box__left__image-box__contents7.item__main-box__left__image-box__contents-image
-            画像7
-          #item__main-box__left__image-box__contents8.item__main-box__left__image-box__contents-image
-            画像8
-          #item__main-box__left__image-box__contents9.item__main-box__left__image-box__contents-image
-            画像9
-          #item__main-box__left__image-box__contents10.item__main-box__left__image-box__contents-image
-            画像10
+          - @item.images.each_with_index do |image, i|
+
+            .item__main-box__left__image-box__contents-image{id: "item__main-box__left__image-box__contents#{i}"}
+              = image_tag image.image, size:'60x60' , class: 'item__main-box__left__image-box__contents-image'
 
       .item__main-box__right
         .item__main-box__right__column-left
@@ -51,19 +40,35 @@
         .item__main-box__right__column-right
           #item__main-box__right__column-right__exhibitor.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__exhibitor-top
-              = link_to root_path do
-                %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links 田中星矢（出品者名）
+              = link_to user_path(@item) do
+                %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
+                  = @item.saler.nickname
 
             .item__main-box__right__column-right__box__exhibitor-bottom
               .item__main-box__right__column-right__box__exhibitor-bottom__box-good
                 %i.fas.fa-laugh
-                .item__main-box__right__column-right__box__exhibitor-bottom__box-good__value 30
+                .item__main-box__right__column-right__box__exhibitor-bottom__box-good__value
+                  - num = 0
+                  - @item.saler.uservaluations.each do |kind|
+                    - if kind.kind == "good"
+                      - num += 1
+                  = num
               .item__main-box__right__column-right__box__exhibitor-bottom__box-normal
                 %i.fas.fa-meh
-                .item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value 10
+                .item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value
+                  - num = 0
+                  - @item.saler.uservaluations.each do |kind|
+                    - if kind.kind == "normal"
+                      - num += 1
+                  = num
               .item__main-box__right__column-right__box__exhibitor-bottom__box-bad
                 %i.fas.fa-frown
-                .item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value 2
+                .item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value
+                  - num = 0
+                  - @item.saler.uservaluations.each do |kind|
+                    - if kind.kind == "bad"
+                      - num += 1
+                  = num
           #item__main-box__right__column-right__category.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__category-large
               = link_to root_path do
@@ -84,34 +89,34 @@
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links ナイキ
           #item__main-box__right__column-right__state.item__main-box__right__column-right__box
-            新品、未使用
+            = @item.state
           #item__main-box__right__column-right__burden.item__main-box__right__column-right__box
-            送料込み(出品者負担)
+            = @item.trade.postage
           #item__main-box__right__column-right__method.item__main-box__right__column-right__box
-            らくらくメルカリ便
+            = @item.trade.delivery
           #item__main-box__right__column-right__region.item__main-box__right__column-right__box
             = link_to root_path do
-              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links 東京都
+              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
+                = @item.trade.region
           #item__main-box__right__column-right__indication.item__main-box__right__column-right__box
-            1〜2日で発送
+            = @item.trade.shipping_date
 
     .item__price-box
       .item__price-box__price
-        ¥21,400
+        = "¥ #{number_with_delimiter(@item.price)}"
       .item__price-box__tax
         (税込)
       .item__price-box__cost
-        送料込み
+        - if @item.trade.postage == "着払い(購入者負担)"
+          着払い
+        - else
+          送料込み
     .item__confirmation-box
       = link_to root_path do
         .item__confirmation-box__link-text 購入画面に進む
     .item__text-box
       %p.item__text-box__text
-        NIKE LEBRON 16 LOW ナイキ レブロン 16
-        27.5cm、黒タグです。
-
-        NIKEオンラインで購入。
-        ※個人情報をきりとった納品書を添付します。
+        = @item.description
     .item__bottom-box
       .item__bottom-box__left
         = link_to root_path do
@@ -128,7 +133,7 @@
             .item__bottom-box__middle__inner-box__text
               不適切な商品の報告
       .item__bottom-box__right
-        = link_to root_path do
+        = link_to "https://www.mercari.com/jp/safe/description/" do
           %i.fas.fa-lock
           .item__bottom-box__right__inner-box__text
             あんしん・あんぜんへの取り組み
@@ -145,42 +150,30 @@
           = f.submit 'コメントする', class: 'comment__form-box__action-box__btn'
   .nav
     .nav__left
-      = link_to root_path do
+      = link_to "https://item.mercari.com/jp/m65619776524/" do
         .nav__left__box
           %i.fas.fa-angle-left
-          %p.nav__left__box__text オーブ なめらか質感ひと塗りルージュ BE41
+          %p.nav__left__box__text ペリペラ  マスカラセット
     .nav__right
-      = link_to root_path do
+      = link_to "https://item.mercari.com/jp/m41093055802/" do
         .nav__right__box
-          %p.nav__right__box__text 装備一式
+          %p.nav__right__box__text 新品 タンクトップ
           %i.fas.fa-angle-right
   .social-media
     .social-media__box
       .social-media__box__inner-box
-        = link_to root_path do
+        = link_to "https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fshare.php%3Fu%3Dhttps%253A%252F%252Fitem.mercari.com%252Fjp%252Fm41093055802%252F&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=ja_JP" do
           .social-media__box__inner-box__facebook
             %i.fab.fa-facebook
-        = link_to root_path do
+        = link_to "https://twitter.com/intent/tweet?text=%E6%96%B0%E5%93%81%20%E3%82%BF%E3%83%B3%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%20%28%C2%A5%20400%29%20https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm41093055802%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89&url=&original_referer=" do
           .social-media__box__inner-box__twitter
             %i.fab.fa-twitter
-        = link_to root_path do
+        = link_to "https://access.line.me/oauth2/v2.1/login?returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dopenid%2Bprofile%2Bfriends%2Bgroups%2Btimeline.post%2Bmessage.write%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsocial-plugins.line.me%252Flineit%252FloginCallback%253FreturnUrl%253Dhttps%25253A%25252F%25252Fsocial-plugins.line.me%25252Flineit%25252Fshare%25253Furl%25253D%252526text%25253D%252525E6%25252596%252525B0%252525E5%25252593%25252581%25252520%252525E3%25252582%252525BF%252525E3%25252583%252525B3%252525E3%25252582%252525AF%252525E3%25252583%25252588%252525E3%25252583%25252583%252525E3%25252583%25252597%25252520%2525257C%25252520%252525E3%25252583%252525A1%252525E3%25252583%252525AB%252525E3%25252582%252525AB%252525E3%25252583%252525AA%25252520%252525E3%25252582%252525B9%252525E3%25252583%2525259E%252525E3%25252583%2525259B%252525E3%25252581%252525A7%252525E3%25252581%2525258B%252525E3%25252582%25252593%252525E3%25252581%2525259F%252525E3%25252582%25252593%25252520%252525E3%25252583%25252595%252525E3%25252583%252525AA%252525E3%25252583%2525259E%252525E3%25252582%252525A2%252525E3%25252583%25252597%252525E3%25252583%252525AA%2525250D%2525250Ahttps%25253A%25252F%25252Fitem.mercari.com%25252Fjp%25252Fm41093055802%25252F%252526from%25253Dline_scheme%26state%3D1f53a2fe25f0893d28891894ad56df%26client_id%3D1446101138&loginChannelId=1446101138&loginState=Tpy8g5Pu7YtRSk631UKYAW#/" do
           .social-media__box__inner-box__line
             %i.fab.fa-line
-        = link_to root_path do
+        = link_to "https://www.pinterest.jp/login/?next=/pin/create/button/%3Furl%3Dhttps%253A%252F%252Fitem.mercari.com%252Fjp%252Fm41093055802%252F%26media%3Dhttps%253A%252F%252Fstatic.mercdn.net%252Fitem%252Fdetail%252Forig%252Fphotos%252Fm41093055802_1.jpg%253F1547859320%26description%3D%25E3%2583%25A1%25E3%2583%25AB%25E3%2582%25AB%25E3%2583%25AA%25E5%2595%2586%25E5%2593%2581%253A%2520%25E6%2596%25B0%25E5%2593%2581%2520%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25AF%25E3%2583%2588%25E3%2583%2583%25E3%2583%2597%2520%2523%25E3%2583%25A1%25E3%2583%25AB%25E3%2582%25AB%25E3%2583%25AA" do
           .social-media__box__inner-box__pinterest
             %i.fab.fa-pinterest
-
-
-
-
-
-
-
-
-
-
-
-
 
   .exhibition
     .exhibition__name
@@ -189,3 +182,5 @@
   .other-item
     .other-item__top
     .other-item__box
+
+= render 'shared/footer'
