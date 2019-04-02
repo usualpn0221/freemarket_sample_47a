@@ -1,2 +1,9 @@
-%h1 Buys#create
-%p Find me in app/views/buys/create.html.haml
+.sell
+  =render 'shared/mercari-header'
+  .sell__form
+    .sell__form__introduction
+      商品は既に売り切れています
+    .sell__form__itembuy
+      = link_to "商品画面へ戻る", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
+  =render 'shared/mercari-footer'
+
