@@ -1,7 +1,9 @@
+= render 'shared/header'
 .default-container
   %main.l-container
     = render 'shared/mypage-left-bar'
     .right-content.credit-content
       .sell__form__button__back
+        <br><br>
         = link_to "ログアウト", destroy_user_session_path, class: 'itemsnewlink__backbutton credit-content__link',method: :delete
-
+= render 'shared/footer'

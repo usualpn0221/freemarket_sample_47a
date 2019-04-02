@@ -1,6 +1,75 @@
+.buy{
+  background-color: #F0F0F0;
+  width: 100vw;
+
+  &__form{
+  width: 700px;
+  background-color: white;
+  margin:0 auto;
+
+    &__introduction{
+  text-align: center;
+  border-bottom: solid #F0F0F0;
+  font-size: 22px;
+  font-weight: bold;
+  padding:50px 0;
+    }
+
+    &__content{
+      padding:50px 150px 50px;
+      border-bottom: solid #F0F0F0;
+
+      &__cover{
+
+        &__image{
+          width: 200px;
+          margin:0 auto;
+
+          &__input{
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
  .sell__form__itembuy{
   margin-top: 50px;
   box-sizing:border-box;
   padding-left: 170px;
-  margin-bottom: 130px;
+  padding-bottom: 40px;
+  margin-bottom: 110px;
+ }
+
+
+ .itembuybutton{
+    display:block;
+    height:50px;
+    width: 100%;
+ }
+
+ #itembuybutton__buy{
+  background:gray;
+  color:white;
+  margin:30px auto;
+ }
+
+#itembuybutton__point{
+  background:white;
+  color:black;
+  border: solid #DDDDDD;
+  margin:50px auto;
+ }
+
+ #itembuy__image{
+  background-color: red;
+ }
+
+ #buyimagefile{
+  background-color: gray;
+ }
+
+ #itemnewimage{
+  object-fit: cover;
  }
