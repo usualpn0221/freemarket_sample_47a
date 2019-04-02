@@ -21,13 +21,13 @@
         東京都 大田区<br>
         名無しの権兵衛
         .profile-cover__notice
-          %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}変更する >
+          = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
     .buy__form__content
       .buy__form__content__cover
         支払方法<br><br>
         Visaカード一括払い
         .profile-cover__notice
-          %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}変更する >
+          = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
 
   =render 'shared/mercari-footer'
 

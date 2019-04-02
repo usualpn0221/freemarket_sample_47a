@@ -7,9 +7,8 @@
       .credit-content__intro
         クレジットカード一覧
       .sell__form__button__back
-        %a.itemsnewlink__backbutton.credit-content__link{href:"/creditcards/edit"}□ クレジットカードを追加する
+        = link_to "□ クレジットカードを追加する", creditcards_edit_path, class: 'itemsnewlink__backbutton credit-content__link'
       .credit-content__notice
-        %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}支払い方法について >
-
+        = link_to "支払い方法について >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
     = render 'shared/mypage-left-bar'
 = render 'shared/footer'
