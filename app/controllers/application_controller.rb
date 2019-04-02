@@ -19,7 +19,11 @@ class ApplicationController < ActionController::Base
       :shikuchouson,
       :banchi,
       :tatemonomei,
-      :phonenumber
+      :phonenumber,
+      :number,
+      :expyear,
+      :expmonth,
+      :securitycode
       ])
   end
   def production?
