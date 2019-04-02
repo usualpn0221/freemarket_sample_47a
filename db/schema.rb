@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20190402110830) do
+
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -43,21 +45,21 @@ ActiveRecord::Schema.define(version: 20190402110830) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                   null: false
-    t.text     "description", limit: 65535,              null: false
-    t.integer  "status",                    default: 1,  null: false
-    t.string   "price",                                  null: false
-    t.integer  "saler_id",                               null: false
-    t.string   "state",                                  null: false
-    t.integer  "category_id",                            null: false
-    t.integer  "brand_id",                  default: 1,  null: false
-    t.string   "saizu",                     default: "", null: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.string   "name",                                       null: false
+    t.text     "description",    limit: 65535,               null: false
+    t.string   "trade_status",                 default: "1", null: false
+    t.string   "price",                                      null: false
+    t.integer  "user_id",                                    null: false
+    t.string   "item_condition",                             null: false
+    t.integer  "category_id",                                null: false
+    t.integer  "brand_id",                     default: 1,   null: false
+    t.string   "saizu",                        default: "",  null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["name"], name: "index_items_on_name", using: :btree
-    t.index ["saler_id"], name: "index_items_on_saler_id", using: :btree
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
