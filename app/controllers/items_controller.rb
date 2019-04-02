@@ -6,8 +6,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(2)
-    # @item = Item.find(params[:id])
+    # @item = Item.find(2)
+    @item = Item.find(params[:id])
     # .includes(:user)
 
     @items = Item.new
