@@ -48,6 +48,10 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 end
 
 group :development do
@@ -77,3 +81,5 @@ gem 'pry-rails'
 gem 'kaminari'
 # 都道府県用gem
 gem 'active_hash'
+
+

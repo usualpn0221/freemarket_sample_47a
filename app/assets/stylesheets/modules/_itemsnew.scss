@@ -15,24 +15,28 @@
     &__introduction{
   text-align: center;
   border-bottom: solid #F0F0F0;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  padding:20px 0;
+  padding:50px 0;
     }
 
     &__image{
   padding:30px 30px 0;
   border-bottom: solid #F0F0F0;
 
+      &__title{
+      font-weight: bold;
+      margin-bottom: 10px;
+      }
+
+
       &__uproad{
-      height: 150px;
-      line-height: 150px;
-      text-align: center;
+      height: 210px;
       }
     }
 
     &__itemname{
-      padding:30px 30px 0;
+      padding:40px 30px 40px;
       border-bottom: solid #F0F0F0;
 
       &__input{
@@ -53,7 +57,7 @@
     }
 
     &__itemdescription{
-      padding:30px 30px 0;
+      padding:40px 30px 40px;
       border-bottom: solid #F0F0F0;
       overflow: hidden;
 
@@ -78,6 +82,7 @@
           line-height: 50px;
           font-size:20px;
           clear: both;
+          padding:10px 0;
 
           &__input{
             float: right;
@@ -94,18 +99,19 @@
 
         &__margin{
         font-size:20px;
+        padding-top: 20px;
         }
       }
     }
 
     &__delivery{
-     padding:30px 30px 0;
+     padding:40px 30px 40px;
      overflow: hidden;
      border-bottom: solid #F0F0F0;
     }
 
     &__price{
-      padding:40px 30px 30px;
+      padding:40px 30px 40px;
       overflow: hidden;
       border-bottom: solid #F0F0F0;
     }
@@ -119,6 +125,7 @@
 
       &__button{
       text-align: center;
+      padding-top: 30px;
 
         &__input{
         width: 640px;
@@ -132,6 +139,7 @@
       &__back{
       text-align: center;
       margin-top:30px;
+      padding-bottom: 40px;
       }
     }
 
@@ -171,4 +179,22 @@
     text-decoration: none;
     color: white;
   }
+}
+
+#itemnew_img_field{
+  background-color: #F0F0F0;
+  width: 640px;
+  height:160px;
+  line-height: 20px;
+  display: table-cell; /* IE8から使用可能 */
+  vertical-align: middle;
+  border: dotted 3px #F0F0F0;
+  text-align: center;
+}
+
+.itempreview{
+  width:125px;
+  height:80px;
+  float:left;
+
 }

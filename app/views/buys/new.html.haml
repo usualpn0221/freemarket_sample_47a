@@ -1,2 +1,33 @@
-%h1 Buys#new
-%p Find me in app/views/buys/new.html.haml
+.buy
+  =render 'shared/mercari-header'
+  .buy__form
+    .buy__form__introduction
+      購入を確定しますか？
+    .buy__form__content
+      .buy__form__content__cover
+        .buy__form__content__cover__image
+          =image_tag "user-joukyo.png",size: "200x200", id: "itemnewimage"
+          .buy__form__content__cover__image__input
+            Tシャツ アンパンマン<br>¥ 499 送料込み
+          %input.itembuybutton#itembuybutton__point{type:'button',value:'ポイントを使う'}
+        支払い金額 ¥ 499<br>
+        <br>
+        配送先と支払い方法の入力を完了してください。
+        %input.itembuybutton#itembuybutton__buy{type:"button",value:"購入する"}
+    .buy__form__content
+      .buy__form__content__cover
+        配送先<br><br>
+        〒146-2222<br>
+        東京都 大田区<br>
+        名無しの権兵衛
+        .profile-cover__notice
+          = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
+    .buy__form__content
+      .buy__form__content__cover
+        支払方法<br><br>
+        Visaカード一括払い
+        .profile-cover__notice
+          = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
+
+  =render 'shared/mercari-footer'
+

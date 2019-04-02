@@ -15,7 +15,7 @@
   }
   &__icon {
     padding:72px 16px 24px;
-    background: url(user-bg.jpg);
+    background-image: image-url("user-bg.jpg");
     &__body {
       height: 60px;
       display:flex;
@@ -24,7 +24,7 @@
       &__user-image {
         width: 60px;
         height:60px;
-        background: url(member_photo_noimage_thumb.png);
+        background-image: image-url("member_photo_noimage_thumb.png");
       }
       &__user-name {
         width: 220px;

@@ -11,7 +11,7 @@
       width: 700px;
       &__user{
         height: 160px;
-        background: url(user-bg.jpg);
+        background-image: image-url('user-bg.jpg');
         position: relative;
         padding-top: 40px;
         &__page{
@@ -53,7 +53,7 @@
 .tab_content{
   text-align:  center;
   padding: 160px 0 60px;
-  background:url(user-joukyo.png)
+  background-image: image-url('user-joukyo.png');
 }
 .trade-information__tab{
   line-height: 72px;

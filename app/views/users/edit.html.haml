@@ -1,3 +1,4 @@
+= render 'shared/header'
 .default-container
   %main.l-container
     = render 'shared/mypage-left-bar'
@@ -8,7 +9,7 @@
         .profile-cover__intro
         お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
         .profile-cover__notice
-          %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}本人確認書類のアップロードについて >
+          = link_to "本人確認書類のアップロードについて", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
         .profile-cover__userinfo
           .profile-cover__userinfo__intro
           お名前
@@ -57,4 +58,5 @@
         .profile-cover__button
           %input.profile-cover__button__submit{type:"submit",value:"登録する"}
         .profile-cover__notice
-          %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}本人情報の登録について >
+          = link_to "本人情報の登録について", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
+= render 'shared/footer'

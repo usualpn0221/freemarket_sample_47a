@@ -32,10 +32,29 @@
         height: 420px;
         margin-right: 20px;
         background-color: $gray-thin;
+        position:relative;
+        &__triangle {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 120px 120px 0 0;
+          border-color: #ea352d transparent transparent transparent;
+          z-index: 1;
+          &__box {
+            top: -100px;
+            position: absolute;
+            color: $white;
+            font-size: 24px;
+            font-weight: 600;
+            transform: rotate( -45deg );
+          }
+        }
         &__image-big {
           width: 300px;
           height: 300px;
           background-color: #EEEEEE;
+          z-index: 0;
         }
         &__image-box {
           width: 300px;
@@ -338,7 +357,7 @@
       width: 620px;
       height: 60px;
       margin-top: 16px;
-      background-color: #ea352d;
+
       a {
         text-decoration: none;
         width: 620px;
@@ -349,6 +368,14 @@
           font-size: 24px;
           font-weight: 700;
           color: $white;
+          background-color: #ea352d;
+        }
+        .item__confirmation-box__link-text2 {
+          text-align: center;
+          font-size: 24px;
+          font-weight: 700;
+          color: $white;
+          background-color: #888888;
         }
       }
     }
@@ -508,6 +535,7 @@
             &__text {
               font-size: 14px;
               color: $font;
+              margin-bottom: 10px;
             }
             &__bottom {
               display: flex;
@@ -534,7 +562,10 @@
                 }
               }
               &__icon-right{
+                position: absolute;
+                right: 134px;
                 a {
+                  position: relative;
                   .fa-flag {
                     right: 0;
                     bottom: 4px;
@@ -739,10 +770,16 @@
   color: #0099e8;
 }
 
+.item__main-box__left__image-box__contents-image {
+  img {
+    object-fit: cover;
+  }
+}
 
-
-
-
+.item__main-box__left__image-big
+  img {
+    object-fit: contain;
+  }
 
 .exhibition {
   &__name {
@@ -759,4 +796,3 @@
   &__box {
  }
 }
-
