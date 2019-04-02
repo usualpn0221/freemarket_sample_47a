@@ -44,6 +44,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 
 end
 
@@ -75,3 +78,5 @@ gem 'pry-rails'
 gem 'kaminari'
 # 都道府県用gem
 gem 'active_hash'
+
+
