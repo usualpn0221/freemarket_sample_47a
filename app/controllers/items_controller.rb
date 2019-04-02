@@ -1,14 +1,9 @@
 class ItemsController < ApplicationController
 
-<<<<<<< HEAD
   def index
-    @items = Item.all.limit(4).order("created_at DESC")
-=======
-
-  def index
-
->>>>>>> master
+    @items = Item.all.includes(:user).limit(4).order("created_at DESC")
   end
+
 
   def show
     # @item = Item.find(2)
