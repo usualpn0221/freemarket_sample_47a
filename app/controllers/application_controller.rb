@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
       :tatemonomei,
       :phonenumber
       ])
+  end
   def production?
     Rails.env.production?
   end
