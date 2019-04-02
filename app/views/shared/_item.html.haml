@@ -1,0 +1,11 @@
+- @items.each do |item|
+  .items-boxs-container--body__upper__unit
+    .items-boxs-container--body__upper__unit__image
+      = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload"
+    .items-boxs-container--body__upper__unit__body
+      .items-boxs-container--body__upper__unit__body__title
+        = item.name
+      .items-boxs-container--body__upper__unit__body__price
+        .items-boxs-container--body__upper__unit__body__price__upper
+          = "￥" + number_with_delimiter(item.price)
+        .items-boxs-container--body__upper__unit__body__price__under (税込)
