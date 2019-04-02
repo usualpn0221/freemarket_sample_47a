@@ -1,5 +1,5 @@
 .sell
-  .sell__icon
+  =render 'shared/mercari-header'
   = form_for @item, html:{class:"sell__form"} do |f|
     .sell__form__introduction
       商品の情報を入力
@@ -101,11 +101,5 @@
       .sell__form__button__back
         = link_to "もどる",user_path(1),class:'itemsnewlink__backbutton'
 
-  .sell__footer
-    .sell__footer__link
-      = link_to "プライバシーポリシー","", class:'itemsnewlink itemsnewlink__footer'
-      = link_to "メルカリ利用規約","", class:'itemsnewlink itemsnewlink__footer'
-      = link_to "特定商取引に関する表記","", class:'itemsnewlink itemsnewlink__footer'
-    .sell__footer__logo
-    © 2019 Mercari
+  =render 'shared/mercari-footer'
 
