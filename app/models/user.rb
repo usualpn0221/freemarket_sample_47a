@@ -12,17 +12,24 @@ class User < ApplicationRecord
   has_one  :profile
 
   accepts_nested_attributes_for :profile
+  accepts_nested_attributes_for :creditcards
+
   validates :nickname, presence: true,length: { maximum: 20 }
   validates :firstname, presence: true,length: { maximum: 35 }
   validates :lastname, presence: true,length: { maximum: 35 }
   validates :firstnamekana, presence: true,length: { maximum: 35 }
   validates :lastnamekana, presence: true,length: { maximum: 35 }
-  validates :birthdyear, presence: true,
-  validates :birthmonth, presence: true,
-  validates :birthday, presence: true,
-  validates :postnumber,length:, format: {with: /^[0-9]{3}-[0-9]{4}$/}
+  validates :birthyear, presence: true
+  validates :birthmonth, presence: true
+  validates :birthday, presence: true
+  validates :postnumber, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
   validates :shikuchouson,length: { maximum: 50 }
   validates :banchi,length: { maximum: 100 }
   validates :tatemonomei,length: { maximum: 100 }
-  validates :phonenumber,presence: true,uniqueness: true, format: { with:  /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/}
+  validates :phonenumber,presence: true,uniqueness: true, format: { with:  /\A[0-9]{3}-[0-9]{4}-[0-9]{4}\z/}
+  validates :number, presence: true, format: { with: /\A[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}\z/}
+  validates :expyear, presence: true
+  validates :expmonth, presence: true
+  validates :securitycose, presence: true, format: {with: /\A[0-9]{3,4}\z/}
+
 end
