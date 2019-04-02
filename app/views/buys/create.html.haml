@@ -4,6 +4,6 @@
     .sell__form__introduction
       商品は既に売り切れています
     .sell__form__itembuy
-      %a.itemsnewlink.itemsnewlink__notice{href:"/users/show"}商品画面へ戻る
+      = link_to "商品画面へ戻る", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
   =render 'shared/mercari-footer'
 
