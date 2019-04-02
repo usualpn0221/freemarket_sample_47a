@@ -8,9 +8,11 @@
         = @item.name
     .item__main-box
       .item__main-box__left
+        - if @item.status == 3
+          .item__main-box__left__triangle
+            .item__main-box__left__triangle__box SOLD
         .item__main-box__left__image-big
           = image_tag @item.images[0].image, size:'300x300' , class: 'item__main-box__left__image-box__contents-image-big'
-
 
         .item__main-box__left__image-box
           - @item.images.each_with_index do |image, i|
@@ -112,8 +114,13 @@
         - else
           送料込み
     .item__confirmation-box
-      = link_to root_path do
-        .item__confirmation-box__link-text 購入画面に進む
+      - if @item.status == 3
+        = link_to buys_create_path do
+          .item__confirmation-box__link-text2 売り切れました
+      - else
+        = link_to buys_new_path do
+          .item__confirmation-box__link-text 購入画面に進む
+
     .item__text-box
       %p.item__text-box__text
         = @item.description
