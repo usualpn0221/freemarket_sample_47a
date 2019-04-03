@@ -189,5 +189,6 @@
   .other-item
     .other-item__top
     .other-item__box
+  = link_to '削除', "/items/#{@item.id}", method: :delete
 
 = render 'shared/footer'
