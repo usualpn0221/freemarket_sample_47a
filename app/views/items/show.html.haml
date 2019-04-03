@@ -113,37 +113,56 @@
           着払い
         - else
           送料込み
-    .item__confirmation-box
-      - if @item.trade_status == "3"
-        = link_to buys_index_path do
-          .item__confirmation-box__link-text2 売り切れました
-      - else
-        = link_to new_item_buy_path(@item) do
-          .item__confirmation-box__link-text 購入画面に進む
 
-    .item__text-box
-      %p.item__text-box__text
-        = @item.description
-    .item__bottom-box
-      .item__bottom-box__left
-        = link_to root_path do
-          .item__bottom-box__left__inner-box
-            %i.far.fa-heart
-            .item__bottom-box__left__inner-box__text
-              いいね！
-            .item__bottom-box__left__inner-box__value
-              7
-      .item__bottom-box__middle
-        = link_to root_path do
-          .item__bottom-box__middle__inner-box
-            %i.far.fa-flag
-            .item__bottom-box__middle__inner-box__text
-              不適切な商品の報告
-      .item__bottom-box__right
-        = link_to "https://www.mercari.com/jp/safe/description/" do
-          %i.fas.fa-lock
-          .item__bottom-box__right__inner-box__text
-            あんしん・あんぜんへの取り組み
+    / - if user_signed_in? && current_user.id == @item.user.id
+    - if @item.trade_status == "3"
+      .item__text-box
+        %p.item__text-box__text
+          = @item.description
+
+    - else
+      .item__confirmation-box
+        - if @item.trade_status == "3"
+          = link_to buys_index_path do
+            .item__confirmation-box__link-text2 売り切れました
+        - else
+          = link_to new_item_buy_path(@item) do
+            .item__confirmation-box__link-text 購入画面に進む
+
+      .item__text-box
+        %p.item__text-box__text
+          = @item.description
+      .item__bottom-box
+        .item__bottom-box__left
+          = link_to root_path do
+            .item__bottom-box__left__inner-box
+              %i.far.fa-heart
+              .item__bottom-box__left__inner-box__text
+                いいね！
+              .item__bottom-box__left__inner-box__value
+                7
+        .item__bottom-box__middle
+          = link_to root_path do
+            .item__bottom-box__middle__inner-box
+              %i.far.fa-flag
+              .item__bottom-box__middle__inner-box__text
+                不適切な商品の報告
+        .item__bottom-box__right
+          = link_to "https://www.mercari.com/jp/safe/description/" do
+            %i.fas.fa-lock
+            .item__bottom-box__right__inner-box__text
+              あんしん・あんぜんへの取り組み
+
+  / - if user_signed_in? && current_user.id == @item.user.id
+  - if @item.trade_status == "3"
+    .product
+      = link_to item_path(@item.id), method: :patch, class: "product__link" do
+        .product__link__edit 商品の編集
+      .product__character or
+      = link_to root_path, class: "product__link" do
+        .product__link__stop 出品を一旦停止する
+      = link_to item_path(@item.id), method: :delete, class: "product__link" do
+        .product__link__destroy この商品を削除する
 
   .comment
     .comment__comments-box
@@ -189,5 +208,7 @@
   .other-item
     .other-item__top
     .other-item__box
+    - if user_signed_in? && current_user.id == item.user_id
+      = link_to '削除' ,item_path(@item.id), method: :delete
 
 = render 'shared/footer'

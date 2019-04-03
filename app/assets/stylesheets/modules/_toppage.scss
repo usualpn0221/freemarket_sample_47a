@@ -40,6 +40,9 @@
       margin:0 auto;
       display:flex;
       box-sizing: border-box;
+      & a {
+        text-decoration: none;
+      }
       &__unit{
         height: 330px;
         width: 213px;

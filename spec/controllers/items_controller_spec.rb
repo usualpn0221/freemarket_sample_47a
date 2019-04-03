@@ -1,6 +1,22 @@
 require 'rails_helper'
 
-describe ItemsController, type: :controller do
+describe ItemsController do
+
+  describe 'GET #show' do
+
+    it "インスタンス変数は期待した値になるか？" do
+      item = create(:item)
+      get :show, params: {  id: item.id }
+      expect(assigns(:item)).to match(item)
+    end
+
+    it "期待するビューに遷移するか？" do
+      item = create(:item)
+      get :show, params: {  id: item.id }
+      expect(response).to render_template :show , params: {  id: item.id }
+    end
+  end
+
 
   describe 'GET #index' do
     it "populates an array of items ordered by created_at DESC" do
@@ -16,4 +32,3 @@ describe ItemsController, type: :controller do
   end
 
 end
-

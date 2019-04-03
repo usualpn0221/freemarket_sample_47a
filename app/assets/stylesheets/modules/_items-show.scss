@@ -562,10 +562,7 @@
                 }
               }
               &__icon-right{
-                position: absolute;
-                right: 134px;
                 a {
-                  position: relative;
                   .fa-flag {
                     right: 0;
                     bottom: 4px;
@@ -762,6 +759,61 @@
           }
         }
       }
+    }
+  }
+}
+
+.product {
+  width: 700px;
+  height: 262px;
+  margin: 24px auto;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  background-color: $white;
+  &__link {
+    text-decoration: none;
+    &__edit {
+      margin: 16px 0;
+      width: 668px;
+      height: 50px;
+      font-size: 14px;
+      color: $white;
+      line-height: 50px;
+      text-align: center;
+      background-color: #ea352d;
+    }
+  }
+  &__character {
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    height: 17px;
+    line-height: 17px;
+
+  }
+  &__link {
+    &__stop {
+      margin: 16px 0;
+      width: 668px;
+      height: 50px;
+      font-size: 14px;
+      color: $white;
+      line-height: 50px;
+      text-align: center;
+      background-color: #aaa;
+    }
+  }
+  &__link {
+    &__destroy {
+      margin: 16px 0;
+      width: 668px;
+      height: 50px;
+      font-size: 14px;
+      color: $white;
+      line-height: 50px;
+      text-align: center;
+      background-color: #aaa;
+
     }
   }
 }
