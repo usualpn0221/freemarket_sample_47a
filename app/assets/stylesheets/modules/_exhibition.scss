@@ -1,0 +1,31 @@
+.exhibition-btn__box {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  width: 0;
+  a {
+    right:40px;
+    bottom: 40px;
+    position: fixed;
+    text-decoration: none;
+    .exhibition-btn {
+      position: relative;
+      height:160px;
+      width: 160px;
+      background-color: #ea352d;
+      border-radius: 50%;
+      .exhibition-btn__text {
+        padding-top: 25px;
+        text-align: center;
+        font-size:22px;
+        color: $white;
+      }
+      .fa-camera {
+        position:absolute;
+        left: 50px;
+        font-size:60px;
+        color: $white;
+      }
+    }
+  }
+}
