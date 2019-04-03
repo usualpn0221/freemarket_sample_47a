@@ -13,5 +13,4 @@ FactoryBot.define do
     saizu                { 'M' }
     created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
   end
-
 end
