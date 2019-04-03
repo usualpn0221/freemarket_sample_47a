@@ -23,6 +23,7 @@ class BuysController < ApplicationController
   end
 
   private
+
   def itembuy_params
     params.permit(:item_id)
   end
