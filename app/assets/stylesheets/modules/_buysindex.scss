@@ -53,17 +53,13 @@
   background:gray;
   color:white;
   margin:30px auto;
-  text-decoration: none;
-  text-align: center;
-  box-sizing:border-box;
-  padding-top:10px;
  }
 
 #itembuybutton__point{
   background:white;
   color:black;
   border: solid #DDDDDD;
-  margin:50px auto;
+  margin:70px auto;
  }
 
  #itembuy__image{
@@ -77,3 +73,38 @@
  #itemnewimage{
   object-fit: cover;
  }
+
+
+#payjp_checkout_box{
+display:none;
+}
+
+.itembuybold{
+  font-weight: bold;
+}
+
+#itembuypayamount{
+  font-size:24px;
+}
+
+.itembuyprice{
+  font-size: 22px;
+
+}
+
+.itembuyred{
+  color:red;
+}
+
+#itembuyright{
+  float: right;
+}
+
+.buy__form__content__cover__amount{
+  padding-right: 100px;
+  padding-left:20px;
+}
+
+.buy__form__content__cover__alert{
+  text-align: center;
+}

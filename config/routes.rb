@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :users
   resources :items do
-    resources :buys, only: [:new,:create,:update]
+    resources :buys, only: [:new,:create,:update] do
+      collection do
+        post 'pay'
+      end
+    end
     resources :comments
   end
 
