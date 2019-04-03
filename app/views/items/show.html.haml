@@ -8,7 +8,7 @@
         = @item.name
     .item__main-box
       .item__main-box__left
-        - if @item.status == 3
+        - if @item.trade_status == "3"
           .item__main-box__left__triangle
             .item__main-box__left__triangle__box SOLD
         .item__main-box__left__image-big
@@ -44,14 +44,14 @@
             .item__main-box__right__column-right__box__exhibitor-top
               = link_to user_path(@item) do
                 %p.item__main-box__right__column-right__box__exhibitor-top__link-text.item__main-box__right__column-right__box__links
-                  = @item.saler.nickname
+                  = @item.user.nickname
 
             .item__main-box__right__column-right__box__exhibitor-bottom
               .item__main-box__right__column-right__box__exhibitor-bottom__box-good
                 %i.fas.fa-laugh
                 .item__main-box__right__column-right__box__exhibitor-bottom__box-good__value
                   - num = 0
-                  - @item.saler.uservaluations.each do |kind|
+                  - @item.user.uservaluations.each do |kind|
                     - if kind.kind == "good"
                       - num += 1
                   = num
@@ -59,7 +59,7 @@
                 %i.fas.fa-meh
                 .item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value
                   - num = 0
-                  - @item.saler.uservaluations.each do |kind|
+                  - @item.user.uservaluations.each do |kind|
                     - if kind.kind == "normal"
                       - num += 1
                   = num
@@ -67,7 +67,7 @@
                 %i.fas.fa-frown
                 .item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value
                   - num = 0
-                  - @item.saler.uservaluations.each do |kind|
+                  - @item.user.uservaluations.each do |kind|
                     - if kind.kind == "bad"
                       - num += 1
                   = num
@@ -91,7 +91,7 @@
             = link_to root_path do
               %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links ナイキ
           #item__main-box__right__column-right__state.item__main-box__right__column-right__box
-            = @item.state
+            = @item.item_condition
           #item__main-box__right__column-right__burden.item__main-box__right__column-right__box
             = @item.trade.postage
           #item__main-box__right__column-right__method.item__main-box__right__column-right__box
@@ -114,11 +114,11 @@
         - else
           送料込み
     .item__confirmation-box
-      - if @item.status == 3
-        = link_to buys_create_path do
+      - if @item.trade_status == "3"
+        = link_to buys_index_path do
           .item__confirmation-box__link-text2 売り切れました
       - else
-        = link_to buys_new_path do
+        = link_to new_item_buy_path(@item) do
           .item__confirmation-box__link-text 購入画面に進む
 
     .item__text-box

@@ -6,14 +6,18 @@
     .buy__form__content
       .buy__form__content__cover
         .buy__form__content__cover__image
-          =image_tag "user-joukyo.png",size: "200x200", id: "itemnewimage"
+          =image_tag "#{@item.images[0].image}",size: "200x200", id: "itemnewimage"
           .buy__form__content__cover__image__input
-            Tシャツ アンパンマン<br>¥ 499 送料込み
+            =@item.name
+            <br>¥
+            =@item.price
+            送料込み
           %input.itembuybutton#itembuybutton__point{type:'button',value:'ポイントを使う'}
-        支払い金額 ¥ 499<br>
-        <br>
+        支払い金額 ¥
+        =@item.price
+        <br><br>
         配送先と支払い方法の入力を完了してください。
-        %input.itembuybutton#itembuybutton__buy{type:"button",value:"購入する"}
+        = link_to "購入する", 'item_buy(@trade)', class: 'itembuybutton',id:'itembuybutton__buy',method: :patch
     .buy__form__content
       .buy__form__content__cover
         配送先<br><br>

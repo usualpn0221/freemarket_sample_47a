@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 
   get 'creditcards/edit'
 
-  get 'buys/new'
 
-  get 'buys/create'
 
   get 'buys/index'
 
@@ -13,6 +11,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :users
   resources :items do
+    resources :buys, only: [:new,:create,:update]
     resources :comments
   end
 
