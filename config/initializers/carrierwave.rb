@@ -20,3 +20,4 @@ CarrierWave.configure do |config|
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/mercari47a'
   end
 end
+

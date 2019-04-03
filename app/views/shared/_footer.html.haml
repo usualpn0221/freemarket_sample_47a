@@ -29,10 +29,12 @@
       %li
         =link_to "メルカリロゴ利用ガイドライン" , root_path
       %ul.under-footer--sociallinks
-        %li
-          %i.fab.fa-twitter-square
-        %li
-          %i.fab.fa-facebook
+        = link_to root_path do
+          %li
+            %i.fab.fa-twitter
+        = link_to root_path do
+          %li
+            %i.fab.fa-facebook
     %ul.under-footer--list
       %li.under-footer--list__title#title2 ヘルプ＆ガイド
       %li
