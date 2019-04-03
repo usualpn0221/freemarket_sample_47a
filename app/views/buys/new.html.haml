@@ -8,23 +8,23 @@
         .buy__form__content__cover__image
           =image_tag "#{@item.images[0].image}",size: "200x200", id: "itemnewimage"
           .buy__form__content__cover__image__input
-            %span.itembuybold.itembuyprice=@item.name
+            %span.buy__form--bold.buy__form--price=@item.name
             <br><br>
-            %span.itembuybold.itembuyprice="¥ #{@item.price}"
+            %span.buy__form--bold.buy__form--price="¥ #{@item.price}"
             送料込み
           %input.itembuybutton#itembuybutton__point{type:'button',value:'ポイントを使う'}
         .buy__form__content__cover__amount
-          %span.itembuybold#itembuypayamount 支払い金額
-          %span.itembuybold.itembuyprice#itembuyright="¥ #{@item.price}"
+          %span.buy__form--bold#itembuypayamount 支払い金額
+          %span.buy__form--bold.buy__form--price#itembuyright="¥ #{@item.price}"
           <br><br>
         .buy__form__content__cover__alert
-          %span.itembuyred 配送先と支払い方法の入力を完了してください。
+          %span.buy__form--red 配送先と支払い方法の入力を完了してください。
         %input.itembuybutton#itembuybutton__buy{value:"購入する",type:"button",onclick:"$('#payjp_checkout_box input[type=button]').click()"}
         = form_tag(action: :pay, method: :post) do
           %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript","data-text" => "購入する"}
     .buy__form__content
       .buy__form__content__cover
-        %span.itembuybold 配送先<br><br>
+        %span.buy__form--bold 配送先<br><br>
         =@item.user.profile.postnumber
         <br>
         =@item.user.profile.prefecture_id
@@ -35,7 +35,7 @@
           = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
     .buy__form__content
       .buy__form__content__cover
-        %span.itembuybold 支払方法<br><br>
+        %span.buy__form--bold 支払方法<br><br>
         Visaカード一括払い
         .profile-cover__notice
           = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'

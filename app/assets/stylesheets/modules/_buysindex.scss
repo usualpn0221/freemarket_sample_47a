@@ -7,6 +7,18 @@
   background-color: white;
   margin:0 auto;
 
+    &--bold{
+    font-weight: bold;
+    }
+
+    &--red{
+    color:red;
+    }
+
+    &--price{
+    font-size: 22px;
+    }
+
     &__introduction{
   text-align: center;
   border-bottom: solid #F0F0F0;
@@ -20,6 +32,15 @@
       border-bottom: solid #F0F0F0;
 
       &__cover{
+
+        &__amount{
+          padding-right: 100px;
+          padding-left:20px;
+        }
+
+        &__alert{
+          text-align: center;
+        }
 
         &__image{
           width: 200px;
@@ -79,32 +100,11 @@
 display:none;
 }
 
-.itembuybold{
-  font-weight: bold;
-}
-
 #itembuypayamount{
   font-size:24px;
-}
-
-.itembuyprice{
-  font-size: 22px;
-
-}
-
-.itembuyred{
-  color:red;
 }
 
 #itembuyright{
   float: right;
 }
 
-.buy__form__content__cover__amount{
-  padding-right: 100px;
-  padding-left:20px;
-}
-
-.buy__form__content__cover__alert{
-  text-align: center;
-}
