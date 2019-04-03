@@ -189,6 +189,7 @@
   .other-item
     .other-item__top
     .other-item__box
-  = link_to '削除', "/items/#{@item.id}", method: :delete
+    - if user_signed_in? && current_user.id == item.user_id
+      = link_to '削除' ,item_path(@item.id), method: :delete
 
 = render 'shared/footer'
