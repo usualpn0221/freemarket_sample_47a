@@ -156,13 +156,13 @@
   / - if user_signed_in? && current_user.id == @item.user.id
   - if @item.trade_status == "3"
     .product
-      = link_to item_path(@item.id), method: :patch do
-        .product__edit 商品の編集
+      = link_to item_path(@item.id), method: :patch, class: "product__link" do
+        .product__link__edit 商品の編集
       .product__character or
-      = link_to root_path do
-        .product__stop 出品を一旦停止する
-      = link_to item_path(@item.id), method: :delete do
-        .product__destroy この商品を削除する
+      = link_to root_path, class: "product__link" do
+        .product__link__stop 出品を一旦停止する
+      = link_to item_path(@item.id), method: :delete, class: "product__link" do
+        .product__link__destroy この商品を削除する
 
   .comment
     .comment__comments-box
