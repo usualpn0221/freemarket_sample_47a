@@ -4,11 +4,8 @@ class ItemsController < ApplicationController
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
   end
 
-
   def show
-    # @item = Item.find(2)
     @item = Item.find(params[:id])
-    # .includes(:user)
 
     @items = Item.new
     @comment = Comment.new
@@ -19,8 +16,6 @@ class ItemsController < ApplicationController
       @item =Item.new
       @image = @item.images.build
       @item.build_trade
-
-
   end
 
   def create
