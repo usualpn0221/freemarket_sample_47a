@@ -1,22 +1,22 @@
 require 'rails_helper'
 
-# describe ItemsController, type: :controller do
 describe ItemsController do
 
-  # describe 'GET #show' do
-  #   item = create(:item)
+  describe 'GET #show' do
 
-  #   it "インスタンス変数は期待した値になるか？" do
-  #     user = create(:user)
-  #     get :show, params: {  id: 1 }
-  #     expect(assigns(:item, :user)).to match(:item, :user)
-  #   end
+    # let(:user) { create(:user) }
+    it "インスタンス変数は期待した値になるか？" do
+      item = create(:item)
+      get :show, params: {  id: item.id }
+      expect(assigns(:item)).to match(item)
+    end
 
-  #   it "期待するビューに遷移するか？" do
-  #     get :show, params: {  id: item.id }
-  #     expect(response).to render_template :show , params: {  id: item.id }
-  #   end
-  # end
+    it "期待するビューに遷移するか？" do
+      item = create(:item)
+      get :show, params: {  id: item.id }
+      expect(response).to render_template :show , params: {  id: item.id }
+    end
+  end
 
 
   describe 'GET #index' do
