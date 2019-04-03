@@ -17,7 +17,7 @@
         =@item.price
         <br><br>
         配送先と支払い方法の入力を完了してください。
-        = link_to "購入する", item_buys_path, class: 'itembuybutton',id:'itembuybutton__buy',method: :post
+        = link_to "購入する", 'item_buy(@trade)', class: 'itembuybutton',id:'itembuybutton__buy',method: :patch
     .buy__form__content
       .buy__form__content__cover
         配送先<br><br>
