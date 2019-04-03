@@ -4,7 +4,6 @@ describe ItemsController do
 
   describe 'GET #show' do
 
-    # let(:user) { create(:user) }
     it "インスタンス変数は期待した値になるか？" do
       item = create(:item)
       get :show, params: {  id: item.id }
