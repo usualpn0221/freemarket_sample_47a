@@ -1,19 +1,20 @@
 $(document).on('turbolinks:load', function() {
+  var modal = '.delete-modal-wrapper'
   $(function() {
     $('.product__link__destroy').click(function() {
-      $('.delete-modal-wrapper').fadeIn();
+      $(modal).fadeIn();
     });
 
     $('.delete-modal-wrapper').click(function() {
-      $('.delete-modal-wrapper').fadeOut();
+      $(modal).fadeOut();
     });
 
     $('.delete-modal__under__left').click(function() {
-      $('.delete-modal-wrapper').fadeOut();
+      $(modal).fadeOut();
     });
 
     $('.delete-modal__upper').click(function() {
-      $('.delete-modal-wrapper').fadeOut();
+      $(modal).fadeOut();
     });
   });
 });
