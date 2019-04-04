@@ -1,5 +1,6 @@
 = render 'shared/header'
 = render 'shared/link-fake'
+= render "shared/delete-modal"
 .wallpaper
   .item
     .item__top-box
@@ -160,8 +161,7 @@
       .product__character or
       = link_to root_path, class: "product__link" do
         .product__link__stop 出品を一旦停止する
-      = link_to item_path(@item.id), method: :delete, class: "product__link" do
-        .product__link__destroy この商品を削除する
+      .product__link__destroy この商品を削除する
 
   .comment
     .comment__comments-box

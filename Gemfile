@@ -75,7 +75,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'pry-rails'
 gem 'kaminari'
-# 都道府県用gem
 gem 'active_hash'
-# クレジット決済payjp
+gem 'jquery-turbolinks'
 gem 'payjp'
+
