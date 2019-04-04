@@ -138,7 +138,15 @@
         height: 50px;
         color:white;
         border:none;
-        background-color: red;
+        background-color: #ea352d;
+        }
+        &__input2 {
+          width: 640px;
+          height: 50px;
+          color:white;
+          border:none;
+          background-color: #ea352d;
+          margin-top: 80px;
         }
       }
 
@@ -177,11 +185,11 @@
 
   &__backbutton{
     display:block;
+    height: 50px;
+    line-height: 50px;
     width:45%;
-    padding-top:10px;
     margin:0 auto;
-    padding-bottom:10px;
-    background:gray;
+    background: #aaa;
     text-decoration: none;
     color: white;
   }

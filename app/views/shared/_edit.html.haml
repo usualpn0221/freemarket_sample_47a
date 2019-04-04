@@ -1,6 +1,6 @@
 .sell
   =render 'shared/mercari-header'
-  = form_for @item, html:{class:"sell__form"} do |f|
+  = form_for item, html:{class:"sell__form"} do |f|
     .sell__form__introduction
       商品の情報を入力
     .sell__form__image
@@ -87,18 +87,9 @@
           販売利益
 
     .sell__form__button
-      .sell__form__button__notice
-        = link_to "禁止されている出品","", class:'itemsnewlink itemsnewlink__notice'
-        、
-        = link_to "行為","", class:'itemsnewlink itemsnewlink__notice'
-        を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。
-        = link_to "偽ブランドの販売","", class:'itemsnewlink itemsnewlink__notice'
-        は犯罪であり処罰される可能性があります。また、出品をもちまして
-        = link_to "加盟店規約","", class:'itemsnewlink itemsnewlink__notice'
-        に同意したことになります。
-      .sell__form__button__button
-        = f.submit '出品する', class:'sell__form__button__button__input'
+      .sell__form__button__button2
+        = f.submit '変更する', class:'sell__form__button__button__input2'
       .sell__form__button__back
-        = link_to "もどる",user_path(1),class:'itemsnewlink__backbutton'
+        = link_to "キャンセル", item_path(item),class:'itemsnewlink__backbutton'
 
   =render 'shared/mercari-footer'
