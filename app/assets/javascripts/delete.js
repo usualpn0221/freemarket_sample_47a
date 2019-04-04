@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
   $(function() {
     $('.product__link__destroy').click(function() {
-      console.log('aiueo')
       $('.delete-modal-wrapper').fadeIn();
     });
 
