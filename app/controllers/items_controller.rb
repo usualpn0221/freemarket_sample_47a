@@ -33,9 +33,9 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find(params[:id])
-    if item.user.id == current_user.id
+    # if item.user.id == current_user.id
       item.update(item_params)
-    end
+    # end
   end
 
   def destroy

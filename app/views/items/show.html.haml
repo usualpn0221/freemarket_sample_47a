@@ -156,7 +156,7 @@
   / - if user_signed_in? && current_user.id == @item.user.id
   - if @item.trade_status == "3"
     .product
-      = link_to item_path(@item.id), method: :patch, class: "product__link" do
+      = link_to edit_item_path(@item.id), class: "product__link" do
         .product__link__edit 商品の編集
       .product__character or
       = link_to root_path, class: "product__link" do
