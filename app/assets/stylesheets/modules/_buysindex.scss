@@ -1,11 +1,23 @@
 .buy{
-  background-color: #F0F0F0;
+  background-color: #f5f5f5;
   width: 100vw;
 
   &__form{
   width: 700px;
   background-color: white;
   margin:0 auto;
+
+    &--bold{
+    font-weight: bold;
+    }
+
+    &--red{
+    color:red;
+    }
+
+    &--price{
+    font-size: 22px;
+    }
 
     &__introduction{
   text-align: center;
@@ -20,6 +32,15 @@
       border-bottom: solid #F0F0F0;
 
       &__cover{
+
+        &__amount{
+          padding-right: 100px;
+          padding-left:20px;
+        }
+
+        &__alert{
+          text-align: center;
+        }
 
         &__image{
           width: 200px;
@@ -53,17 +74,13 @@
   background:gray;
   color:white;
   margin:30px auto;
-  text-decoration: none;
-  text-align: center;
-  box-sizing:border-box;
-  padding-top:10px;
  }
 
 #itembuybutton__point{
   background:white;
   color:black;
   border: solid #DDDDDD;
-  margin:50px auto;
+  margin:70px auto;
  }
 
  #itembuy__image{
@@ -77,3 +94,17 @@
  #itemnewimage{
   object-fit: cover;
  }
+
+
+#payjp_checkout_box{
+display:none;
+}
+
+#itembuypayamount{
+  font-size:24px;
+}
+
+#itembuyright{
+  float: right;
+}
+
