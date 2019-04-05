@@ -37,6 +37,7 @@ before_action :set_item, only: [:edit, :show, :update]
   end
 
   def update
+    binding.pry
     if @item.update(item_params)
         redirect_to item_path(@item)
     else
