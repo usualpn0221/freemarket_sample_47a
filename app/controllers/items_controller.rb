@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
         #     item.images.update(image: image)
         #     puts i
         #   end
-        #   redirect_to item_path(item)
+          redirect_to item_path(item)
         # else
         #   render action: :edit
         # end
