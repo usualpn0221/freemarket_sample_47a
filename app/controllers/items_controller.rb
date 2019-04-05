@@ -29,25 +29,33 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    # @image = @item.images.build
+    # @item.build_trade
   end
 
   def update
     item = Item.find(params[:id])
     # if item.user.id == current_user.id
       if item.update(item_params)
-        redirect_to item_path(item)
+        # if item.images.present?
+        #   binding.pry
+        #   image_params[:images_attributes]["0"][:image].each_with_index do |image, i|
+        #     item.images.update(image: image)
+        #     puts i
+        #   end
+        #   redirect_to item_path(item)
+        # else
+        #   render action: :edit
+        # end
       else
-        render :edit
+        render action: :edit
       end
-    # else
-      # redirect_to item_path(item)
     # end
   end
 
   def destroy
     item = Item.find(params[:id])
     item.destroy if user_signed_in? && current_user.id == item.user_id
-    redirect_to user_path(item.user_id),method: :delete
   end
 
   private
