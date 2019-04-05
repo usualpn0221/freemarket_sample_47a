@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
 
-before_action :set_item, except: [:edit, :show]
-before_action :set_item_local, except: [:update, :destroy]
+before_action :set_item, only: [:edit, :show, :update]
 
   def index
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
@@ -21,12 +20,15 @@ before_action :set_item_local, except: [:update, :destroy]
   end
 
   def create
-    @item=Item.create(item_params)
-    if user_signed_in? && current_user.id == item.user_id
-      image_params[:images_attributes][:"0"][:image].each do |image|
-        @image = @item.images.create(image: image)
+    @item=Item.new(item_params)
+    if @item.save
+      if image_params[:images_attributes][:"0"][:image].each { |image| @image = @item.images.create(image: image)}
+        redirect_to items_path
+      else
+        render :new
       end
-      redirect_to items_path
+    else
+      render :new
     end
   end
 
@@ -35,14 +37,15 @@ before_action :set_item_local, except: [:update, :destroy]
   end
 
   def update
-    if item.update(item_params)
-        redirect_to item_path(item)
+    if @item.update(item_params)
+        redirect_to item_path(@item)
     else
-      render action: :edit
+      render :edit
     end
   end
 
   def destroy
+    item = Item.find(params[:id])
     item.destroy if user_signed_in? && current_user.id == item.user_id
   end
 
@@ -58,9 +61,5 @@ before_action :set_item_local, except: [:update, :destroy]
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def set_item_local
-    item = Item.find(params[:id])
   end
 end
