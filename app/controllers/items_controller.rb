@@ -34,22 +34,11 @@ before_action :set_item_local, except: [:update, :destroy]
   end
 
   def update
-    # if item.user.id == current_user.id
-      if item.update(item_params)
-        # if item.images.present?
-        #   binding.pry
-        #   image_params[:images_attributes]["0"][:image].each_with_index do |image, i|
-        #     item.images.update(image: image)
-        #     puts i
-        #   end
-          redirect_to item_path(item)
-        # else
-        #   render action: :edit
-        # end
-      else
-        render action: :edit
-      end
-    # end
+    if item.update(item_params)
+        redirect_to item_path(item)
+    else
+      render action: :edit
+    end
   end
 
   def destroy
