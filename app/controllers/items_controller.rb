@@ -1,11 +1,13 @@
 class ItemsController < ApplicationController
 
+before_action :set_item, except: [:edit, :show]
+before_action :set_item_local, except: [:update, :destroy]
+
   def index
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
   end
 
   def show
-    @item = Item.find(params[:id])
 
     @items = Item.new
     @comment = Comment.new
@@ -28,13 +30,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    # @image = @item.images.build
-    # @item.build_trade
+
   end
 
   def update
-    item = Item.find(params[:id])
     # if item.user.id == current_user.id
       if item.update(item_params)
         # if item.images.present?
@@ -54,17 +53,24 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
     item.destroy if user_signed_in? && current_user.id == item.user_id
   end
 
   private
-  def item_params
-      params.require(:item).permit(:name, :description,:price,:item_condition,:trade_status,:user_id,:category_id,:brand_id,:saizu,trade_attributes: [:postage,:region,:shipping_date,:delivery])
 
+  def item_params
+    params.require(:item).permit(:name, :description,:price,:item_condition,:trade_status,:user_id,:category_id,:brand_id,:saizu,trade_attributes: [:postage,:region,:shipping_date,:delivery])
   end
 
   def image_params
-  params.require(:item).permit(images_attributes:{image: []})
+    params.require(:item).permit(images_attributes:{image: []})
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def set_item_local
+    item = Item.find(params[:id])
   end
 end
