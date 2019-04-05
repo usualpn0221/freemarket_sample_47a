@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'creditcards/index'
 
   get 'creditcards/edit'
@@ -20,6 +22,6 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-
+  resources :phonenumber
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
