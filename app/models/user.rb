@@ -10,9 +10,6 @@ class User < ApplicationRecord
   has_many :comments
   has_many :uservaluations,foreign_key: "evaluateduser_id", class_name: "Uservaluation"
   has_one  :profile
-  # belongs_to :phonenumber, class_name: "profile"
-
-
   def self.years
    years = []
    for year in 1900..2019 do
