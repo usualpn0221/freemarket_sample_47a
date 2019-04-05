@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require jquery.slick
 //= require jquery.turbolinks
+=======
+// = require jquery.turbolinks
+>>>>>>> master
 //= require turbolinks
 //= require_tree .
