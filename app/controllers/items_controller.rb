@@ -22,11 +22,12 @@ before_action :set_item_local, except: [:update, :destroy]
 
   def create
     @item=Item.create(item_params)
-
-    image_params[:images_attributes][:"0"][:image].each do |image|
-      @image = @item.images.create(image: image)
+    if user_signed_in? && current_user.id == item.user_id
+      image_params[:images_attributes][:"0"][:image].each do |image|
+        @image = @item.images.create(image: image)
+      end
+      redirect_to items_path
     end
-    redirect_to items_path
   end
 
   def edit
