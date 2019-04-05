@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :creditcards
   has_many :comments
   has_many :uservaluations,foreign_key: "evaluateduser_id", class_name: "Uservaluation"
-  has_one  :profile
+  has_one  :profile,dependent: :destroy
 end

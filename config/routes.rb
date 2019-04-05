@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'buys/index'
 
   devise_for :users, controllers: {
-        registratinos: 'users/registrations'
+        registrations: 'users/registrations'
       }
   root 'items#index'
   resources :users

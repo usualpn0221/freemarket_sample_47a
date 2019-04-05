@@ -10,4 +10,9 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def destroy
+    user = User.find(params[:id])
+    redirect_to user_path(current_user.id),method: :delete
+  end
 end
