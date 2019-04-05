@@ -1,0 +1,95 @@
+.sell
+  =render 'shared/mercari-header'
+  = form_for item, html:{class:"sell__form"} do |f|
+    .sell__form__introduction
+      商品の情報を入力
+    .sell__form__image
+      .sell__form__image__title
+        出品画像
+        %span.sell__form--need 必須
+      .sell__form__image__intro
+        最大10枚までアップロードできます
+      .sell__form__image__uproad
+        = f.fields_for :images do |m|
+          %div#itemnew_img_field{onclick:"$('#itemnew_file').click()"}
+            ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+          = m.file_field :image,  multiple: true,id:"itemnew_file",style: "display:none"
+
+    .sell__form__itemname
+      .sell__form__itemname__intro
+        商品名
+        %span.sell__form--need 必須
+        = f.text_field :name,class:'sell__form__itemname__input',placeholder:"商品名（必須40文字まで)"
+      .sell__form__itemname__explanationintro
+        商品の説明
+        %span.sell__form--need 必須
+        = f.text_area :description,class:'sell__form__itemname__explanationinput',placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+    .sell__form__itemdescription
+      .sell__form__itemdescription__left
+        商品の詳細
+      .sell__form__itemdescription__right
+        .sell__form__itemdescription__right__description
+          カテゴリー
+          %span.sell__form--need 必須
+          = f.select :user_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          / = f.select :trade_status,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          = f.select :category_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+        .sell__form__itemdescription__right__description
+          サイズ
+          %span.sell__form--need 任意
+          = f.select :saizu,["","L","M","S"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+        .sell__form__itemdescription__right__description
+          ブランド
+          %span.sell__form--need 任意
+          = f.select :brand_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+        .sell__form__itemdescription__right__description
+          商品の状態
+          %span.sell__form--need 必須
+          = f.select :item_condition,["新品、未使用","未使用に近い","傷や汚れあり","全体的に状態が悪い"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+
+
+
+    .sell__form__delivery
+      = f.fields_for :trade do |t|
+        .sell__form__itemdescription__left
+          配送について
+        .sell__form__itemdescription__right
+          .sell__form__itemdescription__right__description
+            配送料の負担
+            %span.sell__form--need 必須
+            = t.select :postage,["送料込み(出品者負担)","着払い(購入者負担)"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+            配送の方法
+            %span.sell__form--need 必須
+            = t.select :delivery,["未定","ゆうメール","レターパック","クロネコヤマト","普通郵便","ゆうパック","らくらくメルカリ便"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          .sell__form__itemdescription__right__description
+            発送元の地域
+            %span.sell__form--need 必須
+            = t.collection_select :region, Prefecture.all, :name, :name,{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          .sell__form__itemdescription__right__description
+            発送までの日数
+            %span.sell__form--need 必須
+            = t.select :shipping_date,["1〜2日で発送","2〜3日で発送","4〜7日で発送"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+
+    .sell__form__price
+      .sell__form__itemdescription__left
+        販売価格(300〜9,999,999)
+      .sell__form__itemdescription__right
+        .sell__form__itemdescription__right__profit
+          価格
+          %span.sell__form--need 必須
+          .sell__form__itemdescription__right__profit__input
+            ¥
+            = f.text_field :price,class:'sell__form__itemdescription__right__profit__input__box',placeholder:"例) 300"
+        .sell__form__itemdescription__right__profit
+          販売手数料 (10%)
+        .sell__form__itemdescription__right__margin
+          販売利益
+
+    .sell__form__button
+      .sell__form__button__button2
+        = f.submit '変更する', class:'sell__form__button__button__input2'
+      .sell__form__button__back
+        = link_to "キャンセル", item_path(item),class:'itemsnewlink__backbutton'
+
+  =render 'shared/mercari-footer'

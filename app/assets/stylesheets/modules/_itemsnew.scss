@@ -1,5 +1,5 @@
 .sell{
-  background-color: #F0F0F0;
+  background-color: #f6f6f6;
   width: 100vw;
 
   &__icon{
@@ -43,6 +43,8 @@
         width: calc(700px - 60px);
         height: 50px;
         font-size:20px;
+        padding: 0 15px;
+        box-sizing: border-box;
       }
 
       &__explanationintro{
@@ -53,6 +55,8 @@
         width: calc(700px - 60px);
         height: 150px;
         font-size:20px;
+        padding: 10px;
+        box-sizing: border-box;
       }
     }
 
@@ -88,11 +92,13 @@
             float: right;
             clear: both;
 
+
             &__box{
               margin-right:10px;
               margin-left:10px;
               height: 30px;
               width:150px;
+              padding: 5px 10px;
             }
           }
         }
@@ -132,7 +138,15 @@
         height: 50px;
         color:white;
         border:none;
-        background-color: red;
+        background-color: #ea352d;
+        }
+        &__input2 {
+          width: 640px;
+          height: 50px;
+          color:white;
+          border:none;
+          background-color: #ea352d;
+          margin-top: 80px;
         }
       }
 
@@ -171,11 +185,11 @@
 
   &__backbutton{
     display:block;
+    height: 50px;
+    line-height: 50px;
     width:45%;
-    padding-top:10px;
     margin:0 auto;
-    padding-bottom:10px;
-    background:gray;
+    background: #aaa;
     text-decoration: none;
     color: white;
   }
