@@ -79,4 +79,5 @@ gem 'active_hash'
 gem 'jquery-turbolinks'
 gem 'payjp'
 gem "jquery-slick-rails"
+gem "gretel"
 
