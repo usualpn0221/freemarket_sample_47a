@@ -7,10 +7,6 @@ crumb :mypage do
   parent :root
 end
 
-# crumb :items do |item|
-#   link "item.name", item_path(item)
-#   parent :root
-# end
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)
