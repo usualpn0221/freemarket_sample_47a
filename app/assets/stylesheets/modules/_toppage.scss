@@ -1,5 +1,5 @@
 .top-page-view {
-  background:#FFFFFF;
+  background:#F6F6F6;
   padding: 40px 0;
   &--title {
     font-size: 28px;
@@ -9,12 +9,24 @@
   }
 }
 
+.top-page-wallpaper {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #F6F6F6;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .items-boxs-container {
   width: 940px;
-  margin: 0px 170px;
+  margin: 0 auto;
   box-sizing: border-box;
   padding-top: 20px;
   text-decoration: none;
+  background:#F6F6F6;
   &--title {
     font-size: 22px;
     text-align: center;
@@ -47,7 +59,7 @@
         height: 330px;
         width: 213px;
         margin-left:20px;
-        background:#F5F5F5;
+        background:#FFFFFF;
         box-sizing: border-box;
         &__image {
           height: 220px;

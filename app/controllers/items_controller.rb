@@ -69,6 +69,7 @@ before_action :set_item, only: [:edit, :show, :update]
   def destroy
     item = Item.find(params[:id])
     item.destroy if user_signed_in? && current_user.id == item.user_id
+    redirect_to user_path(item.user_id)
   end
 
   private
