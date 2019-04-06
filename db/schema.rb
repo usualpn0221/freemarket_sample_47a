@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190406045253) do
+ActiveRecord::Schema.define(version: 20190406135556) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -76,14 +76,17 @@ ActiveRecord::Schema.define(version: 20190406045253) do
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postnumber",    null: false
-    t.integer  "prefecture_id", null: false
     t.string   "shikuchouson",  null: false
     t.string   "banchi",        null: false
     t.string   "tatemonomei"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
-    t.index ["prefecture_id"], name: "index_profiles_on_prefecture_id", using: :btree
+    t.string   "lastname"
+    t.string   "firstname"
+    t.string   "lastnamekana"
+    t.string   "firstnamekana"
+    t.string   "prefecture"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
