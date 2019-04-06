@@ -1,16 +1,4 @@
 Rails.application.routes.draw do
-
-
-  get 'address/new'
-
-  get 'address/create'
-
-  get 'creditcards/index'
-
-  get 'creditcards/edit'
-
-
-
   get 'buys/index'
 
   devise_for :users, controllers: {
@@ -27,5 +15,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :phonenumber
+  resources :address
+  resources :creditcards
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

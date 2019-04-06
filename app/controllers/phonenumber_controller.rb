@@ -1,25 +1,25 @@
 class PhonenumberController < ApplicationController
   before_action :quit_registrations, except: [:new,:create]
   def new
-    @profiles=Profile.new
+    @phonenumber=Phonenumber.new
   end
 
   def create
-    @profiles = Profile.new(profile_params[:phonenumber])
-    if @profiles.save
-      render credit_user_profiles_path
+    @phonenumber = Phonenumber.new(phonenumber_params)
+    if @phonenumber.save
+      redirect_to new_address_path
     else
       render :new
     end
   end
-end
 
+  private
 
-private
   def quit_registrations
-    cuerrent_user.destroy
+  redirect_to controller: 'users', action: 'destroy', id: current_user.id
   end
 
-  def profile_params
-    params.permit(:phonenumber).merge(user_id: params[:user_id])
+  def phonenumber_params
+    params.require(:phonenumber).permit(:phonenumber).merge(user_id: current_user.id)
   end
+end

@@ -21,11 +21,15 @@
   %main.single-main
     .signin
       .signin__head
-        会員情報入力
+        電話番号の確認
       .signin__user-infomation
-        = form_for @profiles,url:phonenumber_index_path do |f|
-          = f.label :ニックネーム , class: "ur-form-group__label"
-          %span.ur-form-group__span 必須
-          = f.text_field :phonenumber, autofocus: true, autocomplete: "nickname", placeholder:"例) メルカリ太郎", class: "ur-form-group__field"
-          .ur-form__btn
-            = f.submit "次へ進む",class: "ur-form__btn--submit ur-form__btn--default ur-form__btn--red"
+        = form_for @phonenumber,url:phonenumber_index_path do |f|
+          .ur-form-group
+            = f.label :携帯電話の番号 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :phonenumber, autofocus: true, autocomplete: "phonenumber", placeholder:"例) 000-0000-0000", class: "ur-form-group__field"
+            %p.ur-form-group__text 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            .ur-form__btn
+              = f.submit "次へ進む",class: "ur-form__btn--submit ur-form__btn--default ur-form__btn--red"
+            %p.ur-form-group__text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+  =render 'shared/mercari-footer'

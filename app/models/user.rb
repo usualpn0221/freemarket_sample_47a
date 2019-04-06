@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :comments
   has_many :uservaluations,foreign_key: "evaluateduser_id", class_name: "Uservaluation"
   has_one  :profile,dependent: :destroy
+  has_one  :phonenumber,dependent: :destroy
 end
