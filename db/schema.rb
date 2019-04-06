@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190404093505) do
+ActiveRecord::Schema.define(version: 20190406045253) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 20190404093505) do
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
+  create_table "phonenumbers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "phonenumber", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_phonenumbers_on_user_id", using: :btree
+  end
+
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
@@ -72,7 +80,6 @@ ActiveRecord::Schema.define(version: 20190404093505) do
     t.string   "shikuchouson",  null: false
     t.string   "banchi",        null: false
     t.string   "tatemonomei"
-    t.string   "phonenumber",   null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"

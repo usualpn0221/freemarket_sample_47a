@@ -1,5 +1,8 @@
 = render 'shared/header'
 = render "shared/delete-modal"
+%nav.bread-container
+  - breadcrumb :item, @item
+  = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
 
 .wallpaper
   .item
@@ -12,8 +15,7 @@
           .item__main-box__left__triangle
             .item__main-box__left__triangle__box SOLD
         .item__main-box__left__image-big
-          - if @item.images[0] != nil
-            = image_tag @item.images[0].image, size:'300x300' , class: 'item__main-box__left__image-box__contents-image-big'
+          = image_tag @item.images[0].image, size:'300x300' , class: 'item__main-box__left__image-box__contents-image-big' if @item.images[0]
 
         .item__main-box__left__image-box
           - @item.images.each_with_index do |image, i|
