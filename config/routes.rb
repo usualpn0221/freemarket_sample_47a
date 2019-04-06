@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'address/new'
+
+  get 'address/create'
+
   get 'creditcards/index'
 
   get 'creditcards/edit'
