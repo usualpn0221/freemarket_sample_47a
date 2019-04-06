@@ -71,6 +71,23 @@
             width: 213px;
             box-sizing: border-box;
           }
+          &__triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 100px 100px 0 0;
+            border-color: #ea352d transparent transparent transparent;
+            z-index: 1;
+            &__box {
+              top: -80px;
+              position: absolute;
+              color: $white;
+              font-size: 20px;
+              font-weight: 600;
+              transform: rotate( -45deg );
+            }
+          }
         }
         &__body {
           height: 110px;
