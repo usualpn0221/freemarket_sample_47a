@@ -1,5 +1,4 @@
 class PhonenumberController < ApplicationController
-  before_action :quit_registrations, except: [:new,:create]
   def new
     @phonenumber=Phonenumber.new
   end
