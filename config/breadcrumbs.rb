@@ -8,10 +8,10 @@ crumb :mypage do
 end
 
 
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
+crumb :item do |item|
+  link "#{item.name}", item_path(item)
+  parent :root
+end
 
 # crumb :issue do |issue|
 #   link issue.title, issue_path(issue)

@@ -1,5 +1,8 @@
 = render 'shared/header'
 = render "shared/delete-modal"
+%nav.bread-container
+  - breadcrumb :item, @item
+  = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
 
 .wallpaper
   .item
