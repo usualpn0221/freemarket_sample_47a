@@ -20,9 +20,10 @@ before_action :set_item, only: [:edit, :show, :update]
   end
 
   def create
+    binding.pry
     @item=Item.new(item_params)
     if @item.save
-      if image_params[:images_attributes][:"0"][:image].each { |image| @image = @item.images.create(image: image)}
+      if image_params[:images_attributes][:"0"][:image].each_with_index { |image, i| @image = @item.images[i].create(image: image)}
         redirect_to items_path
       else
         render :new

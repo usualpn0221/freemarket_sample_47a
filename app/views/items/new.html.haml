@@ -14,6 +14,7 @@
           %div#itemnew_img_field{onclick:"$('#itemnew_file').click()"}
             ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
           = m.file_field :image,  multiple: true,id:"itemnew_file",style: "display:none"
+          / ,name[m.index]
 
     .sell__form__itemname
       .sell__form__itemname__intro

@@ -2,7 +2,8 @@
   = link_to item_path(item.id) do
     .items-boxs-container--body__upper__unit
       .items-boxs-container--body__upper__unit__image
-        = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload"
+        - if item.images[0] != nil
+          = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload"
       .items-boxs-container--body__upper__unit__body
         .items-boxs-container--body__upper__unit__body__title
           = item.name
