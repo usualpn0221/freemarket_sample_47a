@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'creditcards/index'
-
-  get 'creditcards/edit'
-
-
-
   get 'buys/index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+        registrations: 'users/registrations'
+      }
   root 'items#index'
   resources :users
   resources :items do
@@ -18,6 +14,8 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-
+  resources :phonenumber
+  resources :address
+  resources :creditcards
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
