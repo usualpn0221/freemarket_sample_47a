@@ -15,15 +15,17 @@ before_action :set_item, only: [:edit, :show, :update]
 
   def new
       @item =Item.new
-      @image = @item.images.build
+      @iamge =@item.images.build
       @item.build_trade
   end
 
   def create
-    binding.pry
+binding.pry
     @item=Item.new(item_params)
     if @item.save
-      if image_params[:images_attributes][:"0"][:image].each_with_index { |image, i| @image = @item.images[i].create(image: image)}
+      if @image = @item.images
+      if image_params[:images_attributes][:"0"][:image].each_with_index { |image, i| @image = @item.images.create(image: image)}
+# binding.pry
         redirect_to items_path
       else
         render :new

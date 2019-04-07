@@ -31,8 +31,11 @@
 
 
       &__uproad{
-      height: 210px;
-      }
+        margin: 20px auto 0;
+        height: 210px;
+        box-sizing: border-box;
+        padding: 10px;
+        }
     }
 
     &__itemname{
@@ -196,13 +199,14 @@
 }
 
 #itemnew_img_field{
-  background-color: #F0F0F0;
-  width: 640px;
-  height:160px;
+  margin: 10px auto 0;
+  background-color: #f5f5f5;
+  width: 620px;
+  height:162px;
   line-height: 20px;
   display: table-cell; /* IE8から使用可能 */
   vertical-align: middle;
-  border: dotted 3px #F0F0F0;
+  border: dashed 1px #bbb;
   text-align: center;
 }
 
