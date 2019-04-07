@@ -41,7 +41,7 @@
           .ur-form-group
             = f.label :都道府県 , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
-            = f.collection_select :prefecture_id, Prefecture.all, :name, :name,{}, {class: "ur-form-group__field"}
+            = f.collection_select :prefecture, Prefecture.all, :name, :name,{}, {class: "ur-form-group__field"}
           .ur-form-group
             = f.label :市町村区 , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
