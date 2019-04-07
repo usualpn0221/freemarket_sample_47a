@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20190406135556) do
     t.string   "lastnamekana"
     t.string   "firstnamekana"
     t.string   "prefecture"
+    t.string   "phonenumber"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
