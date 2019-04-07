@@ -1,2 +1,65 @@
-%h1 Address#new
-%p Find me in app/views/address/new.html.haml
+.main-content
+  .signup__header
+    =render 'shared/signin-header'
+    .signup-bar
+      %ul
+        %li.first-list
+          会員情報
+          .radius
+        %li
+          電話番号認証
+          .radius
+        %li#active-text
+          お届け先住所入力
+          .radius#active
+        %li
+          支払い方法
+          .radius
+        %li
+          完了
+          .radius-last
+  %main.single-main
+    .signin
+      .signin__head
+        発送先・お届け先住所入力
+      .signin__user-infomation
+        = form_for @profiles ,url:address_index_path do |f|
+          .ur-form-group
+            = f.label :名前 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :lastname ,autofocus: true, autocomplete: "lastname", placeholder:"例) 山田", class: "ur-form-group__field"
+            = f.text_field :firstname, autofocus: true, autocomplete: "firstname" ,placeholder:"例) 彩", class: "ur-form-group__field"
+          .ur-form-group
+            = f.label :"名前カナ (全角)" , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :lastnamekana, autofocus: true, autocomplete: "lastnamekana" ,placeholder:"例) ヤマダ", class: "ur-form-group__field"
+            = f.text_field :firstnamekana, autofocus: true, autocomplete: "firstnamekana" ,placeholder:"例) アヤ", class: "ur-form-group__field"
+          .ur-form-group
+            = f.label :郵便番号 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :postnumber ,autofocus: true, autocomplete: "postnumber", placeholder:"例) 000-0000", class: "ur-form-group__field"
+          .ur-form-group
+            = f.label :都道府県 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.collection_select :prefecture, Prefecture.all, :name, :name,{}, {class: "ur-form-group__field"}
+          .ur-form-group
+            = f.label :市町村区 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :shikuchouson ,autofocus: true, autocomplete: "shikuchouson", placeholder:"例) 横浜市緑区", class: "ur-form-group__field"
+          .ur-form-group
+            = f.label :番地 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :banchi ,autofocus: true, autocomplete: "banchi", placeholder:"例) 青山1-1-1", class: "ur-form-group__field"
+          .ur-form-group
+            = f.label :建物名 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :tatemonomei ,autofocus: true, autocomplete: "tatemonomei", placeholder:"例) 柳ビル103", class: "ur-form-group__field"
+          .ur-form-group
+            = f.label :電話番号 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :phonenumber ,autofocus: true, autocomplete: "lastname", placeholder:"例) 0123456789", class: "ur-form-group__field"
+
+            .ur-form__btn
+              = f.submit "次へ進む",class: "ur-form__btn--submit ur-form__btn--default ur-form__btn--red"
+  =render 'shared/mercari-footer'
+
