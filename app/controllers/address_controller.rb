@@ -5,7 +5,6 @@ class AddressController < ApplicationController
 
   def create
     @profiles=Profile.new(profile_params)
-    binding.pry
     if @profiles.save
       redirect_to new_creditcard_path
     else
