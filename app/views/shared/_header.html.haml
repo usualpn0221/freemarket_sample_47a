@@ -5,9 +5,12 @@
         = link_to root_path do
           = image_tag "mercari_header.jpeg" ,width: "134px",class: ".inner-header__upper__left__mercari"
       .inner-header__upper__right
-        %form.inner-header__upper__right__form
-          %input.inner-header__upper__right__input{type: "text",placeholder:"何かお探しですか？"}/
-          %i.fas.fa-search
+        = search_form_for @search,url: items_path,class: 'inner-header__upper__right__form' do |f|
+          = f.search_field :name_cont, placeholder: ' 何かお探しですか？', class: 'inner-header__upper__right__form__input'
+          %i.fas.fa-search{onclick:"$('.inner-header__upper__right__form__input__search').click()"}
+          = f.submit '検索',class:'inner-header__upper__right__form__input__search'
+          .inner-header__upper__right__form__hidden
+
     .inner-header__under
       .inner-header__under__left
         .inner-header__under__left__category
@@ -26,3 +29,7 @@
         .inner-header__under__right__my-page
           = image_tag "member_photo_noimage_thumb.png" ,size: "32x32",class: "user-icon-image-top"
           .inner-header__under__right__my-page__text マイページ
+
+
+
+
