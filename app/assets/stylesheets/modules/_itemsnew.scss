@@ -1,188 +1,195 @@
-.sell{
+.sell {
   background-color: #f6f6f6;
   width: 100vw;
-
-  &__icon{
-  height: 128px;
-  width: 100vw;
+  &__icon {
+    height: 128px;
+    width: 100vw;
   }
-
   &__form{
-  width: 700px;
-  background-color: white;
-  margin:0 auto;
-
+    width: 700px;
+    background-color: #FFFFFF;
+    margin:0 auto;
     &__introduction{
-  text-align: center;
-  border-bottom: solid #F0F0F0;
-  font-size: 22px;
-  font-weight: bold;
-  padding:50px 0;
+      box-sizing: border-box;
+      text-align: center;
+      border-bottom: solid  1px #F6F6F6;
+      font-size: 22px;
+      font-weight: 600;
+      padding:32px 16px;
     }
-
-    &__image{
-  padding:30px 30px 0;
-  border-bottom: solid #F0F0F0;
-
+    &__image {
+      padding:30px 30px 0;
+      border-bottom: solid 1px #F6F6F6;
       &__title{
-      font-weight: bold;
-      margin-bottom: 10px;
+        font-weight: 600;
+        margin-bottom: 10px;
       }
-
-
+      &__intro {
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: 16px;
+      }
       &__uproad{
-      height: 210px;
+        height: 210px;
       }
     }
-
     &__itemname{
       padding:40px 30px 40px;
-      border-bottom: solid #F0F0F0;
-
+      border-bottom: solid 1px #F6F6F6;
+      font-size: 14px;
+      &__intro__bold {
+        font-weight: 600;
+      }
       &__input{
         width: calc(700px - 60px);
         height: 50px;
-        font-size:20px;
-        padding: 0 15px;
+        font-size:16px;
+        margin: 8px 0 0;
+        padding: 10px 16px 8px;
         box-sizing: border-box;
+        border-radius: 3px 3px 3px 3px;
+        outline: none;
+        border : 1px solid #dfdfdf;
       }
-
       &__explanationintro{
-        margin-top:30px;
+        margin-top:40px;
       }
-
       &__explanationinput{
         width: calc(700px - 60px);
-        height: 150px;
-        font-size:20px;
+        height: 142px;
+        font-size:16px;
+        margin: 8px 0 0;
         padding: 10px;
         box-sizing: border-box;
+        outline: none;
+        border : 1px solid #dfdfdf;
       }
     }
-
     &__itemdescription{
       padding:40px 30px 40px;
-      border-bottom: solid #F0F0F0;
+      border-bottom: solid 1px #F0F0F0;
       overflow: hidden;
-
+      display: flex;
       &__left{
-        width: 320px;
+        width: 220px;
+        font-size: 14px;
+        color: #333333;
+        font-weight: 600;
+        opacity: 0.7;
         float: left;
       }
-
       &__right{
-        width: 320px;
+        width: 400px;
+        font-size: 14px;
         float: left;
-
+        font-weight: 600;
+        color:#333333;
         &__descriptionselect{
-          width: 300px;
-          height: 40px;
+          width: 400px;
+          height: 48px;
           margin-bottom:20px;
+          border-radius: 3px 3px 3px 3px;
+          outline: none;
+          border : 1px solid #dfdfdf;
+          font-weight: 500;
         }
-
         &__profit{
-          border-bottom: solid #F0F0F0;
+          border-bottom: solid 1px #F0F0F0;
           height: 50px;
           line-height: 50px;
-          font-size:20px;
-          clear: both;
+          font-size:14px;
           padding:10px 0;
-
+          clear: both;
           &__input{
             float: right;
             clear: both;
-
-
             &__box{
               margin-right:10px;
               margin-left:10px;
               height: 30px;
               width:150px;
               padding: 5px 10px;
+              border-radius: 3px 3px 3px 3px;
+              outline: none;
+              border : 1px solid #dfdfdf;
             }
           }
         }
-
         &__margin{
-        font-size:20px;
-        padding-top: 20px;
+          font-size:16px;
+          padding-top: 20px;
+          font-weight: 600;
         }
       }
     }
-
     &__delivery{
-     padding:40px 30px 40px;
-     overflow: hidden;
-     border-bottom: solid #F0F0F0;
+      padding:40px 30px 40px;
+      overflow: hidden;
+      border-bottom: solid 1px #F0F0F0;
+      display: flex
     }
-
     &__price{
       padding:40px 30px 40px;
       overflow: hidden;
-      border-bottom: solid #F0F0F0;
+      border-bottom: solid 1px #F0F0F0;
+      display: flex
     }
-
     &__button{
       margin:0 30px;
-
+      font-size: 14px;
       &__notice{
         margin-top: 30px;
+        font-size: 14px;
+        color:#333333;
       }
-
       &__button{
-      text-align: center;
-      padding-top: 30px;
-
+        text-align: center;
+        padding-top: 40px;
         &__input{
-        width: 640px;
-        height: 50px;
-        color:white;
-        border:none;
-        background-color: #ea352d;
+          width: 640px;
+          height: 50px;
+          color: #FFFFFF;
+          border:none;
+          background-color: #ea352d;
         }
         &__input2 {
           width: 640px;
           height: 50px;
-          color:white;
+          color:#FFFFFF;
           border:none;
           background-color: #ea352d;
           margin-top: 80px;
         }
       }
-
       &__back{
-      text-align: center;
-      margin-top:30px;
-      padding-bottom: 40px;
+        text-align: center;
+        margin-top:30px;
+        padding-bottom: 40px;
+        font-size: 14px;
       }
     }
-
     &--need{
-    border: solid red;
-    color:white;
-    background-color: red;
+      border: solid #ea352d;
+      color:#FFFFFF;
+      background-color: #ea352d;
     }
   }
-
   &__footer{
-  height: 220px;
-  width: 700px;
-  margin: 0 auto 0;
-  padding-top:30px;
-  text-align: center;
+    height: 220px;
+    width: 700px;
+    margin: 0 auto 0;
+    padding-top:30px;
+    text-align: center;
   }
 }
-
 .itemsnewlink{
   text-decoration: none;
-
   &__notice{
-    color:dodgerblue;
+    color: #0099e8;
   }
   &__footer{
     color:black;
   }
-
   &__backbutton{
     display:block;
     height: 50px;
@@ -196,13 +203,13 @@
 }
 
 #itemnew_img_field{
-  background-color: #F0F0F0;
+  background-color: #F5F5F5;
   width: 640px;
   height:160px;
   line-height: 20px;
-  display: table-cell; /* IE8から使用可能 */
+  display: table-cell;
   vertical-align: middle;
-  border: dotted 3px #F0F0F0;
+  border: dotted 2px #d9d9d9;
   text-align: center;
 }
 
@@ -210,5 +217,12 @@
   width:125px;
   height:80px;
   float:left;
+}
 
+#sell__form__itemname_bold-1,#sell__form__itemname_bold-2 {
+  font-weight: 600;
+}
+
+.sell__form__itemdescription__right__profit p {
+  font-weight: 500;
 }
