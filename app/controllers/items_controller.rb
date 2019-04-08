@@ -15,24 +15,32 @@ before_action :set_item, only: [:edit, :show, :update]
 
   def new
       @item =Item.new
-      @iamge =@item.images.build
+      @item.images.build
       @item.build_trade
   end
 
   def create
-binding.pry
-    @item=Item.new(item_params)
+    binding.pry
+    @item = Item.new(item_params)
     if @item.save
-      if @image = @item.images
-      if image_params[:images_attributes][:"0"][:image].each_with_index { |image, i| @image = @item.images.create(image: image)}
-# binding.pry
-        redirect_to items_path
-      else
-        render :new
+      respond_to do |format|
+        format.html
+        format.json {render json: @item}
       end
     else
       render :new
     end
+# binding.pry
+#     @item = Item.new(item_params)
+#     if @item.save
+#       # if @image = @item.images
+#       @images = @item.images.create!(name: image)
+#       end
+# # binding.pry
+#       redirect_to root_path
+#     else
+#       render :new
+#     end
   end
 
   def edit
@@ -60,7 +68,7 @@ binding.pry
 
 
   def update
-    @iamge = Image.new
+    @image = Image.new
     binding.pry
     if @item.update(item_params)
         redirect_to item_path(@item)
@@ -78,12 +86,24 @@ binding.pry
   private
 
   def item_params
-    params.require(:item).permit(:name, :description,:price,:item_condition,:trade_status,:user_id,:category_id,:brand_id,:saizu,trade_attributes: [:postage,:region,:shipping_date,:delivery])
+    params.require(:item).permit(
+     :name,
+     :description,
+     :price,
+     :item_condition,
+     :trade_status,
+     :user_id,
+     :category_id,
+     :brand_id,
+     :saizu,
+     {images_attributes:[:image]},
+     {trades_attributes:[:postage,:region,:shipping_date,:delivery]}).merge(user_id: 1)
+    # .merge(user_id: current_user.id)
   end
 
-  def image_params
-    params.require(:item).permit(images_attributes:{image: []})
-  end
+  # def image_params
+  #   params.require(:item).permit(images_attributes: [:id, :name]).marge(user_id: current_user.id)
+  # end
 
   def set_item
     @item = Item.find(params[:id])
