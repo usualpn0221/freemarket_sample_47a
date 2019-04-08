@@ -80,4 +80,5 @@ gem 'jquery-turbolinks'
 gem 'payjp'
 gem "jquery-slick-rails"
 gem "gretel"
+gem 'ransack'
 

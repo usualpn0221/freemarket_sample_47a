@@ -23,21 +23,27 @@
     }
     &__right {
       height: 50px;
-      width: 791px;
-      margin: 0 0 0 auto;
-      background: #E6E6E6;
+      width: 841px;
+      margin-left: 50px;
+      background-color: #E6E6E6;
       padding: 0 20px 0 10px;
+      display: flex;
       &__form {
         justify-content: center;
         align-items: center;
+        position:relative;
         display: flex;
-      }
-      &__input {
-        height: 50px;
-        width: 881px;
-        background: #E6E6E6;
-        border-style: none;
-        box-sizing: border-box;
+        background-color: #E6E6E6;
+        &__input {
+          height: 50px;
+          width: 810px;
+          background-color: #E6E6E6;
+          border-style: none;
+          box-sizing: border-box;
+          padding: 0 20px 0 10px;
+          border:none;
+          outline: none;
+        }
       }
     }
   }
@@ -124,6 +130,8 @@
 .fas.fa-search{
   font-size: 14px;
   opacity: .7;
+  right: 0;
+  position:absolute;
 }
 
 .fas.fa-tag {
@@ -145,3 +153,10 @@
   border-radius: 50%;
 }
 
+.inner-header__upper__right__form__input__search {
+  display:none;
+}
+
+.inner-header__upper__right__form__input[type=text]::-ms-clear {
+    display: none;
+}
