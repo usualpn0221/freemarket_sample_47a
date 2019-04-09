@@ -77,9 +77,16 @@
         display: flex;
         width:136px;
         padding-left:22px;
+        position:relative;
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           font-weight: 550;
           opacity: .8;
+          &:hover {
+            color: #0099e8;
+          }
         }
       }
     }
@@ -159,4 +166,88 @@
 
 .inner-header__upper__right__form__input[type=text]::-ms-clear {
     display: none;
+}
+
+.inner-header__under__left__brand__text__accordion{
+  position: absolute;
+  background: #FFFFFF;
+  color: #333333;
+  width:224px;
+  z-index: 1000;
+  top: 35px;
+  left: 4px;
+  box-sizing: border-box;
+  display:none;
+  &__chanel{
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__nike {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__louis-vuitton {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__supreme {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__adidas {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__others {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
 }
