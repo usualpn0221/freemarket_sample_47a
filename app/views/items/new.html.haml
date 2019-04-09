@@ -10,11 +10,16 @@
       .sell__form__image__intro
         最大10枚までアップロードできます
       .sell__form__image__uproad
-        = f.fields_for :images do |m|
-          %div#itemnew_img_field{onclick:"$('#itemnew_file').click()"}
-            ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
-          = m.file_field :image , id: "itemnew_file", multiple: true,style: "display:none",name:"[images_attributes][][image]"
+        = f.file_field :images , id: "itemnew_file", multiple: true,style: "display:none"
+        / ,name: "images[]"
+        / = f.fields_for :images do |m|
+        %div#itemnew_img_field{onclick:"$('#itemnew_file').click()"}
+          ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
 
+      /
+      / %div#itemnew_img_field{onclick:"$('#itemnew_file').click()"}
+      / ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+      / = m.file_field :image , id: "itemnew_file", multiple: true,style: "display:none",name:"[images_attributes][][image]"
       / .sell__form__image__uproad
       /   = f.fields_for :images do |i|
       /     = image_tag(i.object.image)

@@ -4,7 +4,8 @@ class Item < ApplicationRecord
   has_many :images
   # belongs_to :brand
   # belongs_to :category
-  accepts_nested_attributes_for :images
+  mount_uploaders :images, ImageUploader
+  serialize :images, JSON
   accepts_nested_attributes_for :trade
 
   validates :item_images, length: { minimum: 1, maximum: 10}

@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
 
 before_action :set_item, only: [:edit, :show, :update]
 
+# before_validation :processing_images, only: [:update, :create]/
+
   def index
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
     @search = Item.ransack(params[:q])
@@ -17,13 +19,53 @@ before_action :set_item, only: [:edit, :show, :update]
 
   def new
       @item =Item.new
-      @item.images.build
+      # @item.images.build
       @item.build_trade
   end
 
   def create
-    binding.pry
-    @item = Item.new(item_params)
+
+    # images = {}
+    # i = 0
+    # item_params[:images].each do |image|
+    #   i += 1
+    #   images[i] = image.original_filename.force_encoding("UTF-8")
+    # end
+
+    # images = images.to_a
+
+    # @item = Item.new(name: item_params[:name],
+    #  description: item_params[:description],
+    #  price: item_params[:price],
+    #  item_condition: item_params[:item_condition],
+    #  trade_status: item_params[:trade_status],
+    #  user_id: 1,
+    #  category_id: item_params[:category_id],
+    #  brand_id: item_params[:brand_id],
+    #  saizu: item_params[:saizu],
+    #  images: images.to_json,
+    #  trade_attributes:[postage: item_params[:postage],
+    #   region: item_params[:region],
+    #   shipping_date: item_params[:shipping_date],
+    #   delivery: item_params[:delivery]])
+    @item = Item.create(name: item_params[:name],
+     description: item_params[:description],
+     price: item_params[:price],
+     item_condition: item_params[:item_condition],
+     trade_status: item_params[:trade_status],
+     user_id: 1,
+     category_id: item_params[:category_id],
+     brand_id: item_params[:brand_id],
+     saizu: item_params[:saizu],
+     trade_attributes:[postage: item_params[:postage],
+      region: item_params[:region],
+      shipping_date: item_params[:shipping_date],
+      delivery: item_params[:delivery]])
+
+    item_params[:images].each do [image]
+      @image = Image.create(image: image, item_id: @item.id)
+    end
+
     if @item.save
       respond_to do |format|
         format.html
@@ -98,8 +140,8 @@ before_action :set_item, only: [:edit, :show, :update]
      :category_id,
      :brand_id,
      :saizu,
-     {images_attributes:[:image]},
-     {trades_attributes:[:postage,:region,:shipping_date,:delivery]}).merge(user_id: 1)
+     {images: []},
+     {trade_attributes:[:postage,:region,:shipping_date,:delivery]}).merge(user_id: 1)
     # .merge(user_id: current_user.id)
   end
 
