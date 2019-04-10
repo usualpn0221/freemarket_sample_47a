@@ -16,17 +16,27 @@
         .inner-header__under__left__category
           %i.fas.fa-list-ul
           .inner-header__under__left__category__text カテゴリーから探す
+          = render 'shared/category-accordion'
+          = render 'shared/ladies-middle'
+          = render 'shared/ladies-bottom'
         .inner-header__under__left__brand
           %i.fas.fa-tag
           .inner-header__under__left__brand__text ブランドから探す
           = render 'shared/brand-accordion'
       .inner-header__under__right
-        .inner-header__under__right__notice
-          %i.fas.fa-bell
-          .inner-header__under__right__notice__text お知らせ
-        .inner-header__under__right__to-do-list
-          %i.fas.fa-check
-          .inner-header__under__right__to-do-list__text やることリスト
-        .inner-header__under__right__my-page
-          = image_tag "member_photo_noimage_thumb.png" ,size: "32x32",class: "user-icon-image-top"
-          .inner-header__under__right__my-page__text マイページ
+        - if user_signed_in?
+          .inner-header__under__right__notice
+            %i.fas.fa-bell
+            .inner-header__under__right__notice__text お知らせ
+          .inner-header__under__right__to-do-list
+            %i.fas.fa-check
+            .inner-header__under__right__to-do-list__text やることリスト
+          .inner-header__under__right__my-page
+            = image_tag "member_photo_noimage_thumb.png" ,size: "32x32",class: "user-icon-image-top"
+            .inner-header__under__right__my-page__text マイページ
+        - else
+          .inner-header__under__right__new
+            = link_to 'ログイン', new_user_registration_path
+          .inner-header__under__right__login
+            = link_to '新規会員登録', new_user_path
+
