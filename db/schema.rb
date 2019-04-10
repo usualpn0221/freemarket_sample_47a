@@ -89,12 +89,14 @@ ActiveRecord::Schema.define(version: 20190409104019) do
     t.string   "tatemonomei"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
     t.string   "lastname"
     t.string   "firstname"
     t.string   "lastnamekana"
     t.string   "firstnamekana"
     t.string   "prefecture"
     t.string   "phonenumber"
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
   create_table "trades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -141,4 +143,5 @@ ActiveRecord::Schema.define(version: 20190409104019) do
     t.index ["evaluater_id"], name: "index_uservaluations_on_evaluater_id", using: :btree
   end
 
+  add_foreign_key "profiles", "users"
 end
