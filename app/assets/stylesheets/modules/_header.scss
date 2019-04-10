@@ -65,11 +65,17 @@
         align-items: center;
         width:148px;
         position:relative;
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           font-weight: 550;
           display: flex;
           justify-content: center;
           opacity: .8;
+          &:hover {
+            color: #0099e8;
+          }
         }
       }
       &__brand {
@@ -109,9 +115,31 @@
         justify-content: center;
         align-items: center;
         padding-left:28px;
+        position: relative;
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           margin: 0 0 0 10px;
           opacity: .9;
+          &:hover {
+            color: $blue;
+          }
+        }
+        &__accordion {
+          position: absolute;
+          z-index: 1000;
+          top: 42px;
+          left: -85px;
+          width: 320px;
+          height: 250px;
+          background: #ffffff;
+          text-align: center;
+          display: none;
+          &__image {
+              padding-top: 50px;
+              box-sizing:border-box;
+          }
         }
       }
       &__my-page {
@@ -198,6 +226,9 @@
 .fas.fa-check{
   color: #d0d0d0;
   font-size: 1.41em;
+  &:hover {
+    color: $blue;
+  }
 }
 
 .user-icon-image-top {
