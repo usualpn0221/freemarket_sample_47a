@@ -44,5 +44,15 @@ $(document).on('turbolinks:load', function() {
     $('.header').hover(function() {
       $('.ladies-bottom').fadeOut();
     });
+
+  $(function() {
+    $('.inner-header__under__right__to-do-list').hover(function() {
+      $('.inner-header__under__right__to-do-list__accordion').fadeIn();
+    });
+  });
+
+    $('.header').hover(function() {
+      $('.inner-header__under__right__to-do-list__accordion').fadeOut();
+    });
 });
 
