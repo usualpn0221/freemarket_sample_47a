@@ -123,7 +123,7 @@
           margin: 0 0 0 10px;
           opacity: .9;
           &:hover {
-            color: #0099e8;
+            color: $blue;
           }
         }
         &__accordion {
@@ -227,7 +227,7 @@
   color: #d0d0d0;
   font-size: 1.41em;
   &:hover {
-    color: #0099e8;
+    color: $blue;
   }
 }
 
