@@ -81,4 +81,6 @@ gem 'payjp'
 gem "jquery-slick-rails"
 gem "gretel"
 gem 'ransack'
+gem 'ancestry'
+gem 'rails-i18n'
 
