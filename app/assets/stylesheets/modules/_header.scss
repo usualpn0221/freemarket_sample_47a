@@ -104,9 +104,70 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        &__circle {
+          background: $red;
+          color: $white;
+          border-radius: 50%;
+          font-size: 8px;
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          line-height: 20px;
+          position: absolute;
+          z-index: 1000;
+          top: 3px;
+          right: 58px;
+          font-weight: 500;
+        }
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           margin-left:10px;
           opacity: .9;
+          &:hover {
+            color: $blue;
+          }
+          &__accordion {
+            width: 320px;
+            z-index: 1000;
+            position: absolute;
+            top: 42px;
+            right: -235px;
+            display:none;
+            &__01 {
+              height: 90.58px;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+            &__02 {
+              height: 92.33px;
+                &:hover {
+                cursor : pointer;
+              }
+            }
+            &__03 {
+              height: 111.55px;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+            &__04 {
+              height: 110.58px;
+              border-bottom: solid 0.5px #f6f6f6;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+            &__05 {
+              height: 111.55px;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+          }
         }
       }
       &__to-do-list {
@@ -222,6 +283,9 @@
 .fas.fa-bell{
   color: #d0d0d0;
   font-size: 1.41em;
+  &:hover {
+    color: $blue;
+  }
 }
 .fas.fa-check{
   color: #d0d0d0;
@@ -233,6 +297,7 @@
 
 .user-icon-image-top {
   border-radius: 50%;
+
 }
 
 .inner-header__upper__right__form__input__search {
