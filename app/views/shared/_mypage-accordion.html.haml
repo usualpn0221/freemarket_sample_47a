@@ -1,0 +1,44 @@
+.inner-header__under__right__my-page__accordion
+  .inner-header__under__right__my-page__accordion__image
+    = image_tag "user-bg.jpg" ,height: "80px" ,width: "320px"
+  .inner-header__under__right__my-page__accordion__body
+    .inner-header__under__right__my-page__accordion__body__icon
+      = image_tag "member_photo_noimage_thumb.png" ,height: "60px" ,width: "60px" ,class:"inner-header__under__right__my-page__accordion__body__icon__image"
+    .inner-header__under__right__my-page__accordion__body__nickname
+      = current_user.nickname
+    .inner-header__under__right__my-page__accordion__body__data　評価:5　出品数:0
+    .inner-header__under__right__my-page__accordion__body__sales
+      .inner-header__under__right__my-page__accordion__body__sales__text 売上金
+      .inner-header__under__right__my-page__accordion__body__sales__number ￥0
+      .inner-header__under__right__my-page__accordion__body__sales__arrow
+        %i.fas.fa-chevron-right
+    .inner-header__under__right__my-page__accordion__body__point
+      .inner-header__under__right__my-page__accordion__body__point__text ポイント
+      .inner-header__under__right__my-page__accordion__body__point__number P0
+      .inner-header__under__right__my-page__accordion__body__point__arrow
+        %i.fas.fa-chevron-right
+  .inner-header__under__right__my-page__accordion__good
+    .inner-header__under__right__my-page__accordion__good__text いいね！一覧
+    .inner-header__under__right__my-page__accordion__good__arrow
+      %i.fas.fa-chevron-right
+  .inner-header__under__right__my-page__accordion__exhibition
+    .inner-header__under__right__my-page__accordion__exhibition__text 出品した商品-出品中
+    .inner-header__under__right__my-page__accordion__exhibition__arrow
+      %i.fas.fa-chevron-right
+  .inner-header__under__right__my-page__accordion__trading
+    .inner-header__under__right__my-page__accordion__trading__text 出品した商品-取引中
+    .inner-header__under__right__my-page__accordion__trading__arrow
+      %i.fas.fa-chevron-right
+  .inner-header__under__right__my-page__accordion__sold
+    .inner-header__under__right__my-page__accordion__sold__text 出品した商品-売却済み
+    .inner-header__under__right__my-page__accordion__sold__arrow
+      %i.fas.fa-chevron-right
+  .inner-header__under__right__my-page__accordion__purchase
+    .inner-header__under__right__my-page__accordion__purchase__text 購入した商品-取引中
+    .inner-header__under__right__my-page__accordion__purchase__arrow
+      %i.fas.fa-chevron-right
+  .inner-header__under__right__my-page__accordion__past
+    .inner-header__under__right__my-page__accordion__past__text 購入した商品-過去の取引
+    .inner-header__under__right__my-page__accordion__past__arrow
+      %i.fas.fa-chevron-right
+
