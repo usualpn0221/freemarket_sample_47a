@@ -38,7 +38,9 @@
                 = image_tag "to-do-list.png" ,width: "280px"
           .inner-header__under__right__my-page
             = image_tag "member_photo_noimage_thumb.png" ,size: "32x32",class: "user-icon-image-top"
-            = link_to "マイページ",user_path(current_user.id),class:"inner-header__under__right__my-page__text"
+            .inner-header__under__right__my-page__text
+              = link_to "マイページ",user_path(current_user.id)
+            = render 'shared/mypage-accordion'
         - else
           .inner-header__under__right__new
             = link_to 'ログイン', new_user_session_path

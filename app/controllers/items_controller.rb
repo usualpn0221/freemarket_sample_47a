@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
 before_action :set_item, only: [:edit, :show, :update]
+before_action :set_category, only: [:edit, :show, :update]
 
   def index
     @categories = Category.all
@@ -75,6 +76,17 @@ before_action :set_item, only: [:edit, :show, :update]
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_category
+
+    @category_large = Category.find_by(id: @item.category_id)
+    @category_middle = Category.find_by(id: @item.category_id)
+    @category_small = Category.find_by(id: @item.category_id)
+    @category_large ||= Category.new
+    @category_middle ||= Category.new
+    @category_small ||= Category.new
+    binding.pry
   end
 
 end

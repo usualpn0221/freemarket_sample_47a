@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
-  # before_action :set_
+  before_action :set_category
 
 
 
@@ -26,6 +26,15 @@ class ApplicationController < ActionController::Base
   def set_search
     @search = Item.ransack(params[:q])
     @items = @search.result.limit(4).order("created_at DESC")
+  end
+
+  def set_category
+    @category_large = Category.where(: "タイトル0")
+    @category_middle = Category.find_by(id: @product.category_middle)
+    @category_small = Category.find_by(id: @product.category_small)
+    @category_large ||= Category.new
+    @category_middle ||= Category.new
+    @category_small ||= Category.new
   end
 end
 

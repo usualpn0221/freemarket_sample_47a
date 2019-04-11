@@ -64,5 +64,15 @@ $(document).on('turbolinks:load', function() {
     $('.header').hover(function() {
       $('.inner-header__under__right__notice__text__accordion').fadeOut();
     });
+
+  $(function () {
+    $('.inner-header__under__right__my-page').hover(function () {
+      $('.inner-header__under__right__my-page__accordion').fadeIn();
+    });
+  });
+
+  $('.header').hover(function () {
+    $('.inner-header__under__right__my-page__accordion').fadeOut();
+  });
 });
 
