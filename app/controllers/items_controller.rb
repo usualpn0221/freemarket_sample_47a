@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 before_action :set_item, only: [:edit, :show, :update]
 
   def index
+    @categories = Category.eager_load({children: [{children: :products}, :products]}, :products).where(parent_id: nil)
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
     @search = Item.ransack(params[:q])
     @items = @search.result.limit(4).order("created_at DESC")

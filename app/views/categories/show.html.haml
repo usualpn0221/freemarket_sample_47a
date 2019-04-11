@@ -1,1 +1,12 @@
-= render 'shared/exhibition'
+= render 'shared/header'
+
+.category
+  .category__links
+    / - @categories.each do |category|
+
+  .category__title
+    の商品一覧
+  .category__product
+    = render "shared/item-mini"
+
+= render 'shared/footer'

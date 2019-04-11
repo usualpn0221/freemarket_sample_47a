@@ -1,0 +1,114 @@
+.category {
+  margin: 0;
+  padding: 50px 30px;
+  width: 100vw;
+  height: 100vh;
+  background-color: $gray-thin;
+  box-sizing: border-box;
+  &__links {
+    height: 30px;
+    width: 1020px;
+    &__link {
+      font-size: 14px;
+      color: #0099e8;
+      margin-right: 14px;
+    }
+    &__link:hover {
+      text-decoration: underline;
+      color: #0099e8;
+    }
+  }
+  &__title {
+    color: #333;
+    font-size: 22px;
+    font-weight: 550;
+    margin: 24px 0 8px 0;
+  }
+  &__product {
+    width: 1020px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.items-boxs-container--body__upper__unit2 {
+  height: 298px;
+  width: 188px;
+  margin-right:20px;
+  background:#FFFFFF;
+  &__image {
+    height: 188px;
+    width: 188px;
+    box-sizing: border-box;
+    &__upload {
+      object-fit: cover;
+      height: 188px;
+      width: 188px;
+      box-sizing: border-box;
+    }
+    &__triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 90px 90px 0 0;
+      border-color: #ea352d transparent transparent transparent;
+      z-index: 1;
+      &__box {
+        top: -80px;
+        position: absolute;
+        color: $white;
+        font-size: 20px;
+        font-weight: 600;
+        transform: rotate( -45deg );
+      }
+    }
+  }
+  &__body {
+    height: 110px;
+    width: 188px;
+    padding:16px;
+    box-sizing: border-box;
+    &__title {
+      overflow: hidden;
+      height: 3em;
+      line-height: 1.5;
+      word-break: break-word;
+      white-space: normal;
+      height: 48px;
+      width: 156px;
+      font-size: 16px;
+      margin:0 auto;
+      color: #333;
+      font-weight: 400;
+      box-sizing: border-box;
+    }
+    &__price {
+      height: 30px;
+      width: 156px;
+      margin:0 auto;
+      box-sizing: border-box;
+      padding-top: 30px;
+      &__upper {
+        height: 20px;
+        width: 60px;
+        margin:8px auto 0;
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+      }
+      &__under {
+        height: 10px;
+        width: 156px;
+        margin:0 auto;
+        font-size: 10px;
+        color: #333;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
