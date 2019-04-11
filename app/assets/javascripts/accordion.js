@@ -54,5 +54,15 @@ $(document).on('turbolinks:load', function() {
     $('.header').hover(function() {
       $('.inner-header__under__right__to-do-list__accordion').fadeOut();
     });
+
+  $(function() {
+    $('.inner-header__under__right__notice').hover(function() {
+      $('.inner-header__under__right__notice__text__accordion').fadeIn();
+    });
+  });
+
+    $('.header').hover(function() {
+      $('.inner-header__under__right__notice__text__accordion').fadeOut();
+    });
 });
 
