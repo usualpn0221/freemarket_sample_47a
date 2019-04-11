@@ -18,7 +18,7 @@
       padding:32px 16px;
     }
     &__image {
-      padding:30px 30px 0;
+      padding:30px 30px 30px 30px;
       border-bottom: solid 1px #F6F6F6;
       &__title{
         font-weight: 600;
@@ -103,6 +103,7 @@
           &__input{
             float: right;
             clear: both;
+            font-weight: 300;
             &__box{
               margin-right:10px;
               margin-left:10px;
@@ -203,20 +204,68 @@
 }
 
 #itemnew_img_field{
-  background-color: #F5F5F5;
   width: 640px;
-  height:160px;
-  line-height: 20px;
-  display: table-cell;
-  vertical-align: middle;
-  border: dotted 2px #d9d9d9;
-  text-align: center;
+  max-height:200px;
+  // line-height: 20px;
+  // display: table-cell;
+  // vertical-align: middle;
+
+  // text-align: center;
 }
 
+#itemnew_img_field__method{
+    display:table-cell;
+    vertical-align:middle;
+    border: dotted 2px #d9d9d9;
+    height:200px;
+    text-align: center;
+    width: 640px;
+    background-color: #F5F5F5;
+}
+
+
 .itempreview{
-  width:125px;
+  width:115px;
   height:80px;
   float:left;
+  background-color: #f6f6f6;
+  border-top: dotted 1px #d9d9d9;
+  border-right: dotted 1px #d9d9d9;
+  border-left: dotted 1px #d9d9d9;
+}
+
+.img_view{
+  width: 115px;
+  background-color: #f6f6f6;
+  border-right: dotted 1px #d9d9d9;
+  border-left: dotted 1px #d9d9d9;
+  border-bottom: dotted 1px #d9d9d9;
+
+  &__cover{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    border-right: dotted 1px #d9d9d9;
+  }
+}
+
+.img_del{
+    text-decoration: none;
+    color: #0099e8;
+    text-align: center;
+}
+
+.img_edit{
+    text-decoration: none;
+    color: #0099e8;
+    text-align: center;
+}
+
+.previewfield{
+   width:115px;
+   float: left;
+   padding-right: 10px;
+   padding-bottom: 10px;
 }
 
 #sell__form__itemname_bold-1,#sell__form__itemname_bold-2 {
@@ -225,4 +274,35 @@
 
 .sell__form__itemdescription__right__profit p {
   font-weight: 500;
+}
+
+.l-right{
+  margin-right: 20px;
+  float: right;
+}
+
+.l-left{
+  width: 50%;
+  float: left;
+}
+
+#item_price{
+text-align: right;
+}
+
+#mercari_margin{
+  font-weight: 300;
+    &--left{
+    font-weight: 300;
+  }
+}
+
+#sell__price__range{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#itemimage_uproad_over{
+  color: #ea352d;
+  clear: both;
 }

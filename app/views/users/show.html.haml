@@ -9,7 +9,8 @@
         =link_to "#", class:"right-content__user__page" do
           %figure
             =image_tag "member_photo_noimage_thumb.png" ,size: "60x60",class: "user-icon"
-          %h2 ユーザーネーム
+          %h2
+            =current_user.nickname
           .right-content__user__number
             %div
               評価
