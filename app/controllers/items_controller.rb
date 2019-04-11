@@ -26,7 +26,7 @@ before_action :set_item, only: [:edit, :show, :update]
   def create
     @item=Item.new(item_params)
     if @item.save
-      if image_params[:images_attributes][:"0"][:image].each { |image| @image = @item.images.create(image: image)}
+      if image_params.each { |image| @image = @item.images.create(image: image)}
         redirect_to items_path
       else
         render :new
@@ -38,11 +38,20 @@ before_action :set_item, only: [:edit, :show, :update]
 
   def edit
 
+
+
   end
 
   def update
+
+
     if @item.update(item_params)
+      if params[:images].present?
+      image_params.each { |image| @image = @item.images.create(image: image)}
         redirect_to item_path(@item)
+      else
+        redirect_to item_path(@item)
+      end
     else
       render :edit
     end
@@ -57,11 +66,11 @@ before_action :set_item, only: [:edit, :show, :update]
   private
 
   def item_params
-    params.require(:item).permit(:name, :description,:price,:item_condition,:trade_status,:user_id,:category_id,:brand_id,:saizu,trade_attributes: [:postage,:region,:shipping_date,:delivery])
+    params.require(:item).permit(:name, :description,:price,:item_condition,:trade_status,:user_id,:category_id,:brand_id,:saizu,trade_attributes: [:postage,:region,:shipping_date,:delivery],images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def image_params
-    params.require(:item).permit(images_attributes:{image: []})
+    params.require(:images).permit(name: [])[:name]
   end
 
   def set_item

@@ -1,6 +1,6 @@
 .sell
   = render 'shared/mercari-header'
-  = form_for @item, html:{class:"sell__form"} do |f|
+  = form_for @item, html:{class:"sell__form",id:"itemnew__sell__form"} do |f|
     .sell__form__introduction
       商品の情報を入力
     .sell__form__image
@@ -11,9 +11,10 @@
         最大10枚までアップロードできます
       .sell__form__image__uproad
         = f.fields_for :images do |m|
-          %div#itemnew_img_field{onclick:"$('#itemnew_file').click()"}
-            ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
-          = m.file_field :image,  multiple: true,id:"itemnew_file",style: "display:none"
+          %div#itemnew_img_field
+            %div.drop-zone#itemnew_img_field__method{onclick:"$('#itemnew_file1').click()",data: {count: 1}} ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+          = m.file_field :image,  multiple: true,id:"itemnew_file1",name: "images[name][]",class:"itemnew_file",style: "display:none"
+      %div#itemimage_uproad_over{style: "display:none"}  アップロードできる画像は10枚までです。
 
     .sell__form__itemname
       .sell__form__itemname__intro
@@ -32,13 +33,13 @@
         .sell__form__itemdescription__right__description
           カテゴリー
           %span.sell__form--need 必須
-          = f.select :user_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
-          / = f.select :trade_status,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
-          = f.select :category_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
-        .sell__form__itemdescription__right__description
-          サイズ
-          %span.sell__form--need 任意
-          = f.select :saizu,["","L","M","S"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox'}
+          = f.select :trade_status,["1","2","3"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox1',style: "display:none"}
+          = f.select :category_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox2',style: "display:none"}
+        / .sell__form__itemdescription__right__description
+        /   サイズ
+        /   %span.sell__form--need 任意
+        /   = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect'}
         .sell__form__itemdescription__right__description
           ブランド
           %span.sell__form--need 任意
@@ -58,10 +59,11 @@
           .sell__form__itemdescription__right__description
             配送料の負担
             %span.sell__form--need 必須
-            = t.select :postage,["送料込み(出品者負担)","着払い(購入者負担)"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
-            配送の方法
-            %span.sell__form--need 必須
-            = t.select :delivery,["未定","ゆうメール","レターパック","クロネコヤマト","普通郵便","ゆうパック","らくらくメルカリ便"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+            = t.select :postage,["送料込み(出品者負担)","着払い(購入者負担)"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitemdelivery'}
+            %div.selectitemdelivery1{style: "display:none"}
+              配送の方法
+              %span.sell__form--need 必須
+              = t.select :delivery,["未定","ゆうメール","レターパック","クロネコヤマト","普通郵便","ゆうパック","らくらくメルカリ便"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitemdelivery1'}
           .sell__form__itemdescription__right__description
             発送元の地域
             %span.sell__form--need 必須
@@ -73,7 +75,8 @@
 
     .sell__form__price
       .sell__form__itemdescription__left
-        販売価格(300〜9,999,999)
+        販売価格
+        %span#sell__price__range<> (300〜9,999,999)
       .sell__form__itemdescription__right
         .sell__form__itemdescription__right__profit
           価格
@@ -82,19 +85,21 @@
             ¥
             = f.text_field :price,class:'sell__form__itemdescription__right__profit__input__box',placeholder:"例) 300"
         .sell__form__itemdescription__right__profit
-          %p 販売手数料 (10%)
+          .l-left#mercari_margin--left 販売手数料 (10%)
+          .l-right#mercari_margin  -
         .sell__form__itemdescription__right__margin
-          販売利益
+          .l-left 販売利益
+          .l-right#saler_margin -
 
     .sell__form__button
       .sell__form__button__notice
-        = link_to "禁止されている出品","", class:'itemsnewlink itemsnewlink__notice'
+        %span>= link_to "禁止されている出品","", class:'itemsnewlink itemsnewlink__notice'
         、
-        = link_to "行為","", class:'itemsnewlink itemsnewlink__notice'
+        %span>= link_to "行為","", class:'itemsnewlink itemsnewlink__notice'
         を必ずご確認ください。<br />またブランド品でシリアルナンバー等がある場合はご記載ください。
-        = link_to "偽ブランドの販売","", class:'itemsnewlink itemsnewlink__notice'
+        %span>= link_to "偽ブランドの販売","", class:'itemsnewlink itemsnewlink__notice'
         は犯罪であり処罰される可能性があります。<br />また、出品をもちまして
-        = link_to "加盟店規約","", class:'itemsnewlink itemsnewlink__notice'
+        %span>= link_to "加盟店規約","", class:'itemsnewlink itemsnewlink__notice'
         に同意したことになります。
       .sell__form__button__button
         = f.submit '出品する', class:'sell__form__button__button__input'
