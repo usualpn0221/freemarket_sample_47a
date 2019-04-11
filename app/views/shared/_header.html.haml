@@ -39,6 +39,7 @@
           .inner-header__under__right__my-page
             = image_tag "member_photo_noimage_thumb.png" ,size: "32x32",class: "user-icon-image-top"
             .inner-header__under__right__my-page__text マイページ
+            = render 'shared/mypage-accordion'
         - else
           .inner-header__under__right__new
             = link_to 'ログイン', new_user_registration_path

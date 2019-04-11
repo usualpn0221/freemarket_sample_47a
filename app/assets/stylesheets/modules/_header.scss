@@ -14,13 +14,16 @@
   margin: 0 auto;
   padding: 8px 0 0;
   box-sizing: border-box;
+
   &__upper {
     height: 50px;
     display: flex;
+
     &__left {
       padding-top: 7px;
       height: 43px;
     }
+
     &__right {
       height: 50px;
       width: 841px;
@@ -28,12 +31,14 @@
       background-color: #E6E6E6;
       padding: 0 20px 0 10px;
       display: flex;
+
       &__form {
         justify-content: center;
         align-items: center;
-        position:relative;
+        position: relative;
         display: flex;
         background-color: #E6E6E6;
+
         &__input {
           height: 50px;
           width: 810px;
@@ -41,12 +46,13 @@
           border-style: none;
           box-sizing: border-box;
           padding: 0 20px 0 10px;
-          border:none;
+          border: none;
           outline: none;
         }
       }
     }
   }
+
   &__under {
     display: flex;
     justify-content: space-between;
@@ -55,56 +61,68 @@
     box-sizing: border-box;
     font-size: 14px;
     vertical-align: middle;
+
     &__left {
       height: 42px;
       display: flex;
       justify-content: space-between;
+
       &__category {
         display: flex;
         justify-content: center;
         align-items: center;
-        width:148px;
-        position:relative;
+        width: 148px;
+        position: relative;
+
         &:hover {
-          cursor : pointer;
+          cursor: pointer;
         }
+
         &__text {
           font-weight: 550;
           display: flex;
           justify-content: center;
           opacity: .8;
+
           &:hover {
             color: #0099e8;
           }
         }
       }
+
       &__brand {
         justify-content: center;
         align-items: center;
         display: flex;
-        width:136px;
-        padding-left:22px;
-        position:relative;
+        width: 136px;
+        padding-left: 22px;
+        position: relative;
+
         &:hover {
-          cursor : pointer;
+          cursor: pointer;
         }
+
         &__text {
           font-weight: 550;
           opacity: .8;
+
           &:hover {
             color: #0099e8;
           }
         }
       }
     }
+
     &__right {
       display: flex;
+
       &__notice {
-        width:86px;
+        width: 86px;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+
         &__circle {
           background: $red;
           color: $white;
@@ -120,73 +138,92 @@
           right: 58px;
           font-weight: 500;
         }
+
         &:hover {
-          cursor : pointer;
+          cursor: pointer;
         }
+
         &__text {
-          margin-left:10px;
+          margin-left: 10px;
           opacity: .9;
+
           &:hover {
             color: $blue;
           }
+
           &__accordion {
             width: 320px;
             z-index: 1000;
             position: absolute;
             top: 42px;
             right: -235px;
-            display:none;
+            display: none;
+
             &__01 {
               height: 90.58px;
+
               &:hover {
-                cursor : pointer;
+                cursor: pointer;
               }
             }
+
             &__02 {
               height: 92.33px;
-                &:hover {
-                cursor : pointer;
+
+              &:hover {
+                cursor: pointer;
               }
             }
+
             &__03 {
               height: 111.55px;
+
               &:hover {
-                cursor : pointer;
+                cursor: pointer;
               }
             }
+
             &__04 {
               height: 110.58px;
               border-bottom: solid 0.5px #f6f6f6;
+
               &:hover {
-                cursor : pointer;
+                cursor: pointer;
               }
             }
+
             &__05 {
               height: 111.55px;
+
               &:hover {
-                cursor : pointer;
+                cursor: pointer;
               }
             }
           }
         }
       }
+
       &__to-do-list {
-        width:129px;
+        width: 129px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left:28px;
+        padding-left: 28px;
         position: relative;
+
         &:hover {
-          cursor : pointer;
+          cursor: pointer;
         }
+
         &__text {
           margin: 0 0 0 10px;
           opacity: .9;
+
           &:hover {
             color: $blue;
           }
         }
+
         &__accordion {
           position: absolute;
           z-index: 1000;
@@ -197,23 +234,227 @@
           background: #ffffff;
           text-align: center;
           display: none;
+
           &__image {
-              padding-top: 50px;
-              box-sizing:border-box;
+            padding-top: 50px;
+            box-sizing: border-box;
           }
         }
       }
+
       &__my-page {
-        width:113px;
+        width: 113px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left:28px;
+        padding-left: 28px;
+        position: relative;
+
         &__text {
           margin: 0 0 0 10px;
           opacity: .9;
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        &__accordion {
+          width: 320px;
+          height: 560px;
+          background: $white;
+          position: absolute;
+          z-index: 1000;
+          top: 43px;
+          right: 0px;
+          cursor: pointer;
+          display: none;
+
+          &__image {
+            height: 80px;
+          }
+
+          &__body {
+            height: 180px;
+            background: $white;
+            border-bottom: solid 1px $gray-thin;
+            position: relative;
+
+            &__icon {
+              position: absolute;
+              left: 129px;
+              top: -52px;
+
+              &__image {
+                border-radius: 50%;
+              }
+            }
+
+            &__nickname {
+              height: 40px;
+              text-align: center;
+              line-height: 40px;
+              font-size: 16px;
+              font-weight: 500;
+            }
+
+            &__data {
+              height: 40px;
+              text-align: center;
+              line-height: 40px;
+            }
+
+            &__sales {
+              height: 40px;
+              margin-left: 10px;
+              margin-right: 10px;
+              display: flex;
+              align-items: center;
+              background: #f5f5f5;
+              border: solid 1px #e6e6e6;
+
+              &__text {
+                width: 250px;
+                margin-left: 10px;
+                box-sizing: border-box;
+              }
+
+              &__number {
+                width: 30px;
+                text-align: center;
+                font-size: 12px;
+              }
+
+              &__arrow {
+                width: 20px;
+              }
+            }
+
+            &__point {
+              height: 40px;
+              margin-left: 10px;
+              margin-right: 10px;
+              display: flex;
+              align-items: center;
+              background: #f5f5f5;
+              border-left: solid 1px #e6e6e6;
+              border-right: solid 1px #e6e6e6;
+              border-bottom: solid 1px #e6e6e6;
+              &__text {
+                width: 250px;
+                margin-left: 10px;
+                box-sizing: border-box;
+              }
+
+              &__number {
+                width: 30px;
+                text-align: center;
+                font-size: 12px;
+              }
+
+              &__arrow {
+                width: 20px;
+              }
+            }
+          }
+
+          &__good {
+            height: 49px;
+            background: $white;
+            border-bottom: solid 1px $gray-thin;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 15px;
+
+            &:hover {
+              background: #f5f5f5;
+
+            }
+          }
+
+          &__exhibition {
+            height: 49px;
+            background: $white;
+            border-bottom: solid 1px $gray-thin;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 15px;
+
+            &:hover {
+              background: #f5f5f5;
+
+            }
+
+          }
+
+          &__trading {
+            height: 49px;
+            background: $white;
+            border-bottom: solid 1px $gray-thin;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 15px;
+
+            &:hover {
+              background: #f5f5f5;
+
+            }
+          }
+
+          &__sold {
+            height: 49px;
+            background: $white;
+            border-bottom: solid 1px $gray-thin;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 15px;
+
+            &:hover {
+              background: #f5f5f5;
+
+            }
+          }
+
+          &__purchase {
+            height: 49px;
+            background: $white;
+            border-bottom: solid 1px $gray-thin;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 15px;
+
+            &:hover {
+              background: #f5f5f5;
+
+            }
+          }
+
+          &__past {
+            height: 50px;
+            background: $white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 15px;
+
+            &:hover {
+              background: #f5f5f5;
+
+            }
+          }
         }
       }
+
       &__new {
         width: 78px;
         height: 32px;
@@ -224,6 +465,7 @@
         align-items: center;
         margin-right: 10px;
         box-sizing: border-box;
+
         & a {
           color: #ffffff;
           text-decoration: none;
@@ -233,6 +475,7 @@
           height: 32px;
         }
       }
+
       &__login {
         width: 106px;
         height: 30px;
@@ -242,18 +485,21 @@
         justify-content: center;
         align-items: center;
         border: 1px solid #0099e8;
-          &:hover {
-            background: #0099e8;
-          }
-          & a {
+
+        &:hover {
+          background: #0099e8;
+        }
+
+        & a {
           color: #0099e8;
           text-decoration: none;
           line-height: 30px;
           text-align: center;
           width: 106px;
           height: 30px;
-            &:hover {
-              color: #ffffff;
+
+          &:hover {
+            color: #ffffff;
           }
         }
       }
@@ -267,11 +513,11 @@
   margin-right: 4px;
 }
 
-.fas.fa-search{
+.fas.fa-search {
   font-size: 14px;
   opacity: .7;
   right: 0;
-  position:absolute;
+  position: absolute;
 }
 
 .fas.fa-tag {
@@ -280,18 +526,30 @@
   margin-right: 4px;
 }
 
-.fas.fa-bell{
+.fas.fa-bell {
   color: #d0d0d0;
   font-size: 1.41em;
+
   &:hover {
     color: $blue;
   }
 }
-.fas.fa-check{
+
+.fas.fa-check {
   color: #d0d0d0;
   font-size: 1.41em;
+
   &:hover {
     color: $blue;
+  }
+}
+
+.fas.fa-chevron-right {
+  font-size: 14px;
+  color: #e6e6e6;
+  &:hover {
+    color: #333333;
+    font-size: 16px;
   }
 }
 
@@ -301,93 +559,105 @@
 }
 
 .inner-header__upper__right__form__input__search {
-  display:none;
+  display: none;
 }
 
 .inner-header__upper__right__form__input[type=text]::-ms-clear {
-    display: none;
+  display: none;
 }
 
-.inner-header__under__left__brand__text__accordion{
+.inner-header__under__left__brand__text__accordion {
   position: absolute;
   background: #FFFFFF;
   color: #333333;
-  width:224px;
+  width: 224px;
   z-index: 1000;
   top: 35px;
   left: 4px;
   box-sizing: border-box;
-  display:none;
-  &__chanel{
+  display: none;
+
+  &__chanel {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__nike {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__louis-vuitton {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__supreme {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__adidas {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__others {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
 }
@@ -396,178 +666,206 @@
   position: absolute;
   background: #FFFFFF;
   color: #333333;
-  width:224px;
+  width: 224px;
   z-index: 1000;
   top: 35px;
   right: -77px;
   box-sizing: border-box;
-  display:none;
+  display: none;
+
   &__ladies {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__mens {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__kids {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__interior {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__book {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__toy {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__cosmetics {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__electric-appliances {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__sports {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__handmade {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__ticket {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__bicycle {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__others {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__lists {
     height: 42px;
     line-height: 42px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #ea352d;
       color: #ffffff;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
 }
@@ -576,166 +874,194 @@
   position: absolute;
   background: #FFFFFF;
   color: #333333;
-  width:224px;
-  height:588px;
+  width: 224px;
+  height: 588px;
   z-index: 900;
   top: 35px;
   right: -301px;
   box-sizing: border-box;
-  border-left:solid 1px #e6e6e6;
-  display:none;
+  border-left: solid 1px #e6e6e6;
+  display: none;
+
   &__tops {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__jacket {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__pants {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__skirt {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__one-piece {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__shoes {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__pajamas {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__leg-wear {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__hat {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__bag {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__accessories {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__hair-accessories {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__komono {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__clock {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
 }
@@ -744,166 +1070,194 @@
   position: absolute;
   background: #FFFFFF;
   color: #333333;
-  width:320px;
-  height:588px;
+  width: 320px;
+  height: 588px;
   z-index: 1000;
   top: 35px;
   right: -621px;
   box-sizing: border-box;
-  border-left:solid 1px #e6e6e6;
-  display:none;
+  border-left: solid 1px #e6e6e6;
+  display: none;
+
   &__t-shirts1 {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__t-shirts2 {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__shirts1 {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__shirts2 {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__polo-shirts {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__camisole {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__tank-top {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__halter-neck {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__knit {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__tunic {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__cardigan {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__ensemble {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__vest {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
+
   &__hoodie {
     height: 28px;
     line-height: 28px;
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
+
     &:hover {
       background: #e6e6e6;
-      cursor : pointer;
+      cursor: pointer;
     }
   }
 }
