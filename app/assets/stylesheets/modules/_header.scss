@@ -64,11 +64,18 @@
         justify-content: center;
         align-items: center;
         width:148px;
+        position:relative;
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           font-weight: 550;
           display: flex;
           justify-content: center;
           opacity: .8;
+          &:hover {
+            color: #0099e8;
+          }
         }
       }
       &__brand {
@@ -77,9 +84,16 @@
         display: flex;
         width:136px;
         padding-left:22px;
+        position:relative;
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           font-weight: 550;
           opacity: .8;
+          &:hover {
+            color: #0099e8;
+          }
         }
       }
     }
@@ -90,9 +104,70 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        &__circle {
+          background: $red;
+          color: $white;
+          border-radius: 50%;
+          font-size: 8px;
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          line-height: 20px;
+          position: absolute;
+          z-index: 1000;
+          top: 3px;
+          right: 58px;
+          font-weight: 500;
+        }
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           margin-left:10px;
           opacity: .9;
+          &:hover {
+            color: $blue;
+          }
+          &__accordion {
+            width: 320px;
+            z-index: 1000;
+            position: absolute;
+            top: 42px;
+            right: -235px;
+            display:none;
+            &__01 {
+              height: 90.58px;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+            &__02 {
+              height: 92.33px;
+                &:hover {
+                cursor : pointer;
+              }
+            }
+            &__03 {
+              height: 111.55px;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+            &__04 {
+              height: 110.58px;
+              border-bottom: solid 0.5px #f6f6f6;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+            &__05 {
+              height: 111.55px;
+              &:hover {
+                cursor : pointer;
+              }
+            }
+          }
         }
       }
       &__to-do-list {
@@ -101,9 +176,31 @@
         justify-content: center;
         align-items: center;
         padding-left:28px;
+        position: relative;
+        &:hover {
+          cursor : pointer;
+        }
         &__text {
           margin: 0 0 0 10px;
           opacity: .9;
+          &:hover {
+            color: $blue;
+          }
+        }
+        &__accordion {
+          position: absolute;
+          z-index: 1000;
+          top: 42px;
+          left: -85px;
+          width: 320px;
+          height: 250px;
+          background: #ffffff;
+          text-align: center;
+          display: none;
+          &__image {
+              padding-top: 50px;
+              box-sizing:border-box;
+          }
         }
       }
       &__my-page {
@@ -115,6 +212,49 @@
         &__text {
           margin: 0 0 0 10px;
           opacity: .9;
+        }
+      }
+      &__new {
+        width: 78px;
+        height: 32px;
+        background: #ea352d;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        box-sizing: border-box;
+        & a {
+          color: #ffffff;
+          text-decoration: none;
+          line-height: 32px;
+          text-align: center;
+          width: 178px;
+          height: 32px;
+        }
+      }
+      &__login {
+        width: 106px;
+        height: 30px;
+        background: #ffffff;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #0099e8;
+          &:hover {
+            background: #0099e8;
+          }
+          & a {
+          color: #0099e8;
+          text-decoration: none;
+          line-height: 30px;
+          text-align: center;
+          width: 106px;
+          height: 30px;
+            &:hover {
+              color: #ffffff;
+          }
         }
       }
     }
@@ -143,14 +283,21 @@
 .fas.fa-bell{
   color: #d0d0d0;
   font-size: 1.41em;
+  &:hover {
+    color: $blue;
+  }
 }
 .fas.fa-check{
   color: #d0d0d0;
   font-size: 1.41em;
+  &:hover {
+    color: $blue;
+  }
 }
 
 .user-icon-image-top {
   border-radius: 50%;
+
 }
 
 .inner-header__upper__right__form__input__search {
@@ -159,4 +306,604 @@
 
 .inner-header__upper__right__form__input[type=text]::-ms-clear {
     display: none;
+}
+
+.inner-header__under__left__brand__text__accordion{
+  position: absolute;
+  background: #FFFFFF;
+  color: #333333;
+  width:224px;
+  z-index: 1000;
+  top: 35px;
+  left: 4px;
+  box-sizing: border-box;
+  display:none;
+  &__chanel{
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__nike {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__louis-vuitton {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__supreme {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__adidas {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__others {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+}
+
+.inner-header__under__left__category__text__accordion {
+  position: absolute;
+  background: #FFFFFF;
+  color: #333333;
+  width:224px;
+  z-index: 1000;
+  top: 35px;
+  right: -77px;
+  box-sizing: border-box;
+  display:none;
+  &__ladies {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__mens {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__kids {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__interior {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__book {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__toy {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__cosmetics {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__electric-appliances {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__sports {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__handmade {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__ticket {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__bicycle {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__others {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+  &__lists {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #ea352d;
+      color: #ffffff;
+      cursor : pointer;
+    }
+  }
+}
+
+.ladies-middle {
+  position: absolute;
+  background: #FFFFFF;
+  color: #333333;
+  width:224px;
+  height:588px;
+  z-index: 900;
+  top: 35px;
+  right: -301px;
+  box-sizing: border-box;
+  border-left:solid 1px #e6e6e6;
+  display:none;
+  &__tops {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__jacket {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__pants {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__skirt {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__one-piece {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__shoes {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__pajamas {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__leg-wear {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__hat {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__bag {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__accessories {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__hair-accessories {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__komono {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__clock {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+}
+
+.ladies-bottom {
+  position: absolute;
+  background: #FFFFFF;
+  color: #333333;
+  width:320px;
+  height:588px;
+  z-index: 1000;
+  top: 35px;
+  right: -621px;
+  box-sizing: border-box;
+  border-left:solid 1px #e6e6e6;
+  display:none;
+  &__t-shirts1 {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__t-shirts2 {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__shirts1 {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__shirts2 {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__polo-shirts {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__camisole {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__tank-top {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__halter-neck {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__knit {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__tunic {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__cardigan {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__ensemble {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__vest {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
+  &__hoodie {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    opacity: .9;
+    box-sizing: border-box;
+    &:hover {
+      background: #e6e6e6;
+      cursor : pointer;
+    }
+  }
 }
