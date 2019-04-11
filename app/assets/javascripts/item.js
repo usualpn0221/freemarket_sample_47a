@@ -46,10 +46,10 @@ $(document).on('turbolinks:load', function() {
         })
 
     .done(function() {
-          console.log("OK");
+
           })
     .fail(function() {
-      console.log("NG");
+
       })
   });
 // 更新
@@ -86,10 +86,10 @@ $(document).on('turbolinks:load', function() {
         })
 
     .done(function() {
-      console.log("OK");
+
       })
     .fail(function() {
-      console.log("NG");
+
       })
     });
 // 数字をカンマ区切り
