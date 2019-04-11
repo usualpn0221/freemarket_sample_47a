@@ -83,4 +83,4 @@ gem "gretel"
 gem 'ransack'
 gem 'ancestry'
 gem 'rails-i18n'
-
+gem 'recaptcha', require: "recaptcha/rails"
