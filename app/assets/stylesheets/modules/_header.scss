@@ -343,10 +343,25 @@
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
-    &:hover {
-      background: #ea352d;
-      color: #ffffff;
-      cursor : pointer;
+    &__link {
+      text-decoration: none;
+      color: #333;
+      opacity: .9;
+      &__text {
+        height: 42px;
+        line-height: 42px;
+        width: 224px;
+        position: relative;
+        &:hover {
+          left: 0;
+          position: absolute;
+          background: #ea352d;
+          color: #ffffff;
+          cursor : pointer;
+          box-sizing: border-box;
+          padding-left: 10px;
+        }
+      }
     }
   }
   &__mens {
@@ -355,10 +370,25 @@
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
-    &:hover {
-      background: #ea352d;
-      color: #ffffff;
-      cursor : pointer;
+    &__link {
+      text-decoration: none;
+      color: #333;
+      opacity: .9;
+      &__text {
+        height: 42px;
+        line-height: 42px;
+        width: 224px;
+        position: relative;
+        &:hover {
+          left: 0;
+          position: absolute;
+          background: #ea352d;
+          color: #ffffff;
+          cursor : pointer;
+          box-sizing: border-box;
+          padding-left: 10px;
+        }
+      }
     }
   }
   &__kids {
@@ -525,9 +555,24 @@
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
-    &:hover {
-      background: #e6e6e6;
-      cursor : pointer;
+    &__link {
+      text-decoration: none;
+      color: #333;
+      opacity: .9;
+      &__text {
+        height: 28px;
+        line-height: 28px;
+        width: 224px;
+        position: relative;
+        &:hover {
+          left: 0;
+          position: absolute;
+          background: #e6e6e6;
+          cursor : pointer;
+          box-sizing: border-box;
+          padding-left: 10px;
+        }
+      }
     }
   }
   &__jacket {
@@ -536,9 +581,24 @@
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
-    &:hover {
-      background: #e6e6e6;
-      cursor : pointer;
+    &__link {
+      text-decoration: none;
+      color: #333;
+      opacity: .9;
+      &__text {
+        height: 28px;
+        line-height: 28px;
+        width: 224px;
+        position: relative;
+        &:hover {
+          left: 0;
+          position: absolute;
+          background: #e6e6e6;
+          cursor : pointer;
+          box-sizing: border-box;
+          padding-left: 10px;
+        }
+      }
     }
   }
   &__pants {
@@ -693,9 +753,24 @@
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
-    &:hover {
-      background: #e6e6e6;
-      cursor : pointer;
+    &__link {
+      text-decoration: none;
+      color: #333;
+      opacity: .9;
+      &__text {
+        height: 28px;
+        line-height: 28px;
+        width: 319px;
+        position: relative;
+        &:hover {
+          left: 0;
+          position: absolute;
+          background: #e6e6e6;
+          cursor : pointer;
+          box-sizing: border-box;
+          padding-left: 10px;
+        }
+      }
     }
   }
   &__t-shirts2 {
@@ -704,9 +779,24 @@
     padding-left: 10px;
     opacity: .9;
     box-sizing: border-box;
-    &:hover {
-      background: #e6e6e6;
-      cursor : pointer;
+    &__link {
+      text-decoration: none;
+      color: #333;
+      opacity: .9;
+      &__text {
+        height: 28px;
+        line-height: 28px;
+        width: 319px;
+        position: relative;
+        &:hover {
+          left: 0;
+          position: absolute;
+          background: #e6e6e6;
+          cursor : pointer;
+          box-sizing: border-box;
+          padding-left: 10px;
+        }
+      }
     }
   }
   &__shirts1 {

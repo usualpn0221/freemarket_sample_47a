@@ -1,6 +1,12 @@
 .ladies-middle
-  .ladies-middle__tops トップス
-  .ladies-middle__jacket ジャケット/アウター
+  .ladies-middle__tops
+    = link_to "category_path(14)", class: "ladies-middle__tops__link" do
+      .ladies-middle__tops__link__text
+        トップス
+  .ladies-middle__jacket
+    = link_to "category_path(15)", class: "ladies-middle__jacket__link" do
+      .ladies-middle__jacket__link__text
+        ジャケット/アウター
   .ladies-middle__pants パンツ
   .ladies-middle__skirt スカート
   .ladies-middle__one-piece ワンピース
@@ -13,3 +19,6 @@
   .ladies-middle__hair-accessories ヘアアクセサリー
   .ladies-middle__komono 小物
   .ladies-middle__clock 時計
+
+
+

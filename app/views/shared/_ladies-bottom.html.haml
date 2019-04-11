@@ -1,6 +1,12 @@
 .ladies-bottom
-  .ladies-bottom__t-shirts1 Tシャツ/カットソー(半袖/袖なし)
-  .ladies-bottom__t-shirts2 Tシャツ/カットソー(七分/長袖)
+  .ladies-bottom__t-shirts1
+    = link_to "category_path(42)", class: "ladies-bottom__t-shirts1__link" do
+      .ladies-bottom__t-shirts1__link__text
+        Tシャツ/カットソー(半袖/袖なし)
+  .ladies-bottom__t-shirts2
+    = link_to "category_path(43)", class: "ladies-bottom__t-shirts2__link" do
+      .ladies-bottom__t-shirts2__link__text
+        Tシャツ/カットソー(七分/長袖)
   .ladies-bottom__shirts1 シャツ/ブラウス(半袖/袖なし)
   .ladies-bottom__shirts2 シャツ/ブラウス(七分/長袖)
   .ladies-bottom__polo-shirts ポロシャツ
@@ -13,3 +19,4 @@
   .ladies-bottom__ensemble アンサンブル
   .ladies-bottom__vest ベスト/ジレ
   .ladies-bottom__hoodie パーカー
+

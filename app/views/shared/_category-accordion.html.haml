@@ -1,6 +1,12 @@
 .inner-header__under__left__category__text__accordion
-  .inner-header__under__left__category__text__accordion__ladies レディース
-  .inner-header__under__left__category__text__accordion__mens メンズ
+  .inner-header__under__left__category__text__accordion__ladies
+    = link_to "category_path(1)", class: "inner-header__under__left__category__text__accordion__ladies__link" do
+      .inner-header__under__left__category__text__accordion__ladies__link__text
+        レディース
+  .inner-header__under__left__category__text__accordion__mens
+    = link_to "category_path(2)", class: " inner-header__under__left__category__text__accordion__mens__link" do
+      .inner-header__under__left__category__text__accordion__mens__link__text
+        メンズ
   .inner-header__under__left__category__text__accordion__kids ベビー・キッズ
   .inner-header__under__left__category__text__accordion__interior インテリア・住まい・小物
   .inner-header__under__left__category__text__accordion__book 本・音楽・ゲーム
