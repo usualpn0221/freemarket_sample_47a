@@ -1,4 +1,14 @@
 $(document).on('turbolinks:load', function() {
+// 編集（更新時の画像ドロップゾーンviewを調整
+    var previewarea = document.getElementsByClassName('previewfield');
+    var previewareacount = previewarea.length;
+
+    if (previewareacount >= 10)
+      {$('#itemnew_img_field__method').hide();}
+    else if(previewareacount >= 5)
+      {$('#itemnew_img_field__method').height(100);}
+    else
+      {$('#itemnew_img_field__method').height(200);}
     // プレビューの削除
   $(document).on("click", ".img_del", function removeFile(e) {
     e.preventDefault();
@@ -9,6 +19,16 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().parent().remove();
 
       $('#itemnew_img_field__method').show();
+
+      var previewarea = document.getElementsByClassName('previewfield');
+      var previewareacount = previewarea.length;
+// view調整
+    if (previewareacount >= 10)
+      {$('#itemnew_img_field__method').hide();}
+    else if(previewareacount >= 5)
+      {$('#itemnew_img_field__method').height(100);}
+    else
+      {$('#itemnew_img_field__method').height(200);}
      }
   );
 // 新規出品
