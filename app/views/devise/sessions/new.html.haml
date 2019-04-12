@@ -25,7 +25,12 @@
             %br/
             = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード" ,class: "siginin-field"
           .g-recaptcha
-            =image_tag "recaptcha.ong"
+            / = recaptcha_tags
+            = recaptcha_tags
+            / = recaptcha_tags theme: :darks
+            / callback: 'successRecaptchaVerified'
+            / =image_tag "recaptcha.ong"
+            ここ
           .actions
             = f.submit "ログイン", class: "signin-btn"
           .forget-passward
