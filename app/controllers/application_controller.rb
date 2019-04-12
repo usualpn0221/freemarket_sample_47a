@@ -29,12 +29,12 @@ class ApplicationController < ActionController::Base
   end
 
   def set_category
-    @category_large = Category.where(: "タイトル0")
-    @category_middle = Category.find_by(id: @product.category_middle)
-    @category_small = Category.find_by(id: @product.category_small)
-    @category_large ||= Category.new
-    @category_middle ||= Category.new
-    @category_small ||= Category.new
+    @category = Category.where(parent_id: null)
+    # @category_middle = Category.where(parent_id: 1) && Category.where(parent_id: 1)
+    # @category_small = Category.find_by(id: @product.category_small)
+    # @category_large ||= Category.new
+    # @category_middle ||= Category.new
+    # @category_small ||= Category.new
   end
 end
 

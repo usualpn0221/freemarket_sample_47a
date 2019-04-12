@@ -2,8 +2,12 @@
   .inner-header__under__left__category__text__accordion__ladies
     = link_to "category_path(1)", class: "inner-header__under__left__category__text__accordion__ladies__link" do
       .inner-header__under__left__category__text__accordion__ladies__link__text
-        レディース
+        / = @category.name
         / = @categories.name
+
+
+
+
   .inner-header__under__left__category__text__accordion__mens
     = link_to "category_path(2)", class: " inner-header__under__left__category__text__accordion__mens__link" do
       .inner-header__under__left__category__text__accordion__mens__link__text
