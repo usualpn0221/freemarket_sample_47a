@@ -26,3 +26,8 @@ crumb :confirmation do
   link '本人情報の登録', edit_user_path(current_user.id)
   parent :mypage
 end
+
+crumb :method do
+  link '支払い方法', edit_creditcard_path(1)
+  parent :mypage
+end
