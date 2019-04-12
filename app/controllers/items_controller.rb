@@ -22,12 +22,15 @@ before_action :set_item, only: [:edit, :show, :update]
   end
 
   def create
+
     @item=Item.new(item_params)
-    if @item.save
-      if image_params.each { |image| @image = @item.images.create(image: image)}
-        redirect_to items_path
-      else
-        render :new
+    if params[:images].present?
+      if @item.save
+        if image_params.each { |image| @image = @item.images.create(image: image)}
+          redirect_to items_path
+        else
+          render :new
+        end
       end
     else
       render :new
@@ -41,7 +44,6 @@ before_action :set_item, only: [:edit, :show, :update]
   end
 
   def update
-
 
     if @item.update(item_params)
       if params[:images].present?
