@@ -16,7 +16,7 @@
   box-sizing: border-box;
 
   &__upper {
-    height: 50px;
+    height: 40px;
     display: flex;
 
     &__left {
@@ -25,24 +25,26 @@
     }
 
     &__right {
-      height: 50px;
+      height: 40px;
       width: 841px;
-      margin-left: 50px;
-      background-color: #E6E6E6;
+      margin-left: 45px;
+      background-color: #f5f5f5;
       padding: 0 20px 0 10px;
       display: flex;
+      border : 1px solid #dfdfdf;
+      border-radius: 5px;
 
       &__form {
         justify-content: center;
         align-items: center;
         position: relative;
         display: flex;
-        background-color: #E6E6E6;
+        background-color: #f5f5f5;
 
         &__input {
-          height: 50px;
+          height: 40px;
           width: 810px;
-          background-color: #E6E6E6;
+          background-color: #f5f5f5;
           border-style: none;
           box-sizing: border-box;
           padding: 0 20px 0 10px;
@@ -57,7 +59,7 @@
     display: flex;
     justify-content: space-between;
     height: 42px;
-    margin: 8px 0 0;
+    margin-top: 8px;
     box-sizing: border-box;
     font-size: 14px;
     vertical-align: middle;
