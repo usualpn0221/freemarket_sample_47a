@@ -1,0 +1,11 @@
+= render 'shared/header'
+.default-container
+  %nav.bread-container
+    - breadcrumb :profile
+    = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
+  %main.l-container
+    = render 'shared/mypage-left-bar'
+    = render 'shared/user-profile'
+= render 'shared/footer'
+
+
