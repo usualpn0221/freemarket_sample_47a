@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   resources :address
   resources :creditcards
   resources :category, only: [:index, :show]
-  resources :profiles, only: [:show]
+  resources :profiles, only: :show
 end
