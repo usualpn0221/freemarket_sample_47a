@@ -21,3 +21,8 @@ crumb :logout do
   link 'ログアウト', destroy_user_session_path(current_user.id)
   parent :mypage
 end
+
+crumb :confirmation do
+  link '本人情報の登録', edit_user_path(current_user.id)
+  parent :mypage
+end

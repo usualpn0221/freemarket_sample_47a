@@ -1,5 +1,8 @@
 = render 'shared/header'
 .default-container
+  %nav.bread-container
+    - breadcrumb :confirmation
+    = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
   %main.l-container
     = render 'shared/mypage-left-bar'
     .right-content.credit-content
