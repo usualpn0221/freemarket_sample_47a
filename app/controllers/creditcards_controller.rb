@@ -21,5 +21,6 @@ class CreditcardsController < ApplicationController
       customer_id: customer.id,
       user_id: current_user.id)
     card.save
+    redirect_to complete_path
   end
 end
