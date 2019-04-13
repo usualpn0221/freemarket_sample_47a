@@ -125,7 +125,7 @@
     - else
       .item__confirmation-box
         - if @item.trade_status == "3"
-          = link_to buys_index_path do
+          = link_to root_path do
             .item__confirmation-box__link-text2 売り切れました
         - else
           = link_to new_item_buy_path(@item) do
@@ -173,7 +173,10 @@
           相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.text_field :text, class: 'comment__form-box__input'
         .comment__form-box__action-box
-          = f.submit 'コメントする', class: 'comment__form-box__action-box__btn'
+          - if @item.trade_status == "3"
+            = f.submit '売り切れのためコメントできません', class: 'comment__form-box__action-box__btn1'
+          - else
+            = f.submit 'コメントする', class: 'comment__form-box__action-box__btn2'
   .nav
     .nav__left
       = link_to "https://item.mercari.com/jp/m65619776524/" do
