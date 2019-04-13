@@ -19,9 +19,8 @@
           <br><br>
         .buy__form__content__cover__alert
           %span.buy__form--red 配送先と支払い方法の入力を完了してください。
-        %input.itembuybutton#itembuybutton__buy{value:"購入する",type:"button",onclick:"$('#payjp_checkout_box input[type=button]').click()"}
         = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript","data-text" => "購入する"}
+          = submit_tag("購入する",class: "itembuybutton",id: "itembuybutton__buy")
     .buy__form__content
       .buy__form__content__cover
         %span.buy__form--bold 配送先<br><br>

@@ -1,10 +1,8 @@
 .signup__header{
   display: flex;
-  width: 60%;
   margin: 0 auto 40px;
   padding-top: 40px;
   .signup-header{
-  padding-left: 50px;
     h1{
       position: relative;
       a{
@@ -15,7 +13,8 @@
   }
 }
 .signup-bar{
-  width:650px;
+  display: flex;
+  margin: 0 auto;
   #active-text{
     color: red;
   }
@@ -118,6 +117,10 @@
       padding: 0 20px;
       margin: 5px 0;
       border: 1px solid #ccc;
+      &:focus{
+        outline: none;
+        border: 1px solid #0099e8;
+      }
     }
   }
   .ur-form__btn--submit{
