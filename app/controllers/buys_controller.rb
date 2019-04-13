@@ -25,10 +25,13 @@ class BuysController < ApplicationController
     Payjp::Charge.create(currency: 'jpy', amount: @item.price, customer: customer_id)
 
     if @item.trade_status == 3
-
+       redirect_to items_path
     else
       @item.trade_status = 3
       @item.save
+      @item.trade.buyer_id =current_user.id
+      @item.trade.save
+      redirect_to items_path
     end
   end
 

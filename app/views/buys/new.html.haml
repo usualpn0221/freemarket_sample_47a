@@ -24,12 +24,12 @@
     .buy__form__content
       .buy__form__content__cover
         %span.buy__form--bold 配送先<br><br>
-        =@item.user.profile.postnumber
+        =current_user.profile.postnumber
         <br>
-        =@item.user.profile.prefecture
-        =@item.user.profile.shikuchouson
+        =current_user.profile.prefecture
+        =current_user.profile.shikuchouson
         <br>
-        =@item.user.nickname
+        =current_user.nickname
         .profile-cover__notice
           = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
     .buy__form__content
