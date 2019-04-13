@@ -28,7 +28,7 @@
             %span.charge-errors
             %label カード番号
             %span.ur-form-group__span 必須
-            %input.number{maxlength: "16", name: "number", placeholder: "カード番号", type: "text"}/
+            %input.number{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", value: 4242424242424242}/
             =image_tag "credit.png", size:"350x30"
           .ur-form-group
             %label 有効期限
@@ -64,8 +64,6 @@
             %label セキリュティコード
             %span.ur-form-group__span 必須
             %input.cvc{minlength: "3",maxlength: "4", name: "cvc", placeholder: "３桁または４桁", type: "text"}/
-            %button{type: "submit"} 送信
-
-
+            %button{type: "submit",id: "card-save"} 送信
   =render 'shared/mercari-footer'
 
