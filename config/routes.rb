@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :creditcards
   resources :category, only: [:index, :show]
   resources :profiles, only: :show
+  post 'pay'     => 'creditcards#create'
+  get 'complete' => "users#complete"
 end
