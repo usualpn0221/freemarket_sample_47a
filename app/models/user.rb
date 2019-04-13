@@ -16,7 +16,15 @@ class User < ApplicationRecord
   has_one  :phonenumber,dependent: :destroy
   has_many :snsCredentials, dependent: :destroy
 
-  def self.find_oauth(auth)
+  def self.Snscreate(uid,provider,user)
+    SnsCredential.create(
+          uid: uid,
+          provider: provider,
+          user_id: user.id
+          )
+  end
+
+  def self.find_or_create_from_auth(auth)
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
@@ -25,24 +33,18 @@ class User < ApplicationRecord
     else
       user = User.where(email: auth.info.email).first
       if user.present?
-        SnsCredential.create(
-          uid: uid,
-          provider: provider,
-          user_id: user.id
-          )
+        self.Snscreate(uid,provider,user)
       else
         user = User.create(
           nickname: auth.info.name,
           email:    auth.info.email,
           password: Devise.friendly_token[0, 20],
           )
-        SnsCredential.create(
-          uid: uid,
-          provider: provider,
-          user_id: user.id
-          )
+        self.Snscreate(uid,provider,user)
       end
     end
     return user
   end
+
+
 end
