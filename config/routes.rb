@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   resources :address
   resources :creditcards
   resources :category, only: [:index, :show]
-  post 'pay'     => 'creditcards#create'
   resources :profiles, only: :show
+  post 'pay'     => 'creditcards#create'
 end

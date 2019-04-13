@@ -1,11 +1,4 @@
-$(document).on('turbolinks:load', function() {
-  Payjp.setPublicKey(gon.key);
-  var form = $("charge-form");
-    number = form.find('input[name="number"]'),
-    cvc = form.find('input[name="cvc"]'),
-    exp_month = form.find('input[name="exp_month"]'),
-    exp_year = form.find('input[name="exp_year"]');
-  $("#charge-form").on("click", "#card-save", function(e) {
+$("#charge-form").on("click", "#card-save", function(e) {
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
     var card = {
