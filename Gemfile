@@ -83,5 +83,9 @@ gem "gretel"
 gem 'ransack'
 gem 'ancestry'
 gem 'rails-i18n'
+
 gem 'recaptcha', require: "recaptcha/rails"
-gem 'slim-rails'
+gem 'rack-cors'
+# gem 'slim-rails'
+# gem 'dotenv-rails', :require => 'dotenv/rails-now'
+# gem 'bcrypt'
