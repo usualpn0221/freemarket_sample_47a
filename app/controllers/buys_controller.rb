@@ -21,15 +21,17 @@ class BuysController < ApplicationController
   def pay
     buyitem
     Payjp.api_key = PAYJP_SECRET_KEY
-    token = params['payjp-token']
-    customer = Payjp::Customer.create(card: token)
-    Payjp::Charge.create(currency: 'jpy', amount: @item.price, customer: customer)
+    customer_id =current_user.cards[0].customer_id
+    Payjp::Charge.create(currency: 'jpy', amount: @item.price, customer: customer_id)
 
     if @item.trade_status == 3
-
+       redirect_to items_path
     else
       @item.trade_status = 3
       @item.save
+      @item.trade.buyer_id =current_user.id
+      @item.trade.save
+      redirect_to items_path
     end
   end
 

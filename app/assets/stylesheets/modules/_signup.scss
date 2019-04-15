@@ -1,10 +1,8 @@
 .signup__header{
   display: flex;
-  width: 60%;
   margin: 0 auto 40px;
   padding-top: 40px;
   .signup-header{
-  padding-left: 50px;
     h1{
       position: relative;
       a{
@@ -15,7 +13,8 @@
   }
 }
 .signup-bar{
-  width:650px;
+  display: flex;
+  margin: 0 auto;
   #active-text{
     color: red;
   }
@@ -70,13 +69,25 @@
 .signin__user-infomation{
   width: 50%;
   margin: 40px auto 0;
+  font-size: 20px;
+  .signin__user-infomation__thanks{
+    font-size: 3px;
+  }
+  &__complete{
+    font-size: 20px;
+  }
   .ur-form-group {
     width:100%;
     margin-top: 40px;
     display: inline-block;
     text-align: left;
+    .creditcard{
+      font-size: 14px;
+      font-weight: bold;
+    }
     &-info-text{
-      color: #888
+      color: #888;
+      font-size :12px;
     }
     &__text{
       font-size: 12px;
@@ -110,28 +121,43 @@
       margin-left: 10px;
       margin-bottom: 15px;
     }
+    &__free{
+      padding:3px;
+      border-radius: 4px;
+      background: #ccc;
+      font-size: 12px;
+      color: white;
+      margin-left: 10px;
+      margin-bottom: 15px;
+    }
     &__field{
-      width:100%;
+      width:88%;
       font-size:14px;
       border-radius: 4px;
       height: 48px;
       padding: 0 20px;
       margin: 5px 0;
       border: 1px solid #ccc;
+      &:focus{
+        outline: none;
+        border: 1px solid #0099e8;
+      }
     }
   }
-  .ur-form__btn--submit{
+  .ur-form__btn--submit,#card-save{
     background: #ea352d;
     border: 1px solid #ea352d;
     color: #fff;
     margin-top: 40px;
     width: 100%;
     line-height: 48px;
+    font-size: 18px;
+    padding: 0 20px;
   }
 }
 
 
-.select__default{
+.select__default,.registration-form__expiration-date--month-form,.registration-form__expiration-date--year-form{
   width: 140px;
   height: 48px;
   margin:5px 0;

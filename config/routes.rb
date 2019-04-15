@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'buys/index'
 
   devise_for :users, controllers: {
-        registrations: 'users/registrations'
+        registrations: 'users/registrations',
+        omniauth_callbacks: 'users/omniauth_callbacks'
       }
   root 'items#index'
   resources :users
@@ -19,4 +20,6 @@ Rails.application.routes.draw do
   resources :creditcards
   resources :category, only: [:index, :show]
   resources :profiles, only: :show
+  post 'pay'     => 'creditcards#create'
+  get 'complete' => "users#complete"
 end

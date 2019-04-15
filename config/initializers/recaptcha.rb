@@ -5,6 +5,7 @@ Recaptcha.configure do |config|
 
   config.site_key   = ENV["RECAPTCHA_SITE_KEY"]
   config.secret_key = ENV["RECAPTCHA_PRIVATE_KEY"]
+
   # config.api_server_url = "v2"
 
   # Uncomment the following line if you are using a proxy server:
