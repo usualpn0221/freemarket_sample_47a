@@ -24,23 +24,8 @@
           .field
             %br/
             = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード" ,class: "siginin-field"
-          / .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "{Site key}"}
+          = recaptcha_tags
 
-          .g-recaptcha
-            .g-recaptcha{"data-sitekey" => "6LebxZ0UAAAAAF1w76NScwnCZyhNDpEydcBa5Xwi",display_captcha:true}
-            / = recaptcha_tags, display_captcha:true
-          / callback: 'successRecaptcha Verified'
-
-          / = recaptcha_tags :script => false
-
-          / = recaptcha_tags
-          / = recaptcha_tags callback: 'successRecaptchaVerified'
-
-          / = recaptcha_tags theme: :darks
-          / callback: 'successRecaptchaVerified'
-          / =image_tag "recaptcha.ong"
-          / ここログイン
-          / = recaptcha_tags
 
           .actions
             = f.submit "ログイン", class: "signin-btn"

@@ -4,7 +4,7 @@ Recaptcha.configure do |config|
   # config.secret_key = Rails.application.secrets[:RECAPTCHA_PRIVATE_KEY]
 
   config.site_key   = ENV["RECAPTCHA_SITE_KEY"]
-  config.secret_key = ENV["RECAPTCHA_PRIVATE_KEY"]
+  config.secret_key = ENV["RECAPTCHA_SECRET_KEY"]
 
   # config.api_server_url = "v2"
 
