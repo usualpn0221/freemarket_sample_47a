@@ -224,14 +224,19 @@
 .slide-dots{
   text-align: center;
   position: absolute;
-  top: 88%;
-  right: 50%;
+  top: 85%;
+  right: 47%;
   li{
     display: inline-block;
     margin: 0 15px;
     button{
       position: relative;
       text-indent: -9999px;
+      right: -190%;
+      color: transparent;
+      background: transparent;
+      border: transparent;
+      outline: none;
       &:before{
         content: '●';
         color: #fff;
