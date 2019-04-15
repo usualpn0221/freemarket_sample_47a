@@ -20,4 +20,6 @@ $(document).on('turbolinks:load', function() {
 });
 
 
-
+// $(document).addEventListener("turbolinks:before-cache", function() {
+//    $('.g-recaptcha').empty();
+// });

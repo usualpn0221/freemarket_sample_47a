@@ -19,3 +19,5 @@ $(document).on('turbolinks:load', function() {
     focusOnSelect:true,
   });
 });
+
+

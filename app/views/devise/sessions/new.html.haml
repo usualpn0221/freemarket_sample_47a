@@ -24,16 +24,23 @@
           .field
             %br/
             = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード" ,class: "siginin-field"
-          .g-recaptcha
-            .g-recaptcha{"data-sitekey" => "{config.site_key}"}
-            = recaptcha_tags
-            = recaptcha_tags callback: 'successRecaptchaVerified'
+          / .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "{Site key}"}
 
-            / = recaptcha_tags theme: :darks
-            / callback: 'successRecaptchaVerified'
-            / =image_tag "recaptcha.ong"
-            ここログイン
-          = recaptcha_tags callback: 'successRecaptchaVerified'
+          .g-recaptcha
+            = recaptcha_tags
+          / callback: 'successRecaptchaVerified'
+          / .g-recaptcha{"data-sitekey" => "{config.site_key}"}
+          / = recaptcha_tags :script => false
+
+          / = recaptcha_tags
+          / = recaptcha_tags callback: 'successRecaptchaVerified'
+
+          / = recaptcha_tags theme: :darks
+          / callback: 'successRecaptchaVerified'
+          / =image_tag "recaptcha.ong"
+          / ここログイン
+          / = recaptcha_tags
+
           .actions
             = f.submit "ログイン", class: "signin-btn"
           .forget-passward

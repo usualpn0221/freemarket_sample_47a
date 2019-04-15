@@ -84,8 +84,10 @@ gem 'ransack'
 gem 'ancestry'
 gem 'rails-i18n'
 
+# gem "recaptcha", github: "ambethia/recaptcha"
 gem 'recaptcha', require: "recaptcha/rails"
-gem 'rack-cors'
+# gem 'rack-cors'
+# gem 'dotenv-rails'
 # gem 'slim-rails'
 # gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # gem 'bcrypt'
