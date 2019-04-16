@@ -183,9 +183,9 @@ $(document).on('turbolinks:load', function() {
             $("#selectitembox2").hide();
             $("#selectitembox1").val("");
             $("#selectitembox2").val("");
-        }
+    }
     for(var i=document.getElementById('selectitembox1').options.length -1; 1 <= i ; --i){document.getElementById('selectitembox1').options[i] = null;
-      }
+    }
 
     $.ajax({
       type: 'GET',
@@ -195,12 +195,13 @@ $(document).on('turbolinks:load', function() {
     })
 
     .done(function(sub_categories) {
-    sub_categories.forEach(function(sub_category){
-       appendCategory(sub_category);
-     });
+      sub_categories.forEach(function(sub_category){
+         appendCategory(sub_category);
+      });
     })
 
     .fail(function() {
+      alert("NG");
     })
   })
 
@@ -210,12 +211,12 @@ $(document).on('turbolinks:load', function() {
   }
 
   $('#selectitembox1').change(function()  {
-      var test = $('#selectitembox1').val();
-          if($(this).val() !== "")
-        {$("#selectitembox2").show();
-        }else{$("#selectitembox2").hide();
-              $("#selectitembox2").val("");
-        }
+    var test = $('#selectitembox1').val();
+    if($(this).val() !== "")
+      {$("#selectitembox2").show();}
+    else{$("#selectitembox2").hide();
+         $("#selectitembox2").val("");
+    }
 
     $.ajax({
       type: 'GET',
@@ -225,9 +226,9 @@ $(document).on('turbolinks:load', function() {
     })
 
     .done(function(sub_categories) {
-    for(var i=document.getElementById('selectitembox2').options.length -1; 1 <= i ; --i){
-    document.getElementById('selectitembox2').options[i] = null;
-      }
+      for(var i=document.getElementById('selectitembox2').options.length -1; 1 <= i ; --i){
+      document.getElementById('selectitembox2').options[i] = null;
+    }
 
     sub_categories.forEach(function(sub_category){
        appendCategory2(sub_category);
