@@ -175,14 +175,16 @@ $(document).on('turbolinks:load', function() {
     $("#selectitembox1").append(html);
   }
 
-  $('#selectitembox').change(function()  {
+  $('#selectitembox').change(function() {
     var test = $('#selectitembox').val();
-        if($(this).val() !== "")
-        {$("#selectitembox1").show();
-        }else{$("#selectitembox1").hide();
-            $("#selectitembox2").hide();
-            $("#selectitembox1").val("");
-            $("#selectitembox2").val("");
+    if($(this).val() !== ""){
+       $("#selectitembox1").show();
+    }
+    else{
+       $("#selectitembox1").hide();
+       $("#selectitembox2").hide();
+       $("#selectitembox1").val("");
+       $("#selectitembox2").val("");
     }
     for(var i=document.getElementById('selectitembox1').options.length -1; 1 <= i ; --i){document.getElementById('selectitembox1').options[i] = null;
     }
