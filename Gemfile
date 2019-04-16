@@ -87,11 +87,4 @@ gem 'gon'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-
-# gem "recaptcha", github: "ambethia/recaptcha"
 gem 'recaptcha', require: "recaptcha/rails"
-# gem 'rack-cors'
-# gem 'dotenv-rails'
-# gem 'slim-rails'
-# gem 'dotenv-rails', :require => 'dotenv/rails-now'
-# gem 'bcrypt'
