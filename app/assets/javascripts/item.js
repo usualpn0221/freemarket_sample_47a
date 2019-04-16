@@ -279,7 +279,6 @@ $(document).on('turbolinks:load', function() {
 // ドロップされた画像データをinput type=fileに代入する
     var tmpfiles = e.originalEvent.dataTransfer.files;
     fileInput.files = tmpfiles;
-    console.log(fileInput.files);
   });
   $(".drop-zone").on("dragover",function(e){
     e.preventDefault();
