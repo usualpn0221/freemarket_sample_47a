@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+
 // 編集（更新時の画像ドロップゾーンviewを調整
     var previewarea = document.getElementsByClassName('previewfield');
     var previewareacount = previewarea.length;
@@ -40,6 +41,11 @@ $(document).on('turbolinks:load', function() {
     var formData = new FormData(this);
 // validationチェック
     formvalidation();
+
+ for (var [key, value] of formData.entries()) {
+  console.log(key, value);
+}
+
 
     var formcheck=
     $('.sell__form__itemdescription__right__profit__input__box').val();
@@ -168,6 +174,76 @@ $(document).on('turbolinks:load', function() {
         return num;
     }
   }
+// カテゴリーのセレクトボックスを動的に追加
+  function appendCategory(sub_category) {
+    var html=`<option value='${sub_category.id}'>${sub_category.name}</option>`
+    $("#selectitembox1").append(html);
+  }
+
+  $('#selectitembox').change(function()  {
+    var test = $('#selectitembox').val();
+        if($(this).val() !== "")
+        {$("#selectitembox1").show();
+        }else{$("#selectitembox1").hide();
+            $("#selectitembox2").hide();
+            $("#selectitembox1").val("");
+            $("#selectitembox2").val("");
+        }
+       for(var i=document.getElementById('selectitembox1').options.length -1; 1 <= i ; --i){
+    document.getElementById('selectitembox1').options[i] = null;
+      }
+
+    $.ajax({
+      type: 'GET',
+      url: '/categories/new',
+      data: { category_id: test},
+      dataType: 'json'
+    })
+
+    .done(function(sub_categories) {
+    sub_categories.forEach(function(sub_category){
+       appendCategory(sub_category);
+     });
+    })
+
+    .fail(function() {
+    })
+  })
+
+  function appendCategory2(sub_category) {
+    var html=`<option value='${sub_category.id}'>${sub_category.name}</option>`
+    $("#selectitembox2").append(html);
+  }
+
+  $('#selectitembox1').change(function()  {
+      var test = $('#selectitembox1').val();
+          if($(this).val() !== "")
+        {$("#selectitembox2").show();
+        }else{$("#selectitembox2").hide();
+              $("#selectitembox2").val("");
+        }
+
+    $.ajax({
+      type: 'GET',
+      url: '/categories/new',
+      data: { category_id: test},
+      dataType: 'json'
+    })
+
+    .done(function(sub_categories) {
+    for(var i=document.getElementById('selectitembox2').options.length -1; 1 <= i ; --i){
+    document.getElementById('selectitembox2').options[i] = null;
+      }
+
+    sub_categories.forEach(function(sub_category){
+       appendCategory2(sub_category);
+     });
+    })
+
+    .fail(function() {
+    })
+  })
+
 // 手数料と利益計算
   $("#item_price").on('keyup',$("#item_price"), function() {
    var price = $(this).val();
@@ -187,24 +263,6 @@ $(document).on('turbolinks:load', function() {
       }
   })
 
-   $("#selectitembox").change(function()  {
-    if($(this).val() !== "")
-      {$("#selectitembox1").show();
-      }else{$("#selectitembox1").hide();
-            $("#selectitembox2").hide();
-            $("#selectitembox1").val("");
-            $("#selectitembox2").val("");
-      }
-   });
-
-  $("#selectitembox1").change(function()  {
-    if($(this).val() !== "")
-      {$("#selectitembox2").show();
-      }else{$("#selectitembox2").hide();
-            $("#selectitembox2").val("");
-      }
-   });
-
   $("#selectitemdelivery").change(function()  {
   if($(this).val() !== "")
     {$(".selectitemdelivery1").show();
@@ -221,6 +279,7 @@ $(document).on('turbolinks:load', function() {
 // ドロップされた画像データをinput type=fileに代入する
     var tmpfiles = e.originalEvent.dataTransfer.files;
     fileInput.files = tmpfiles;
+    console.log(fileInput.files);
   });
   $(".drop-zone").on("dragover",function(e){
     e.preventDefault();
