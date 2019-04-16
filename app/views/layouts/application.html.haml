@@ -5,6 +5,7 @@
     %title FreemarketSample47a
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{:async => "", :defer => "defer", :src => "“https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit”"}
     %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = include_gon
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -90,9 +90,20 @@
     margin: 20px;
   }
 }
-.g-recaptcha{
-  margin-top: 20px
+
+.new_user {
+  .g-recaptcha{
+  margin-top: 20px ;
+  margin-left: 23px;
+  }
 }
+.ur-form-group {
+  .g-recaptcha{
+  margin-top: 20px;
+  margin-left:0;
+  }
+}
+
 
 
 .forget-passward{
