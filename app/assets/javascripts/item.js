@@ -184,8 +184,7 @@ $(document).on('turbolinks:load', function() {
             $("#selectitembox1").val("");
             $("#selectitembox2").val("");
         }
-       for(var i=document.getElementById('selectitembox1').options.length -1; 1 <= i ; --i){
-    document.getElementById('selectitembox1').options[i] = null;
+    for(var i=document.getElementById('selectitembox1').options.length -1; 1 <= i ; --i){document.getElementById('selectitembox1').options[i] = null;
       }
 
     $.ajax({

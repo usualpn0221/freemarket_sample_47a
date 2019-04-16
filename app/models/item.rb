@@ -10,7 +10,6 @@ class Item < ApplicationRecord
   validates :name,length: { in: 1..40 }
   validates :description,length: { in: 1..1000 }
   validates :price, numericality: true
-  # validates :price, numericality: { greater_than_or_equal_to: 300}
   validates_associated :images
   validates_associated :trade
 end
