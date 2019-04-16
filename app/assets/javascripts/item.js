@@ -42,11 +42,6 @@ $(document).on('turbolinks:load', function() {
 // validationチェック
     formvalidation();
 
- for (var [key, value] of formData.entries()) {
-  console.log(key, value);
-}
-
-
     var formcheck=
     $('.sell__form__itemdescription__right__profit__input__box').val();
     if(formcheck >=300 && formcheck <= 9999999 ){$('#validation_price').hide();}
