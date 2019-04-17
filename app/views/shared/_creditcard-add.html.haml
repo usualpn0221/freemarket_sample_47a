@@ -27,6 +27,6 @@
       %span.sell__form--need 必須
       %input.credit-content__cover__title__input{type:"text",placeholder:"カード背面4桁もしくは3桁の番号"}
     .credit-content__cover__hosoku
-      %a.itemsnewlink.itemsnewlink__notice{href:""}カード裏面の番号とは?
+      = link_to "カード裏面の番号とは?",root_path,class:'itemsnewlink itemsnewlink__notice'
     .sell__form__button__back
-      %a.itemsnewlink__backbutton.credit-content__link{href:"/creditcards/update"}追加する
+      = link_to "追加する",root_path,class:'itemsnewlink__backbutton credit-content__link'

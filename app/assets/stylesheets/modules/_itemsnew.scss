@@ -329,3 +329,15 @@ text-align: right;
 color: #0099e8;
 font-size: 14px;
 }
+
+select.sell__form__itemdescription__right__descriptionselect{
+-webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
+-moz-appearance: none;  /* ベンダープレフィックス(Firefox用) */
+appearance: none; /* 標準のスタイルを無効にする */
+padding-left: 10px;
+background-image: image-url('yagirushi.png');
+background-repeat: no-repeat;
+background-size: 30px 20px;
+background-position: right 10px center;
+background-color: #FFFFFF;
+}

@@ -16,7 +16,7 @@
     }
 
     &--price{
-    font-size: 22px;
+    font-size: 19px;
     }
 
     &__introduction{
@@ -34,7 +34,7 @@
       &__cover{
 
         &__amount{
-          padding-right: 100px;
+          padding-right: 70px;
           padding-left:20px;
         }
 
@@ -106,5 +106,6 @@ display:none;
 
 #itembuyright{
   float: right;
+  font-size: 24px;
 }
 
