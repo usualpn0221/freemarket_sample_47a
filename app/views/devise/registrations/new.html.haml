@@ -47,6 +47,7 @@
             = f.label :"姓 (全角)" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :lastname, autofocus: true, autocomplete: "last_name" ,placeholder:"例) 山田", class: "ur-form-group__field"
+            -binding.pry
           .ur-form-group
             = f.label :"名 (全角)" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須

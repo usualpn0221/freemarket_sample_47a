@@ -3,7 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
    #before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
+   prepend_before_action :check_captcha, only: [:create]
   # GET /resource/sign_up
   # def new
   #   super
@@ -11,12 +11,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    if verify_recaptcha
-      super
-    else
-      self.resource = resource_class.new
-      respond_with_navigational(resource) { render :new }
-    end
+    super
+    # if verify_recaptcha
+    #   super
+    # else
+    #   self.resource = resource_class.new
+    #   respond_with_navigational(resource) { render :new }
+    # end
   end
 
   # GET /resource/edit
@@ -60,6 +61,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
     new_phonenumber_path(user_id: current_user.id)
    end
 
+
+
+ private
+
+ def check_captcha
+    self.resource = resource_class.new sign_up_params
+    resource.validate
+    unless verify_recaptcha(model: resource)
+      respond_with_navigational(resource) { render :new }
+    end
+  end
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
