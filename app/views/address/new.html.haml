@@ -28,16 +28,31 @@
             = f.label :名前 , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :lastname ,autofocus: true, autocomplete: "lastname", placeholder:"例) 山田", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:lastname].present?
+              - @profiles.errors.messages[:lastname].each do |message|
+                %p.error= message
             = f.text_field :firstname, autofocus: true, autocomplete: "firstname" ,placeholder:"例) 彩", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:firstname].present?
+              - @profiles.errors.messages[:firstname].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :"名前カナ (全角)" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :lastnamekana, autofocus: true, autocomplete: "lastnamekana" ,placeholder:"例) ヤマダ", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:lastnamekana].present?
+              - @profiles.errors.messages[:lastnamekana].each do |message|
+                %p.error= message
             = f.text_field :firstnamekana, autofocus: true, autocomplete: "firstnamekana" ,placeholder:"例) アヤ", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:firstnamekana].present?
+              - @profiles.errors.messages[:firstnamekana].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :郵便番号 , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :postnumber ,autofocus: true, autocomplete: "postnumber", placeholder:"例) 000-0000", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:postnumber].present?
+              - @profiles.errors.messages[:postnumber].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :都道府県 , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
@@ -46,14 +61,23 @@
             = f.label :市町村区 , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :shikuchouson ,autofocus: true, autocomplete: "shikuchouson", placeholder:"例) 横浜市緑区", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:shikuchouson].present?
+              - @profiles.errors.messages[:shikuchouson].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :番地 , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :banchi ,autofocus: true, autocomplete: "banchi", placeholder:"例) 青山1-1-1", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:banchi].present?
+              - @profiles.errors.messages[:banchi].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :建物名 , class: "ur-form-group__label"
             %span.ur-form-group__free 任意
             = f.text_field :tatemonomei ,autofocus: true, autocomplete: "tatemonomei", placeholder:"例) 柳ビル103", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:tatemonomei].present?
+              - @profiles.errors.messages[:tatemonomei].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :電話番号 , class: "ur-form-group__label"
             %span.ur-form-group__free 任意
