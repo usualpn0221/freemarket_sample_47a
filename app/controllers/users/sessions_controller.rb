@@ -27,9 +27,7 @@ class Users::SessionsController < Devise::SessionsController
   def check_captcha
     self.resource = resource_class.new sign_in_params
     resource.validate
-    unless verify_recaptcha(model: resource)
-      respond_with_navigational(resource) { render :new }
-    end
+    respond_with_navigational(resource) { render :new } unless verify_recaptcha(model: resource)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
