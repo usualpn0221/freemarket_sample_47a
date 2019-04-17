@@ -82,6 +82,9 @@
             = f.label :電話番号 , class: "ur-form-group__label"
             %span.ur-form-group__free 任意
             = f.text_field :phonenumber ,autofocus: true, autocomplete: "lastname", placeholder:"例) 0123456789", class: "ur-form-group__field"
+            - if @profiles.errors.messages[:phonenumber].present? && @profiles.phonenumber?
+              - @profiles.errors.messages[:phonenumber].each do |message|
+                %p.error= message
 
             .ur-form__btn
               = f.submit "次へ進む",class: "ur-form__btn--submit ur-form__btn--default ur-form__btn--red"
