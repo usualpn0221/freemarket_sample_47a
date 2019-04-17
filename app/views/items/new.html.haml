@@ -33,21 +33,22 @@
       .sell__form__itemdescription__left
         商品の詳細
       .sell__form__itemdescription__right
-        .sell__form__itemdescription__right__description
+        .sell__form__itemdescription__right__description#testkari
           カテゴリー
           %span.sell__form--need 必須
-          = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox'}
-          = f.select :trade_status,["1","2","3"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox1',style: "display:none"}
-          = f.select :category_id,["1","2"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox2',style: "display:none"}
+          = f.select :category_id,Category.all.where(parent_id: nil).map{|c| [c.name, c.id]},{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox'}
+          = f.select :category_id,{},{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox1',style: "display:none"}
+          = f.select :category_id,{},{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox2',style: "display:none"}
           .itemvalidation--notice#validation_itemcategory  選択してください
-        / .sell__form__itemdescription__right__description
-        /   サイズ
-        /   %span.sell__form--need 任意
-        /   = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect'}
         .sell__form__itemdescription__right__description
-          ブランド
+          サイズ
           %span.sell__form--need 任意
-          = f.select :brand_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect'}
+        / .sell__form__itemdescription__right__description
+        /   ブランド
+        /   %span.sell__form--need 任意
+        /   = f.select :brand_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+        / ブランドテーブル実装時のためコメントアウトで残しておく
         .sell__form__itemdescription__right__description
           商品の状態
           %span.sell__form--need 必須
@@ -117,7 +118,7 @@
       .sell__form__button__button
         = f.submit '出品する', class:'sell__form__button__button__input'
       .sell__form__button__back
-        = link_to "もどる",user_path(1),class:'itemsnewlink__backbutton'
+        = link_to "もどる",root_path,class:'itemsnewlink__backbutton'
 
   = render 'shared/mercari-footer'
 

@@ -10,12 +10,12 @@
           .buy__form__content__cover__image__input
             %span.buy__form--bold.buy__form--price=@item.name
             <br><br>
-            %span.buy__form--bold.buy__form--price="¥ #{@item.price}"
+            %span.buy__form--bold.buy__form--price="¥ #{number_with_delimiter(@item.price)}"
             送料込み
           %input.itembuybutton#itembuybutton__point{type:'button',value:'ポイントを使う'}
         .buy__form__content__cover__amount
           %span.buy__form--bold#itembuypayamount 支払い金額
-          %span.buy__form--bold.buy__form--price#itembuyright="¥ #{@item.price}"
+          %span.buy__form--bold#itembuyright="¥ #{number_with_delimiter(@item.price)}"
           <br><br>
         .buy__form__content__cover__alert
           %span.buy__form--red 配送先と支払い方法の入力を完了してください。
