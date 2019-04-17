@@ -8,12 +8,12 @@
           .signin-box 新規会員登録
       .login-panel__login
         .login-panel__login__facebook
-          =link_to root_path do
+          =link_to user_facebook_omniauth_authorize_path do
             .facebook-box
               facebookでログイン
           %i.fab.fa-facebook
         .login-panel__login__google
-          =link_to root_path do
+          =link_to user_google_oauth2_omniauth_authorize_path do
             .google-box
               googleでログイン
           =image_tag "google",size:"20x20"
@@ -24,8 +24,7 @@
           .field
             %br/
             = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード" ,class: "siginin-field"
-          .g-recaptcha
-            =image_tag "recaptcha.ong"
+          = recaptcha_tags
           .actions
             = f.submit "ログイン", class: "signin-btn"
           .forget-passward
