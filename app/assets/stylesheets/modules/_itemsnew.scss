@@ -66,7 +66,7 @@
       }
     }
     &__itemdescription{
-      padding:40px 30px 40px;
+      padding:40px 30px 20px;
       border-bottom: solid 1px #F0F0F0;
       overflow: hidden;
       display: flex;
@@ -84,17 +84,24 @@
         float: left;
         font-weight: 600;
         color:#333333;
+        &__wrapper{
+          border-bottom: solid 1px #F0F0F0;
+          padding-bottom: 10px;
+        }
+        &__description{
+          margin-bottom: 20px;
+        }
         &__descriptionselect{
           width: 400px;
           height: 48px;
-          margin-bottom:20px;
+          margin-bottom:10px;
           border-radius: 3px 3px 3px 3px;
           outline: none;
           border : 1px solid #dfdfdf;
           font-weight: 500;
         }
         &__profit{
-          border-bottom: solid 1px #F0F0F0;
+
           height: 50px;
           line-height: 50px;
           font-size:14px;
@@ -124,7 +131,7 @@
       }
     }
     &__delivery{
-      padding:40px 30px 40px;
+      padding:40px 30px 20px;
       overflow: hidden;
       border-bottom: solid 1px #F0F0F0;
       display: flex
@@ -305,4 +312,32 @@ text-align: right;
 #itemimage_uproad_over{
   color: #ea352d;
   clear: both;
+}
+
+#itemimage_uproad_none{
+  color: #ea352d;
+  clear: both;
+}
+
+.itemvalidation--notice{
+  color: #ea352d;
+  font-weight: 300;
+  display: none;
+}
+
+.item-circle{
+color: #0099e8;
+font-size: 14px;
+}
+
+select.sell__form__itemdescription__right__descriptionselect{
+-webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
+-moz-appearance: none;  /* ベンダープレフィックス(Firefox用) */
+appearance: none; /* 標準のスタイルを無効にする */
+padding-left: 10px;
+background-image: image-url('yagirushi.png');
+background-repeat: no-repeat;
+background-size: 30px 20px;
+background-position: right 10px center;
+background-color: #FFFFFF;
 }

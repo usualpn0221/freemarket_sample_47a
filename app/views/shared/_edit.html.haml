@@ -27,16 +27,19 @@
             %span.itemedit__checkbox{ data: { id: image.index, default: 'default' } }
         %input.itemnew_file{id:"itemnew_file1",multiple:"true",name:"images[name][]",type:"file",style: "display:none"}
       %div#itemimage_uproad_over{style: "display:none"}  アップロードできる画像は10枚までです。
+      %div#itemimage_uproad_none{style: "display:none"}  画像がありません
 
     .sell__form__itemname
       .sell__form__itemname__intro
-        商品名
+        %span#sell__form__itemname_bold-1 商品名
         %span.sell__form--need 必須
         = f.text_field :name,class:'sell__form__itemname__input',placeholder:"商品名（必須40文字まで)"
+        .itemvalidation--notice#validation_itemname 入力してください
       .sell__form__itemname__explanationintro
-        商品の説明
+        %span#sell__form__itemname_bold-2 商品の説明
         %span.sell__form--need 必須
         = f.text_area :description,class:'sell__form__itemname__explanationinput',placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        .itemvalidation--notice#validation_itemdescription 入力してください
 
     .sell__form__itemdescription
       .sell__form__itemdescription__left
@@ -45,21 +48,24 @@
         .sell__form__itemdescription__right__description
           カテゴリー
           %span.sell__form--need 必須
-          = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox'}
-          = f.select :trade_status,["1","2","3"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox1',style: "display:none"}
-          = f.select :category_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox2',style: "display:none"}
-        / .sell__form__itemdescription__right__description
-        /   サイズ
-        /   %span.sell__form--need 任意
-        /   = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect'}
+          = f.select :category_id,Category.all.where(parent_id: nil).map{|c| [c.name, c.id]},{include_blank: "---",selected:"#{item.category.parent.parent.id}"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox'}
+          = f.select :category_id,item.category.parent.parent.children.map{|c| [c.name, c.id]},{include_blank: "---",selected:"#{item.category.parent.id}"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox1'}
+          = f.select :category_id,item.category.parent.children.map{|c| [c.name, c.id]},{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitembox2'}
+          .itemvalidation--notice#validation_itemcategory  選択してください
         .sell__form__itemdescription__right__description
-          ブランド
+          サイズ
           %span.sell__form--need 任意
-          = f.select :brand_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          = f.select :saizu,["L","M","S"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect'}
+        / .sell__form__itemdescription__right__description
+        /   ブランド
+        /   %span.sell__form--need 任意
+        /   = f.select :brand_id,["1","2"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+        / ブランドテーブル実装時のためコメントアウトで残しておく
         .sell__form__itemdescription__right__description
           商品の状態
           %span.sell__form--need 必須
-          = f.select :item_condition,["新品、未使用","未使用に近い","傷や汚れあり","全体的に状態が悪い"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+          = f.select :item_condition,["新品、未使用","未使用に近い","傷や汚れあり","全体的に状態が悪い"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'select_item_conditon'}
+          .itemvalidation--notice#validation_itemcondition 選択してください
 
 
 
@@ -67,35 +73,44 @@
       = f.fields_for :trade do |t|
         .sell__form__itemdescription__left
           配送について
+          %i.fas.fa-question-circle.item-circle
         .sell__form__itemdescription__right
           .sell__form__itemdescription__right__description
             配送料の負担
             %span.sell__form--need 必須
             = t.select :postage,["送料込み(出品者負担)","着払い(購入者負担)"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitemdelivery'}
+            .itemvalidation--notice#validation_postage 選択してください
             %div.selectitemdelivery1{style: "display:none"}
               配送の方法
               %span.sell__form--need 必須
               = t.select :delivery,["未定","ゆうメール","レターパック","クロネコヤマト","普通郵便","ゆうパック","らくらくメルカリ便"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'selectitemdelivery1'}
+              .itemvalidation--notice#validation_delivery 選択してください
           .sell__form__itemdescription__right__description
             発送元の地域
             %span.sell__form--need 必須
-            = t.collection_select :region, Prefecture.all, :name, :name,{},{class:'sell__form__itemdescription__right__descriptionselect'}
+            = t.collection_select :region, Prefecture.all, :name, :name,{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'select_item_region'}
+            .itemvalidation--notice#validation_region 選択してください
           .sell__form__itemdescription__right__description
             発送までの日数
             %span.sell__form--need 必須
-            = t.select :shipping_date,["1〜2日で発送","2〜3日で発送","4〜7日で発送"],{},{class:'sell__form__itemdescription__right__descriptionselect'}
+            = t.select :shipping_date,["1〜2日で発送","2〜3日で発送","4〜7日で発送"],{include_blank: "---"},{class:'sell__form__itemdescription__right__descriptionselect',id:'select_item_shipping_date'}
+            .itemvalidation--notice#validation_shipping_date 選択してください
 
     .sell__form__price
       .sell__form__itemdescription__left
         販売価格
         %span#sell__price__range<> (300〜9,999,999)
+        %i.fas.fa-question-circle.item-circle
       .sell__form__itemdescription__right
-        .sell__form__itemdescription__right__profit
-          価格
-          %span.sell__form--need 必須
-          .sell__form__itemdescription__right__profit__input
-            ¥
-            = f.text_field :price,class:'sell__form__itemdescription__right__profit__input__box',placeholder:"例) 300"
+        .sell__form__itemdescription__right__wrapper
+          .sell__form__itemdescription__right__profit
+            価格
+            %span.sell__form--need 必須
+            .sell__form__itemdescription__right__profit__input
+              ¥
+              = f.text_field :price,class:'sell__form__itemdescription__right__profit__input__box',placeholder:"例) 300"
+          .itemvalidation--notice#validation_price 300以上9999999以下で入力してください
+
         .sell__form__itemdescription__right__profit
           .l-left#mercari_margin--left 販売手数料 (10%)
           .l-right#mercari_margin  -

@@ -10,27 +10,26 @@
           .buy__form__content__cover__image__input
             %span.buy__form--bold.buy__form--price=@item.name
             <br><br>
-            %span.buy__form--bold.buy__form--price="¥ #{@item.price}"
+            %span.buy__form--bold.buy__form--price="¥ #{number_with_delimiter(@item.price)}"
             送料込み
           %input.itembuybutton#itembuybutton__point{type:'button',value:'ポイントを使う'}
         .buy__form__content__cover__amount
           %span.buy__form--bold#itembuypayamount 支払い金額
-          %span.buy__form--bold.buy__form--price#itembuyright="¥ #{@item.price}"
+          %span.buy__form--bold#itembuyright="¥ #{number_with_delimiter(@item.price)}"
           <br><br>
         .buy__form__content__cover__alert
           %span.buy__form--red 配送先と支払い方法の入力を完了してください。
-        %input.itembuybutton#itembuybutton__buy{value:"購入する",type:"button",onclick:"$('#payjp_checkout_box input[type=button]').click()"}
         = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript","data-text" => "購入する"}
+          = submit_tag("購入する",class: "itembuybutton",id: "itembuybutton__buy")
     .buy__form__content
       .buy__form__content__cover
         %span.buy__form--bold 配送先<br><br>
-        =@item.user.profile.postnumber
+        =current_user.profile.postnumber
         <br>
-        =@item.user.profile.prefecture
-        =@item.user.profile.shikuchouson
+        =current_user.profile.prefecture
+        =current_user.profile.shikuchouson
         <br>
-        =@item.user.nickname
+        =current_user.nickname
         .profile-cover__notice
           = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
     .buy__form__content

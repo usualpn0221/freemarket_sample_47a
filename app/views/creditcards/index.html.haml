@@ -1,5 +1,8 @@
 = render 'shared/header'
 .default-container
+  %nav.bread-container
+    - breadcrumb :method
+    = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
   %main.l-container
     .right-content.credit-content
       .sell__form__introduction
@@ -7,7 +10,7 @@
       .credit-content__intro
         クレジットカード一覧
       .sell__form__button__back
-        = link_to "□ クレジットカードを追加する", creditcards_edit_path, class: 'itemsnewlink__backbutton credit-content__link'
+        = link_to "□ クレジットカードを追加する", edit_creditcard_path(1), class: 'itemsnewlink__backbutton credit-content__link'
       .credit-content__notice
         = link_to "支払い方法について >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
     = render 'shared/mypage-left-bar'

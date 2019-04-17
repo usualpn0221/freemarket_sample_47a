@@ -83,4 +83,8 @@ gem "gretel"
 gem 'ransack'
 gem 'ancestry'
 gem 'rails-i18n'
-
+gem 'gon'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'recaptcha', require: "recaptcha/rails"

@@ -377,6 +377,7 @@
           font-weight: 700;
           color: $white;
           background-color: #888888;
+          cursor: not-allowed;
         }
       }
     }
@@ -583,7 +584,6 @@
       background-color: $white;
       padding: 24px;
       box-sizing: border-box;
-      // = form_for [@items, @comment] do |f|
       &__top-text {
         padding: 8px;
         box-sizing: border-box;
@@ -599,6 +599,7 @@
         margin-top: 8px;
         background-color: #f5f5f5;
         border: 1px solid #CCCCCC;
+        outline: none;
       }
       &__action-box {
         width: 652px;
@@ -607,7 +608,16 @@
         height: 50px;
         background-color: #aaaaaa;
         margin-top: 8px;
-        &__btn {
+        &__btn1 {
+          color: $white;
+          height: 50px;
+          background-color: #aaaaaa;
+          font-size: 14px;
+          width: 652px;
+          border-style: none;
+          cursor: not-allowed;
+        }
+        &__btn2 {
           color: $white;
           height: 50px;
           background-color: #aaaaaa;

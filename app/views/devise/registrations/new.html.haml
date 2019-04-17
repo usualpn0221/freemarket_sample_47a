@@ -1,7 +1,7 @@
 .main-content
   .signup__header
-    =render 'shared/signin-header'
     .signup-bar
+      =render 'shared/signin-header'
       %ul
         %li#active-text.first-list
           会員情報
@@ -75,8 +75,7 @@
                 = f.select :birthday, options_for_select(1..31),{},{class: "select__default"}
                 = f.label :"日" ,class: "ur-form-group-birthday__labels"
             %p.ur-form-group-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-            .g-recaptcha
-            =image_tag "recaptcha.ong"
+            = recaptcha_tags
             .ur-form-group#termsofservice
               %p.ur-form-group__agree
               次へ進むのボタンを押すことにより、

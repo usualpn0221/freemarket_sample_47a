@@ -1,5 +1,8 @@
 = render 'shared/header'
 .default-container
+  %nav.bread-container
+    - breadcrumb :confirmation
+    = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
   %main.l-container
     = render 'shared/mypage-left-bar'
     .right-content.credit-content
@@ -58,5 +61,5 @@
         .profile-cover__button
           %input.profile-cover__button__submit{type:"submit",value:"登録する"}
         .profile-cover__notice
-          = link_to "本人情報の登録について", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
+          = link_to "本人情報の登録について", user_path(current_user.id), class: 'itemsnewlink itemsnewlink__notice'
 = render 'shared/footer'

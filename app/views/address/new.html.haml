@@ -1,7 +1,7 @@
 .main-content
   .signup__header
-    =render 'shared/signin-header'
     .signup-bar
+      =render 'shared/signin-header'
       %ul
         %li.first-list
           会員情報
@@ -52,11 +52,11 @@
             = f.text_field :banchi ,autofocus: true, autocomplete: "banchi", placeholder:"例) 青山1-1-1", class: "ur-form-group__field"
           .ur-form-group
             = f.label :建物名 , class: "ur-form-group__label"
-            %span.ur-form-group__span 必須
+            %span.ur-form-group__free 任意
             = f.text_field :tatemonomei ,autofocus: true, autocomplete: "tatemonomei", placeholder:"例) 柳ビル103", class: "ur-form-group__field"
           .ur-form-group
             = f.label :電話番号 , class: "ur-form-group__label"
-            %span.ur-form-group__span 必須
+            %span.ur-form-group__free 任意
             = f.text_field :phonenumber ,autofocus: true, autocomplete: "lastname", placeholder:"例) 0123456789", class: "ur-form-group__field"
 
             .ur-form__btn
