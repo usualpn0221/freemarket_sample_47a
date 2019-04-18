@@ -70,11 +70,25 @@
   width: 50%;
   margin: 40px auto 0;
   font-size: 20px;
-  .signin__user-infomation__thanks{
+  &__thanks{
     font-size: 3px;
   }
   &__complete{
     font-size: 20px;
+  }
+  &__btn{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin-top: 40px;
+    width: 100%;
+    line-height: 48px;
+    font-size: 18px;
+    padding: 0 20px;
+    &__start{
+      color: white;
+      text-decoration: none;
+    }
   }
   .ur-form-group {
     width:100%;
