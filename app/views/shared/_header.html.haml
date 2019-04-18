@@ -25,7 +25,7 @@
           = render 'shared/brand-accordion'
       .inner-header__under__right
         - if user_signed_in?
-          - if @user_profile.present? && @user_phonenumber.present?
+          - if current_user.profile.present? && @current_user.phonenumber.present?
             .inner-header__under__right__notice
               %i.fas.fa-bell
               .inner-header__under__right__notice__text お知らせ
