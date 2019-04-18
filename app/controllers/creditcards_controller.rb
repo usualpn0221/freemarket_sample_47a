@@ -1,5 +1,6 @@
 class CreditcardsController < ApplicationController
   protect_from_forgery except:  [:create]
+  skip_before_action :delete_user
   def index
   end
 

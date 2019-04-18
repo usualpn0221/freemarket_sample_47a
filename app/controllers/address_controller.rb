@@ -1,4 +1,5 @@
 class AddressController < ApplicationController
+  skip_before_action :delete_user
   def new
     @profiles=Profile.new
   end

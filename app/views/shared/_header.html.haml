@@ -25,22 +25,28 @@
           = render 'shared/brand-accordion'
       .inner-header__under__right
         - if user_signed_in?
-          .inner-header__under__right__notice
-            %i.fas.fa-bell
-            .inner-header__under__right__notice__text お知らせ
-            = render 'shared/notice-accordion'
-            .inner-header__under__right__notice__circle 99+
-          .inner-header__under__right__to-do-list
-            %i.fas.fa-check
-            .inner-header__under__right__to-do-list__text やることリスト
-            .inner-header__under__right__to-do-list__accordion
-              .inner-header__under__right__to-do-list__accordion__image
-                = image_tag "to-do-list.png" ,width: "280px"
-          .inner-header__under__right__my-page
-            = image_tag "member_photo_noimage_thumb.png" ,size: "32x32",class: "user-icon-image-top"
-            .inner-header__under__right__my-page__text
-              = link_to "マイページ",user_path(current_user.id)
-            = render 'shared/mypage-accordion'
+          - if current_user.profile.present? && @current_user.phonenumber.present?
+            .inner-header__under__right__notice
+              %i.fas.fa-bell
+              .inner-header__under__right__notice__text お知らせ
+              = render 'shared/notice-accordion'
+              .inner-header__under__right__notice__circle 99+
+            .inner-header__under__right__to-do-list
+              %i.fas.fa-check
+              .inner-header__under__right__to-do-list__text やることリスト
+              .inner-header__under__right__to-do-list__accordion
+                .inner-header__under__right__to-do-list__accordion__image
+                  = image_tag "to-do-list.png" ,width: "280px"
+            .inner-header__under__right__my-page
+              = image_tag "member_photo_noimage_thumb.png" ,size: "32x32",class: "user-icon-image-top"
+              .inner-header__under__right__my-page__text
+                = link_to "マイページ",user_path(current_user.id)
+              = render 'shared/mypage-accordion'
+          - else
+            .inner-header__under__right__new
+              = link_to 'ログイン', new_user_session_path
+            .inner-header__under__right__login
+              = link_to '新規会員登録', new_user_path
         - else
           .inner-header__under__right__new
             = link_to 'ログイン', new_user_session_path

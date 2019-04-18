@@ -1,4 +1,5 @@
 class PhonenumberController < ApplicationController
+  skip_before_action :delete_user
   def new
     @phonenumber=Phonenumber.new
   end
@@ -13,10 +14,6 @@ class PhonenumberController < ApplicationController
   end
 
   private
-
-  def quit_registrations
-  redirect_to controller: 'users', action: 'destroy', id: current_user.id
-  end
 
   def phonenumber_params
     params.require(:phonenumber).permit(:phonenumber).merge(user_id: current_user.id)

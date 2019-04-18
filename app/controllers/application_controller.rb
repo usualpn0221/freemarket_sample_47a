@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
-
+  before_action :delete_user, if: :user_signed_in?
   private
 
   def production?
@@ -23,6 +23,12 @@ class ApplicationController < ActionController::Base
   def set_search
     @search = Item.ransack(params[:q])
     @items = @search.result.limit(4).order("created_at DESC")
+  end
+
+  def delete_user
+    @registrations=User.find(current_user.id)
+    @registrations.destroy unless Profile.where(user_id: current_user.id).exists? && Phonenumber.where(user_id: current_user.id).exists? && @user_card =Card.where(user_id: current_user.id).exists?
+
   end
 end
 

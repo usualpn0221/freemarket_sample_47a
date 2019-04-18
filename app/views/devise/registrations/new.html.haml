@@ -28,18 +28,30 @@
             = f.label :ニックネーム , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"例) メルカリ太郎", class: "ur-form-group__field"
+            - if resource.errors.messages[:nickname].present?
+              - resource.errors.messages[:nickname].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :メールアドレス , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.email_field :email, autofocus: true, autocomplete: "email" , placeholder:"PC・携帯どちらでも可", class: "ur-form-group__field"
+            - if resource.errors.messages[:email].present?
+              - resource.errors.messages[:email].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :パスワード, class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.password_field :password, autocomplete: "new-password",placeholder:"6文字以上",class: "ur-form-group__field"
+            - if resource.errors.messages[:password].present?
+              - resource.errors.messages[:password].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :"パスワード (確認)",class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"6文字以上",class: "ur-form-group__field"
+            - if resource.errors.messages[:password_confirmation].present?
+              - resource.errors.messages[:password_confirmation].each do |message|
+                %p.error= message
           .ur-form-group
             %h3.ur-form-group__confirm 本人確認
             %p.ur-form-group__text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -47,18 +59,31 @@
             = f.label :"姓 (全角)" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :lastname, autofocus: true, autocomplete: "last_name" ,placeholder:"例) 山田", class: "ur-form-group__field"
+            .ur-form-group-error
+            - if resource.errors.messages[:lastname].present?
+              - resource.errors.messages[:lastname].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :"名 (全角)" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :firstname, autofocus: true, autocomplete: "first_name" ,placeholder:"例) 彩", class: "ur-form-group__field"
+            - if resource.errors.messages[:firstname].present?
+              - resource.errors.messages[:firstname].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :"姓カナ (全角)" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :lastnamekana, autofocus: true, autocomplete: "last_name_kana" ,placeholder:"例) ヤマダ", class: "ur-form-group__field"
+            - if resource.errors.messages[:lastnamekana].present?
+              - resource.errors.messages[:lastnamekana].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :"名カナ (全角)" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
             = f.text_field :firstnamekana, autofocus: true, autocomplete: "first_name_kana" ,placeholder:"例) アヤ", class: "ur-form-group__field"
+            - if resource.errors.messages[:firstnamekana].present?
+              - resource.errors.messages[:firstnamekana].each do |message|
+                %p.error= message
           .ur-form-group
             = f.label :"生年月日" , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
