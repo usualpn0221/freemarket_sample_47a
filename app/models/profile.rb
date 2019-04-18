@@ -7,5 +7,5 @@ class Profile < ApplicationRecord
   validates :shikuchouson, presence: true,length: {maximum: 50 ,message: "50文字以下で入力してください"}
   validates :banchi, presence: true,length: {maximum: 100 ,message: "100文字以下で入力してください"}
   validates :tatemonomei,length: {maximum: 100 ,message: "100文字以下で入力してください"}
-  validates :phonenumber,format: {with:/\A[0-9]+\z/, message:"フォーマットが不適切です"}
+  validates :phonenumber,format: {with:/\A[0-9]*\z/, message:"フォーマットが不適切です"}
 end

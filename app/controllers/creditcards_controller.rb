@@ -1,6 +1,7 @@
 class CreditcardsController < ApplicationController
   protect_from_forgery except:  [:create]
   skip_before_action :delete_user
+  before_action :move_to_root,unless: :user_signed_in?
   def index
   end
 
@@ -23,5 +24,11 @@ class CreditcardsController < ApplicationController
       user_id: current_user.id)
     card.save
     redirect_to complete_path
+  end
+
+  private
+
+  def move_to_root
+    redirect_to root_path
   end
 end
