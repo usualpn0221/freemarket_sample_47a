@@ -26,8 +26,6 @@ class ApplicationController < ActionController::Base
   end
 
   def delete_user
-    @user_profile =Profile.where(user_id: current_user.id)
-    @user_phonenumber = Phonenumber.where(user_id: current_user.id)
     @registrations=User.find(current_user.id)
     @registrations.destroy if Profile.where(user_id: current_user.id).empty? || Phonenumber.where(user_id: current_user.id).empty? || @user_card =Card.where(user_id: current_user.id).empty?
 
