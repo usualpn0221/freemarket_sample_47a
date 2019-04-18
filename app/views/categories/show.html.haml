@@ -1,12 +1,13 @@
 = render 'shared/header'
+.haikei
+  .category
+    .category__links
+      / - @categories.each do |category|
 
-.category
-  .category__links
-    / - @categories.each do |category|
-
-  .category__title
-    の商品一覧
-  .category__product
-    = render "shared/item-mini"
+    .category__title
+      = @items[1].category.name
+      の商品一覧
+    .category__product
+      = render "shared/item-mini"
 
 = render 'shared/footer'

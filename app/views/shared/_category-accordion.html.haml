@@ -1,26 +1,24 @@
 .inner-header__under__left__category__text__accordion
-  .inner-header__under__left__category__text__accordion__ladies
-    = link_to "category_path(1)", class: "inner-header__under__left__category__text__accordion__ladies__link" do
-      .inner-header__under__left__category__text__accordion__ladies__link__text
-        / = @category.name
-        / = @categories.name
+  - @categories_large.each do |category|
+    .inner-header__under__left__category__text__accordion__ladies
+      = link_to category_path(category.id), class: "inner-header__under__left__category__text__accordion__ladies__link" do
+        .inner-header__under__left__category__text__accordion__ladies__link__text
+          =category.name
 
 
-
-
-  .inner-header__under__left__category__text__accordion__mens
-    = link_to "category_path(2)", class: " inner-header__under__left__category__text__accordion__mens__link" do
-      .inner-header__under__left__category__text__accordion__mens__link__text
-        メンズ
-  .inner-header__under__left__category__text__accordion__kids ベビー・キッズ
-  .inner-header__under__left__category__text__accordion__interior インテリア・住まい・小物
-  .inner-header__under__left__category__text__accordion__book 本・音楽・ゲーム
-  .inner-header__under__left__category__text__accordion__toy おもちゃ・ホビー・グッズ
-  .inner-header__under__left__category__text__accordion__cosmetics コスメ・香水・美容
-  .inner-header__under__left__category__text__accordion__electric-appliances 家電・スマホ・カメラ
-  .inner-header__under__left__category__text__accordion__sports スポーツ・レジャー
-  .inner-header__under__left__category__text__accordion__handmade ハンドメイド
-  .inner-header__under__left__category__text__accordion__ticket チケット
-  .inner-header__under__left__category__text__accordion__bicycle 自転車・オートバイ
-  .inner-header__under__left__category__text__accordion__others その他
-  .inner-header__under__left__category__text__accordion__lists カテゴリー一覧
+  / .inner-header__under__left__category__text__accordion__mens
+  /   = link_to "category_path(2)", class: " inner-header__under__left__category__text__accordion__mens__link" do
+  /     .inner-header__under__left__category__text__accordion__mens__link__text
+  /       メンズ
+  / .inner-header__under__left__category__text__accordion__kids ベビー・キッズ
+  / .inner-header__under__left__category__text__accordion__interior インテリア・住まい・小物
+  / .inner-header__under__left__category__text__accordion__book 本・音楽・ゲーム
+  / .inner-header__under__left__category__text__accordion__toy おもちゃ・ホビー・グッズ
+  / .inner-header__under__left__category__text__accordion__cosmetics コスメ・香水・美容
+  / .inner-header__under__left__category__text__accordion__electric-appliances 家電・スマホ・カメラ
+  / .inner-header__under__left__category__text__accordion__sports スポーツ・レジャー
+  / .inner-header__under__left__category__text__accordion__handmade ハンドメイド
+  / .inner-header__under__left__category__text__accordion__ticket チケット
+  / .inner-header__under__left__category__text__accordion__bicycle 自転車・オートバイ
+  / .inner-header__under__left__category__text__accordion__others その他
+  / .inner-header__under__left__category__text__accordion__lists カテゴリー一覧

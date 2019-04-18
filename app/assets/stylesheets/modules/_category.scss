@@ -1,8 +1,13 @@
-.category {
-  margin: 0;
-  padding: 50px 30px;
+.haikei {
   width: 100vw;
   height: 100vh;
+  padding: 0;
+  background-color: $gray-thin;
+}
+.category {
+  margin: 0 auto;
+  padding: 50px 30px;
+  width: 1100px;
   background-color: $gray-thin;
   box-sizing: border-box;
   &__links {
@@ -87,13 +92,10 @@
       height: 30px;
       width: 156px;
       margin:0 auto;
-      box-sizing: border-box;
-      padding-top: 30px;
       &__upper {
         height: 20px;
         width: 60px;
-        margin:8px auto 0;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 600;
         color: #333;
         box-sizing: border-box;
@@ -109,6 +111,12 @@
         box-sizing: border-box;
       }
     }
+  }
+}
+
+.category__product {
+  a {
+    text-decoration: none;
   }
 }
 
