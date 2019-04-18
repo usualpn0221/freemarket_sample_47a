@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  var form = $("charge-form");
+  var form = $("#charge-form");
     number = form.find('input[name="number"]'),
     cvc = form.find('input[name="cvc"]'),
     exp_month = form.find('input[name="exp_month"]'),
@@ -25,8 +25,8 @@ $(document).on('turbolinks:load', function() {
         $(".exp_month").removeAttr("name");
         $(".exp_year").removeAttr("name");
         var token = response.id;
-        $("#charge-form").append(`<input type="hidden" name="pay_id" class="payjp-token" value=${token} />`)
-        $("#charge-form").get(0).submit();
+        form.append(`<input type="hidden" name="pay_id" class="payjp-token" value=${token} />`)
+        form.get(0).submit();
       }
     });
   });
