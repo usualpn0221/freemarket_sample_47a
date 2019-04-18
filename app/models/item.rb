@@ -12,4 +12,8 @@ class Item < ApplicationRecord
   validates :price, numericality: true
   validates_associated :images
   validates_associated :trade
+
+  def self.set_index(id)
+    Item.where(id).order("created_at DESC")
+  end
 end
