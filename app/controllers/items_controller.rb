@@ -1,13 +1,10 @@
 class ItemsController < ApplicationController
 
 before_action :set_item, only: [:edit, :show, :update]
-<<<<<<< HEAD
-before_action :set_ladies, only: [:edit, :show, :update]
-before_action :set_mens_items, only: [:edit, :show, :update]
-before_action :set_kids_items, only: [:edit, :show, :update]
-=======
+# before_action :set_ladies, only: [:edit, :show, :update]
+# before_action :set_mens_items, only: [:edit, :show, :update]
+# before_action :set_kids_items, only: [:edit, :show, :update]
 before_action :move_to_root,unless: :user_signed_in? ,only: :new
->>>>>>> master
 
 
   def index
