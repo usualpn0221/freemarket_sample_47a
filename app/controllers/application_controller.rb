@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
 
 
+
   private
 
   def production?
@@ -29,12 +30,22 @@ class ApplicationController < ActionController::Base
   end
 
   def set_category
-    @category = Category.where(parent_id: null)
-    # @category_middle = Category.where(parent_id: 1) && Category.where(parent_id: 1)
-    # @category_small = Category.find_by(id: @product.category_small)
-    # @category_large ||= Category.new
-    # @category_middle ||= Category.new
-    # @category_small ||= Category.new
+    @categories_small ||= Category.new
+    @categories_medium ||= Category.new
+    @categories_large ||= Category.new
+    @categories = Category.all
+    @categories_small = []
+    @categories_medium = []
+    @categories_large = []
+    @categories.each do |category|
+      if category.parent_id == 14 || category.parent_id == 15 || category.parent_id == 28 || category.parent_id == 29
+        @categories_small << category
+      elsif category.parent_id == 1 || category.parent_id == 2
+        @categories_medium << category
+      else
+        @categories_large << category
+      end
+    end
   end
 end
 

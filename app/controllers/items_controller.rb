@@ -1,14 +1,12 @@
 class ItemsController < ApplicationController
 
 before_action :set_item, only: [:edit, :show, :update]
-before_action :set_category, only: [:edit, :show, :update]
+before_action :set_category
 
   def index
-    @categories = Category.all
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
     @search = Item.ransack(params[:q])
     @items = @search.result.limit(4).order("created_at DESC")
-
   end
 
   def show
@@ -81,14 +79,22 @@ before_action :set_category, only: [:edit, :show, :update]
   end
 
   def set_category
-
-    @category_large = Category.find_by(id: @item.category_id)
-    @category_middle = Category.find_by(id: @item.category_id)
-    @category_small = Category.find_by(id: @item.category_id)
-    @category_large ||= Category.new
-    @category_middle ||= Category.new
-    @category_small ||= Category.new
-    binding.pry
+    @categories_small ||= Category.new
+    @categories_medium ||= Category.new
+    @categories_large ||= Category.new
+    @categories = Category.all
+    @categories_small = []
+    @categories_medium = []
+    @categories_large = []
+    @categories.each do |category|
+      if category.parent_id == 14 || category.parent_id == 15 || category.parent_id == 28 || category.parent_id == 29
+        @categories_small << category
+      elsif category.parent_id == 1 || category.parent_id == 2
+        @categories_medium << category
+      else
+        @categories_large << category
+      end
+    end
   end
 
 end
