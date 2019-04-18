@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
 before_action :set_item, only: [:edit, :show, :update]
+before_action :move_to_root,unless: :user_signed_in? ,only: :new
+
 
   def index
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
@@ -77,4 +79,7 @@ before_action :set_item, only: [:edit, :show, :update]
     @item = Item.find(params[:id])
   end
 
+  def move_to_root
+    redirect_to root_path
+  end
 end
