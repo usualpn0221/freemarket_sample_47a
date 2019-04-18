@@ -106,6 +106,14 @@ Category.create(name: 'ステンカラーコート', parent_id: '29', created_at
 Category.create(name: 'トレンチコート', parent_id: '29', created_at: '2019-04-10 00:00:00', updated_at: '2019-04-10 00:00:00')
 Category.create(name: 'モッズコート', parent_id: '29', created_at: '2019-04-10 00:00:00', updated_at: '2019-04-10 00:00:00')
 
+# ブランド
+
+Brand.create(name: 'シャネル', created_at: '2019-04-10 00:00:00', updated_at: '2019-04-10 00:00:00')
+Brand.create(name: 'ナイキ', created_at: '2019-04-10 00:00:00', updated_at: '2019-04-10 00:00:00')
+Brand.create(name: 'ルイ ヴィトン', created_at: '2019-04-10 00:00:00', updated_at: '2019-04-10 00:00:00')
+Brand.create(name: 'シュプリーム', created_at: '2019-04-10 00:00:00', updated_at: '2019-04-10 00:00:00')
+Brand.create(name: 'アディダス', created_at: '2019-04-10 00:00:00', updated_at: '2019-04-10 00:00:00')
+
 
 
 
