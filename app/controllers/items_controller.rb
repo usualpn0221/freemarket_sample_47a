@@ -1,13 +1,13 @@
 class ItemsController < ApplicationController
 
 before_action :set_item, only: [:edit, :show, :update]
+before_action :set_ladies, only: [:edit, :show, :update]
+before_action :set_mens_items, only: [:edit, :show, :update]
+before_action :set_kids_items, only: [:edit, :show, :update]
+
 
   def index
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
-    @ladies_items = Item.where(category_id:1).includes(:user).limit(4).order("created_at DESC")
-    @mens_items = Item.where(category_id:2).includes(:user).limit(4).order("created_at DESC")
-    @kids_items = Item.where(category_id:3).includes(:user).limit(4).order("created_at DESC")
-    @cosme_items = Item.where(category_id:7).includes(:user).limit(4).order("created_at DESC")
     @search = Item.ransack(params[:q])
     @items = @search.result.limit(4).order("created_at DESC")
   end

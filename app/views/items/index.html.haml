@@ -19,10 +19,7 @@
               .items-boxs-container--body__upper__unit__body
                 .items-boxs-container--body__upper__unit__body__title
                   = item.name
-                .items-boxs-container--body__upper__unit__body__price
-                  .items-boxs-container--body__upper__unit__body__price__upper
-                    = "￥" + number_with_delimiter(item.price)
-                  .items-boxs-container--body__upper__unit__body__price__under (税込)
+                - render partial: "shared/item-price", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -42,10 +39,7 @@
               .items-boxs-container--body__upper__unit__body
                 .items-boxs-container--body__upper__unit__body__title
                   = item.name
-                .items-boxs-container--body__upper__unit__body__price
-                  .items-boxs-container--body__upper__unit__body__price__upper
-                    = "￥" + number_with_delimiter(item.price)
-                  .items-boxs-container--body__upper__unit__body__price__under (税込)
+                - render partial: "shared/item-price", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -65,10 +59,7 @@
               .items-boxs-container--body__upper__unit__body
                 .items-boxs-container--body__upper__unit__body__title
                   = item.name
-                .items-boxs-container--body__upper__unit__body__price
-                  .items-boxs-container--body__upper__unit__body__price__upper
-                    = "￥" + number_with_delimiter(item.price)
-                  .items-boxs-container--body__upper__unit__body__price__under (税込)
+                - render partial: "shared/item-price", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -88,10 +79,7 @@
               .items-boxs-container--body__upper__unit__body
                 .items-boxs-container--body__upper__unit__body__title
                   = item.name
-                .items-boxs-container--body__upper__unit__body__price
-                  .items-boxs-container--body__upper__unit__body__price__upper
-                    = "￥" + number_with_delimiter(item.price)
-                  .items-boxs-container--body__upper__unit__body__price__under (税込)
+                - render partial: "shared/item-price", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
