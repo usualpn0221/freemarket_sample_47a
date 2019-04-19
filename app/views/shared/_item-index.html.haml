@@ -5,10 +5,10 @@
         .items-boxs-container--body__upper__unit__image__triangle
           .items-boxs-container--body__upper__unit__image__triangle__box SOLD
       = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload" if item.images[0]
-      .items-boxs-container--body__upper__unit__body
-        .items-boxs-container--body__upper__unit__body__title
-          = item.name
-        .items-boxs-container--body__upper__unit__body__price
-          .items-boxs-container--body__upper__unit__body__price__upper
-            = "￥" + number_with_delimiter(item.price)
-          .items-boxs-container--body__upper__unit__body__price__under (税込)
+    .items-boxs-container--body__upper__unit__body
+      .items-boxs-container--body__upper__unit__body__title
+        = item.name
+      .items-boxs-container--body__upper__unit__body__price
+        .items-boxs-container--body__upper__unit__body__price__upper
+          = "￥" + number_with_delimiter(item.price)
+        .items-boxs-container--body__upper__unit__body__price__under (税込)
