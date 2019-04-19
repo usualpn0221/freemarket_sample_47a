@@ -9,8 +9,30 @@
         支払方法
       .credit-content__intro
         クレジットカード一覧
-      .sell__form__button__back
-        = link_to "□ クレジットカードを追加する", edit_creditcard_path(1), class: 'itemsnewlink__backbutton credit-content__link'
+      -if current_user.cards.exists?
+        .credit_detail
+          =link_to "削除する", creditcard_path(id:current_user.id),method: :delete
+          .buy__form__content__cover__brand
+            -if @brand="visa"
+              =image_tag "Visa.png",size: "50x15"
+            -else
+              =@brand
+          .buy__form__content__cover__number
+            .buy__form__content__cover__number__secret
+            ********
+            .buy__form__content__cover__number__last4
+              =@last4
+          .buy__form__content__cover__exp
+            .buy__form__content__cover__exp__month
+              =@exp_month
+            .buy__form__content__cover__exp__monthtoyear /
+            .buy__form__content__cover__exp__year
+              =@exp_year
+
+
+      -else
+        .sell__form__button__back
+          = link_to "□ クレジットカードを追加する", cards_new_path, class: 'itemsnewlink__backbutton credit-content__link'
       .credit-content__notice
         = link_to "支払い方法について >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
     = render 'shared/mypage-left-bar'
