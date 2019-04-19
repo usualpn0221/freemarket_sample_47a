@@ -10,6 +10,10 @@ before_action :move_to_root,unless: :user_signed_in? ,only: :new
     @mens_items = Item.set_index(category_id:2).limit(4)
     @kids_items = Item.set_index(category_id:3).limit(4)
     @cosme_items = Item.set_index(category_id:7).limit(4)
+    @channel_items = Item.set_index(brand_id:1).limit(4)
+    @louis_vuitton_items = Item.set_index(brand_id:3).limit(4)
+    @supreme_items = Item.set_index(brand_id:4).limit(4)
+    @nike_items = Item.set_index(brand_id:2).limit(4)
     @search = Item.ransack(params[:q])
     @items = @search.result.limit(4).order("created_at DESC")
   end

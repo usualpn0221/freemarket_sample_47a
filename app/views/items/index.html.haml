@@ -9,18 +9,7 @@
     .items-boxs-container--body
       .items-boxs-container--body__upper
         - @ladies_items.each do |item|
-          = link_to item_path(item.id) do
-            .items-boxs-container--body__upper__unit
-              .items-boxs-container--body__upper__unit__image
-                - if item.trade_status == "3"
-                  .items-boxs-container--body__upper__unit__image__triangle
-                    .items-boxs-container--body__upper__unit__image__triangle__box SOLD
-                = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload" if item.images[0]
-              .items-boxs-container--body__upper__unit__body
-                .items-boxs-container--body__upper__unit__body__title
-                  = item.name
-                = render partial: "shared/item-price", locals: { item: item }
-
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -30,17 +19,7 @@
     .items-boxs-container--body
       .items-boxs-container--body__upper
         - @mens_items.each do |item|
-          = link_to item_path(item.id) do
-            .items-boxs-container--body__upper__unit
-              .items-boxs-container--body__upper__unit__image
-                - if item.trade_status == "3"
-                  .items-boxs-container--body__upper__unit__image__triangle
-                    .items-boxs-container--body__upper__unit__image__triangle__box SOLD
-                = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload" if item.images[0]
-              .items-boxs-container--body__upper__unit__body
-                .items-boxs-container--body__upper__unit__body__title
-                  = item.name
-                = render partial: "shared/item-price", locals: { item: item }
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -50,17 +29,7 @@
     .items-boxs-container--body
       .items-boxs-container--body__upper
         - @kids_items.each do |item|
-          = link_to item_path(item.id) do
-            .items-boxs-container--body__upper__unit
-              .items-boxs-container--body__upper__unit__image
-                - if item.trade_status == "3"
-                  .items-boxs-container--body__upper__unit__image__triangle
-                    .items-boxs-container--body__upper__unit__image__triangle__box SOLD
-                = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload" if item.images[0]
-              .items-boxs-container--body__upper__unit__body
-                .items-boxs-container--body__upper__unit__body__title
-                  = item.name
-                = render partial: "shared/item-price", locals: { item: item }
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -70,17 +39,7 @@
     .items-boxs-container--body
       .items-boxs-container--body__upper
         - @cosme_items.each do |item|
-          = link_to item_path(item.id) do
-            .items-boxs-container--body__upper__unit
-              .items-boxs-container--body__upper__unit__image
-                - if item.trade_status == "3"
-                  .items-boxs-container--body__upper__unit__image__triangle
-                    .items-boxs-container--body__upper__unit__image__triangle__box SOLD
-                = image_tag item.images[0].image,class:"items-boxs-container--body__upper__unit__image__upload" if item.images[0]
-              .items-boxs-container--body__upper__unit__body
-                .items-boxs-container--body__upper__unit__body__title
-                  = item.name
-                = render partial: "shared/item-price", locals: { item: item }
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -90,7 +49,8 @@
       = link_to "シャネル新着アイテム" , root_path
     .items-boxs-container--body
       .items-boxs-container--body__upper
-        = render "shared/item"
+        - @channel_items.each do |item|
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -99,7 +59,8 @@
       = link_to "ルイ・ヴィトン新着アイテム" , root_path
     .items-boxs-container--body
       .items-boxs-container--body__upper
-        = render "shared/item"
+        - @louis_vuitton_items.each do |item|
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -108,7 +69,8 @@
       = link_to "シュプリーム新着アイテム" , root_path
     .items-boxs-container--body
       .items-boxs-container--body__upper
-        = render "shared/item"
+        - @supreme_items.each do |item|
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
@@ -117,7 +79,8 @@
       = link_to "ナイキ新着アイテム" , root_path
     .items-boxs-container--body
       .items-boxs-container--body__upper
-        = render "shared/item"
+        - @nike_items.each do |item|
+          = render partial: "shared/item-index", locals: { item: item }
       .items-boxs-container--body__under
         = link_to "すべての商品を見る" , root_path
 
