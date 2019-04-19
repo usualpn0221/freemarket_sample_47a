@@ -77,22 +77,26 @@
           #item__main-box__right__column-right__category.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__category-large
               = link_to root_path do
-                %p.item__main-box__right__column-right__box__category-large__link-text.item__main-box__right__column-right__box__links レディース
+                %p.item__main-box__right__column-right__box__category-large__link-text.item__main-box__right__column-right__box__links
+                  = @item.category.parent.parent.name
             .item__main-box__right__column-right__box__category-medium
               = link_to root_path do
                 .item__main-box__right__column-right__box__category-medium__link-text.item__main-box__right__column-right__box__links
                   .item__main-box__right__column-right__box__category-medium__link-text__icon
                     %i.fas.fa-angle-right
-                  .item__main-box__right__column-right__box__category-medium__link-text__string.item__main-box__right__column-right__box__links バッグ
+                  .item__main-box__right__column-right__box__category-medium__link-text__string.item__main-box__right__column-right__box__links
+                    = @item.category.parent.name
             .item__main-box__right__column-right__box__category-small
               = link_to root_path do
                 .item__main-box__right__column-right__box__category-small__link-text.item__main-box__right__column-right__box__links
                   .item__main-box__right__column-right__box__category-small__link-text__icon
                     %i.fas.fa-angle-right
-                  .item__main-box__right__column-right__box__category-small__link-text__string.item__main-box__right__column-right__box__links ショルダーバッグ
+                  .item__main-box__right__column-right__box__category-small__link-text__string.item__main-box__right__column-right__box__links
+                    = @item.category.name
           #item__main-box__right__column-right__brand.item__main-box__right__column-right__box
             = link_to root_path do
-              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links ナイキ
+              %p.item__main-box__right__column-right__box__link-text.item__main-box__right__column-right__box__links
+                = @item.brand.name
           #item__main-box__right__column-right__state.item__main-box__right__column-right__box
             = @item.item_condition
           #item__main-box__right__column-right__burden.item__main-box__right__column-right__box
@@ -128,7 +132,7 @@
           = link_to root_path do
             .item__confirmation-box__link-text2 売り切れました
         - else
-          = link_to new_item_buy_path(@item) do
+          = link_to new_buy_path(@item) do
             .item__confirmation-box__link-text 購入画面に進む
 
       .item__text-box
