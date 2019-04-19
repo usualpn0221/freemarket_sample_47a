@@ -32,7 +32,12 @@
       border-bottom: solid #F0F0F0;
 
       &__cover{
-
+        &__number{
+          display: flex;
+        }
+        &__exp{
+          display: flex;
+        }
         &__amount{
           padding-right: 70px;
           padding-left:20px;

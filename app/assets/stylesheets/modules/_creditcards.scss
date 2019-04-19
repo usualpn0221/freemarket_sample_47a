@@ -1,6 +1,20 @@
 .credit-content{
   background-color: white;
   width: 700px;
+  .credit_detail{
+    margin: 20px 0 20px 25%;
+    position: relative;
+    a{
+      position: absolute;
+      right: 50%;
+      top: 30%;
+      text-decoration: none;
+      border: 1px solid red;
+      border-radius: 4px;
+      color:red;
+      padding: 5px;
+    }
+  }
 
   &__intro{
     margin-top: 30px;
