@@ -19,7 +19,7 @@
           <br><br>
         .buy__form__content__cover__alert
           %span.buy__form--red 配送先と支払い方法の入力を完了してください。
-        = form_tag(action: :pay, method: :post) do
+        = form_tag buys_path(@item) do
           = submit_tag("購入する",class: "itembuybutton",id: "itembuybutton__buy")
     .buy__form__content
       .buy__form__content__cover
@@ -35,7 +35,22 @@
     .buy__form__content
       .buy__form__content__cover
         %span.buy__form--bold 支払方法<br><br>
-        Visaカード一括払い
+        .buy__form__content__cover__number
+          .buy__form__content__cover__number__secret
+          ********
+          .buy__form__content__cover__number__last4
+            = @last4
+        .buy__form__content__cover__exp
+          .buy__form__content__cover__exp__month
+            = @exp_month
+          .buy__form__content__cover__exp__monthtoyear /
+          .buy__form__content__cover__exp__year
+            = @exp_year
+        .buy__form__content__cover__brand
+        -if @brand = "visa"
+          =image_tag "Visa.png",size: "50x15"
+        -else
+          = @brand
         .profile-cover__notice
           = link_to "変更する >", user_path(:id), class: 'itemsnewlink itemsnewlink__notice'
 
