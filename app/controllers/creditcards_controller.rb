@@ -42,6 +42,7 @@ class CreditcardsController < ApplicationController
       redirect_to creditcards_path
     else
       render :index
+    end
 
   end
 

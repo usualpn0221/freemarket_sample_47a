@@ -2,8 +2,8 @@ class BuysController < ApplicationController
   before_action :move_to_session,unless: :user_signed_in?
   before_action :have_card?
   def new
-    buyitem
-    @trade=@item.trade
+    set_item
+    @trade = @item.trade
     Payjp.api_key = PAYJP_SECRET_KEY
     customer = Payjp::Customer.retrieve(current_user.cards[0].customer_id)
     @card = customer.cards.data[0]
@@ -15,7 +15,7 @@ class BuysController < ApplicationController
   end
 
   def create
-    buyitem
+    set_item
     Payjp.api_key = PAYJP_SECRET_KEY
     customer_id = current_user.cards[0].customer_id
     Payjp::Charge.create(currency: 'jpy', amount: @item.price, customer: customer_id)
@@ -43,8 +43,8 @@ class BuysController < ApplicationController
 
   private
 
-  def buyitem
-    @item=Item.find(params[:format])
+  def set_item
+    @item = Item.find(params[:format])
   end
 
   def move_to_session
