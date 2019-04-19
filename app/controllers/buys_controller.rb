@@ -61,7 +61,7 @@ class BuysController < ApplicationController
 
   def have_card?
     @credit_info = Card.where(user_id: current_user.id)
-    redirect_to cards_new_path unless @credit_info.exists?
+    redirect_to new_card_path unless @credit_info.exists?
   end
 
 end
