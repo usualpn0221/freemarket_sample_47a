@@ -7,7 +7,7 @@
       .signin__head
         支払い方法
       .signin__user-infomation
-        %form#charge-form{:action => "/pays", :method => "POST"}
+        %form#charge-form{action:cards_path,method: "POST"}
           .ur-form-group
             %span.charge-errors
             %label.creditcard カード番号
