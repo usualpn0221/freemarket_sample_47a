@@ -5,33 +5,19 @@ class BuysController < ApplicationController
     buyitem
     @trade=@item.trade
     Payjp.api_key = PAYJP_SECRET_KEY
-    @credit_info = Card.find_by(user_id: current_user.id)
-    customer = Payjp::Customer.retrieve(@credit_info.customer_id)
-    @card=customer.cards.data[0]
-    @brand=@card[:brand]
-    @last4=@card[:last4]
-    @exp_month=@card[:exp_month]
-    @exp_year=@card[:exp_year]
+    customer = Payjp::Customer.retrieve(current_user.cards[0].customer_id)
+    @card = customer.cards.data[0]
+    @brand = @card[:brand]
+    @last4 = @card[:last4]
+    @exp_month = @card[:exp_month]
+    @exp_year = @card[:exp_year]
 
   end
 
   def create
-
-  end
-
-  def index
-
-  end
-
-
-  def update
-
-  end
-
-  def pay
     buyitem
     Payjp.api_key = PAYJP_SECRET_KEY
-    customer_id =current_user.cards[0].customer_id
+    customer_id = current_user.cards[0].customer_id
     Payjp::Charge.create(currency: 'jpy', amount: @item.price, customer: customer_id)
 
     if @item.trade_status == 3
@@ -45,14 +31,20 @@ class BuysController < ApplicationController
     end
   end
 
-  private
+  def index
 
-  def itembuy_params
-    params.permit(:item_id)
   end
 
+
+  def update
+
+  end
+
+
+  private
+
   def buyitem
-    @item=Item.find(itembuy_params[:item_id])
+    @item=Item.find(params[:format])
   end
 
   def move_to_session

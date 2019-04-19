@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   protect_from_forgery except:  [:create]
   def new
     gon.key = PAYJP_PUBLIC_KEY
-    @creditcard=Creditcard.new
+    @creditcard = Creditcard.new
   end
 
   def create
@@ -14,7 +14,10 @@ class CardsController < ApplicationController
       pay_id: params[:pay_id],
       customer_id: customer.id,
       user_id: current_user.id)
-    card.save
-    redirect_to root_path
+    if card.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 end

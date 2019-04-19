@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def delete_user
-    @registrations=User.find(current_user.id)
+    @registrations = User.find(current_user.id)
     @registrations.destroy unless Profile.where(user_id: current_user.id).exists? && Phonenumber.where(user_id: current_user.id).exists?
 
   end
