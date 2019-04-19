@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'buys/index'
 
   devise_for :users, controllers: {
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
   resources :creditcards
   resources :categories, only: [:index, :show, :new]
   resources :profiles, only: :show
-  post 'pay'     => 'creditcards#create'
+  resources :cards
+  resources :buys
   get 'complete' => "users#complete"
 end
