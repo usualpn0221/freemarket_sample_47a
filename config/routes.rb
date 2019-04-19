@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show, :new]
   resources :profiles, only: :show
   resources :cards
-  post 'pay'     => 'creditcards#create'
-  post 'pays'     => 'cards#create'
+  resources :buys
   get 'complete' => "users#complete"
 end
