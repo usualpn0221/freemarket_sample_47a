@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @search = Item.ransack(params[:q])
-    @items = @search.result.limit(4).order("created_at DESC")
   end
 
   def delete_user
