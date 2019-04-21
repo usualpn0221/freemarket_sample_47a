@@ -4,7 +4,13 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
   before_action :delete_user, if: :user_signed_in?
+  before_action :set_count, if: :user_signed_in?
   private
+
+  def set_count
+    @count = current_user.items.length
+    @rate = rand(20..119)
+  end
 
   def production?
     Rails.env.production?

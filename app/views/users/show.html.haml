@@ -14,10 +14,12 @@
           .right-content__user__number
             %div
               評価
-              %span.bold 0
+              %span.bold
+              = @rate
             %div
               出品数
-              %span.bold 0
+              %span.bold
+              = @count
       %user-information_tab
         .tabs
           %input#notice{checked: "checked", name: "tab_user", type: "radio"}

@@ -6,7 +6,7 @@
       = image_tag "member_photo_noimage_thumb.png" ,height: "60px" ,width: "60px" ,class:"inner-header__under__right__my-page__accordion__body__icon__image"
     .inner-header__under__right__my-page__accordion__body__nickname
       = current_user.nickname
-    .inner-header__under__right__my-page__accordion__body__data　評価:5　出品数:0
+    .inner-header__under__right__my-page__accordion__body__data　評価:#{@rate}　出品数:#{@count}
     .inner-header__under__right__my-page__accordion__body__sales
       .inner-header__under__right__my-page__accordion__body__sales__text 売上金
       .inner-header__under__right__my-page__accordion__body__sales__number ￥0

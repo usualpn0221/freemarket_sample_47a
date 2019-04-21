@@ -30,7 +30,8 @@
               %i.fas.fa-bell
               .inner-header__under__right__notice__text お知らせ
               = render 'shared/notice-accordion'
-              .inner-header__under__right__notice__circle 99+
+              .inner-header__under__right__notice__circle
+                = rand(5..67)
             .inner-header__under__right__to-do-list
               %i.fas.fa-check
               .inner-header__under__right__to-do-list__text やることリスト
