@@ -13,7 +13,7 @@
     width: 700px;
     &__top-box {
       width:620px;
-      height: 33px;
+      min-height: 33px;
       line-height: 33px;
       text-align: center;
       margin-bottom: 16px;
@@ -65,36 +65,6 @@
           &__contents-image {
             width: 60px;
             height: 60px;
-          }
-          #item__main-box__left__image-box__contents1 {
-            background-color: $test1;
-          }
-          #item__main-box__left__image-box__contents2 {
-            background-color: $test2;
-          }
-          #item__main-box__left__image-box__contents3 {
-            background-color: $test1;
-          }
-          #item__main-box__left__image-box__contents4 {
-            background-color: $test2;
-          }
-          #item__main-box__left__image-box__contents5 {
-            background-color: $test1;
-          }
-          #item__main-box__left__image-box__contents6 {
-            background-color: $test2;
-          }
-          #item__main-box__left__image-box__contents7 {
-            background-color: $test1;
-          }
-          #item__main-box__left__image-box__contents8 {
-            background-color: $test2;
-          }
-          #item__main-box__left__image-box__contents9 {
-            background-color: $test1;
-          }
-          #item__main-box__left__image-box__contents10 {
-            background-color: $test2;
           }
         }
       }
@@ -551,7 +521,7 @@
               position: relative;
               &__icon-left {
                 display: flex;
-                width: 72px;
+                width: 90px;
                 height: 23px;
                 position: relative;
                 .fa-clock {
@@ -848,19 +818,3 @@
   img {
     object-fit: contain;
   }
-
-.exhibition {
-  &__name {
-
-  }
-  &__box {
-
-  }
-}
-.other-item {
-  &__top {
-
-  }
-  &__box {
- }
-}

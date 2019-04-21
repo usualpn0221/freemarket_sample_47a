@@ -18,7 +18,7 @@
       padding:32px 16px;
     }
     &__image {
-      padding:30px 30px 30px 30px;
+      padding:30px 0 30px 30px;
       border-bottom: solid 1px #F6F6F6;
       &__title{
         font-weight: 600;
@@ -211,28 +211,22 @@
 }
 
 #itemnew_img_field{
-  width: 640px;
+  width: 653px;
   max-height:200px;
-  // line-height: 20px;
-  // display: table-cell;
-  // vertical-align: middle;
-
-  // text-align: center;
 }
 
 #itemnew_img_field__method{
     display:table-cell;
     vertical-align:middle;
-    border: dotted 2px #d9d9d9;
+    border: dotted 2px #ddd;
     height:200px;
     text-align: center;
     width: 640px;
     background-color: #F5F5F5;
+    padding-right: 12px;
 }
-
-
 .itempreview{
-  width:115px;
+  width:118.5px;
   height:80px;
   float:left;
   background-color: #f6f6f6;
@@ -242,7 +236,7 @@
 }
 
 .img_view{
-  width: 115px;
+  width: 118.5px;
   background-color: #f6f6f6;
   border-right: dotted 1px #d9d9d9;
   border-left: dotted 1px #d9d9d9;
@@ -253,6 +247,21 @@
     width: 50%;
     text-align: center;
     border-right: dotted 1px #d9d9d9;
+    margin-right: 8px;
+    .img_del {
+      font-size: 14px;
+    }
+    .img_del:hover {
+      text-decoration: underline;
+      opacity: 0.6;
+    }
+  }
+  .img_del {
+    font-size: 14px;
+  }
+  .img_del:hover {
+    text-decoration: underline;
+    opacity: 0.6;
   }
 }
 
@@ -269,10 +278,10 @@
 }
 
 .previewfield{
-   width:115px;
+   width:118.5px;
    float: left;
-   padding-right: 10px;
-   padding-bottom: 10px;
+   padding-right: 12px;
+   padding-bottom: 12px;
 }
 
 #sell__form__itemname_bold-1,#sell__form__itemname_bold-2 {
