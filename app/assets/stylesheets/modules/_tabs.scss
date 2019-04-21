@@ -22,7 +22,6 @@ input[name="tab_item"] , input[name="tab_user"] {
   background-color: white;
   clear: both;
   overflow: hidden;
-  // max-height:    後々制限が必要？（メルカリだとリスト⑤個分）
 }
 
 #notice:checked ~ #notice_content,
