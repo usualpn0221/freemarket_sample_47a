@@ -53,27 +53,18 @@
               .item__main-box__right__column-right__box__exhibitor-bottom__box-good
                 %i.fas.fa-laugh
                 .item__main-box__right__column-right__box__exhibitor-bottom__box-good__value
-                  - num = 0
-                  - @item.user.uservaluations.each do |kind|
-                    - if kind.kind == "good"
-                      - num += 1
-                  = num
+                  - good = rand(15..99)
+                  = good
               .item__main-box__right__column-right__box__exhibitor-bottom__box-normal
                 %i.fas.fa-meh
                 .item__main-box__right__column-right__box__exhibitor-bottom__box-normal__value
-                  - num = 0
-                  - @item.user.uservaluations.each do |kind|
-                    - if kind.kind == "normal"
-                      - num += 1
-                  = num
+                  - normal = rand(5..15)
+                  = normal
               .item__main-box__right__column-right__box__exhibitor-bottom__box-bad
                 %i.fas.fa-frown
                 .item__main-box__right__column-right__box__exhibitor-bottom__box-bad__value
-                  - num = 0
-                  - @item.user.uservaluations.each do |kind|
-                    - if kind.kind == "bad"
-                      - num += 1
-                  = num
+                  - bad = rand(0..5)
+                  = bad
           #item__main-box__right__column-right__category.item__main-box__right__column-right__box
             .item__main-box__right__column-right__box__category-large
               = link_to root_path do
@@ -146,7 +137,7 @@
               .item__bottom-box__left__inner-box__text
                 いいね！
               .item__bottom-box__left__inner-box__value
-                7
+                = rand(1..9)
         .item__bottom-box__middle
           = link_to root_path do
             .item__bottom-box__middle__inner-box
